@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="13px" viewBox="0 0 11 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>508B984F-A1E9-437B-BEB5-0F63B3EE745D</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="0.0001 0.0002 11 0.0002 11 13 0.0001 13"></polygon>
+    </defs>
+    <g id="main-2019" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.실시간" transform="translate(-1570.000000, -317.000000)">
+            <g id="실시간-펼침" transform="translate(1290.000000, 222.000000)">
+                <g id="실시간-리스트" transform="translate(21.000000, 61.000000)">
+                    <g id="2" transform="translate(0.000000, 34.000000)">
+                        <g id="icon/ranking_up" transform="translate(259.000000, 0.000000)">
+                            <g id="Page-1">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <g id="Clip-2"></g>
+                                <path d="M10.8531,5.1472 L5.8551,0.1472 C5.6591,-0.0488 5.3411,-0.0488 5.1451,0.1472 L5.1381,0.1542 L0.1471,5.1472 C-0.0489,5.3432 -0.0489,5.6612 0.1471,5.8562 C0.3431,6.0532 0.6611,6.0532 0.8561,5.8562 L4.9921,1.7192 L4.9921,12.5012 C4.9921,12.7762 5.2161,13.0002 5.4921,13.0002 C5.7681,13.0002 5.9921,12.7762 5.9921,12.5012 L5.9921,1.7042 L10.1431,5.8562 C10.3391,6.0532 10.6571,6.0532 10.8531,5.8562 C11.0491,5.6612 11.0491,5.3432 10.8531,5.1472" id="Fill-1" fill="#FF0F0F" mask="url(#mask-2)"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

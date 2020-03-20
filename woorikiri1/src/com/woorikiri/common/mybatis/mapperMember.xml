@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+/*	Name: 회원가입 mapper	*/ 
+/*	PART: 회원가입 */
+/*	Author: 이재은	*/
+/*	RegDate : 2020-01-13	*/
+/*	ModDate : 2020-01-18	*/
+/*
+	수정 이력 email 중복 체크 추가 - 전성용 
+*/
+ -->
+<mapper namespace="member">
+
+	<!-- id 중복체크 -->
+	<select id="cnt" resultType="int" parameterType="String">
+		SELECT COUNT(*) FROM T_MEMBER
+		 WHERE MEM_ID = #{memId}
+	</select>
+	
+	<!-- email 중복체크 -->
+	<select id="isEmail" resultType="int" parameterType="String">
+		SELECT COUNT(*) FROM T_MEMBER
+		 WHERE MEM_EMAIL = #{memEmail}
+	</select>
+
+	<!-- 회원가입 제출 -->
+	<insert id="register" parameterType="com.woorikiri.front.member.vo.MemberVO">
+		INSERT INTO T_MEMBER
+			(MEM_SQ, MEM_ID, MEM_PW, MEM_NM, MEM_NICK,
+			MEM_MOBILE, MEM_EMAIL, MEM_BIRTH, MEM_GENDER, MEM_FAVORITE,
+			MEM_REG_DT, MEM_REG_IP, MEM_REG_TYPE, MEM_LEAVE_FL, MEM_BLOCK_FL,
+			MAILLING_FL, SMS_FL, PRIVATE_OPEN_FL, MEM_ZONE_CODE, MEM_ADDRESS,
+			MEM_ADDRESS_SUB)
+		VALUES (MEM_SQ.NEXTVAL, #{memId}, #{memPw}, #{memNm}, #{memNick},
+				#{memMobile}, #{memEmail}, #{memBirth}, #{memGender}, #{memFavorite},
+				SYSDATE, '0.0.0.0', 'pc', 'F', 'F',
+				'F', 'F', #{privateOpenFl}, #{memZoneCode}, #{memAddress},
+				#{memAddressSub})	
+	</insert>
+	
+	<!-- 회원가입 제출2 -->
+	<insert id="register2"  parameterType="com.woorikiri.front.member.vo.MemberVO">
+		INSERT INTO T_MEMBER
+			(MEM_SQ, MEM_ID, MEM_PW, MEM_NM, MEM_NICK,
+			MEM_MOBILE, MEM_EMAIL, MEM_BIRTH, MEM_GENDER, MEM_FAVORITE,
+			MEM_REG_DT, MEM_REG_IP, MEM_REG_TYPE, MEM_LEAVE_FL, MEM_BLOCK_FL,
+			MAILLING_FL, SMS_FL, PRIVATE_OPEN_FL, MEM_ZONE_CODE, MEM_ADDRESS,
+			MEM_ADDRESS_SUB)
+		VALUES (MEM_SQ.NEXTVAL, #{memId}, #{memPw}, #{memNm}, #{memNick},
+				#{memMobile}, #{memEmail}, #{memBirth}, #{memGender}, #{memFavorite},
+				SYSDATE, #{memRegIp}, #{memRegType}, #{memLeaveFl}, #{memBlockFl},
+				'F', 'F', #{privateOpenFl}, #{memZoneCode}, #{memAddress},
+				#{memAddressSub})	
+	</insert>
+	
+	<!-- 최종로그인 시간 -->
+	<update id="lastLogin" parameterType="Map">
+		UPDATE T_MEMBER
+		   SET MEM_LAST_LOGIN = SYSDATE
+		 WHERE MEM_ID = #{memId}
+	</update>
+	
+	<!-- 로그인 -->
+	<select id="one" resultType="com.woorikiri.front.member.vo.MemberVO" parameterType="Map">
+		SELECT MEM_SQ,MEM_ID, MEM_PW, MEM_NM, MEM_NICK, MEM_MOBILE,
+			   MEM_EMAIL, MEM_BIRTH, MEM_GENDER, MEM_FAVORITE,
+			   MEM_LEAVE_FL, MEM_BLOCK_FL, MAILLING_FL, SMS_FL, PRIVATE_OPEN_FL,
+			   MEM_ZONE_CODE, MEM_ADDRESS, MEM_ADDRESS_SUB, MEM_ADDRESS_ADD
+		  FROM T_MEMBER
+		 WHERE MEM_ID = #{memId} AND MEM_PW = #{memPw}
+	
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

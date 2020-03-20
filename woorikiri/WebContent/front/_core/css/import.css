@@ -1,0 +1,4 @@
+@charset "UTF-8";
+
+@import url(reset.css);			/* css 리셋 스타일 */
+@import url(./common/common.css);		/* 공통 기본스타일 */

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="author" content="우리끼리">
+<meta name="keywords" content="비트캠프,자바141기,GPL,우리끼리">
+<meta name="description" content="우리끼리는 비트캠프 자바141기의 2차 프로젝트 솔루션입니다">
+<title>우리끼리 관리자 | 동네진사</title>
+<link  rel="stylesheet" href="../css/route/admin.css?ver=191202">
+<link rel="stylesheet" href="https://demo.sir.kr/gnuboard5/js/font-awesome/css/font-awesome.min.css?ver=191202">
+<link type="text/css" href="../css/route/bootstrap-dialog.css?ts=1525753067" rel="stylesheet"/>
+<!--[if lte IE 8]>
+<script src="https://demo.sir.kr/gnuboard5/js/html5.js"></script>
+<![endif]-->
+<script src="https://demo.sir.kr/gnuboard5/js/jquery-1.12.4.min.js"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/jquery-migrate-1.4.1.min.js"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/jquery.menu.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/common.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/wrest.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/placeholders.min.js"></script>
+<script src="../js/jquery/jquery.min.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/bootstrap/bootstrap-dialog.js"></script>
+<script src="../js/common.js"></script>
+</head>
+<body>
+
+<script>
+var tempX = 0;
+var tempY = 0;
+
+function imageview(id, w, h)
+{
+
+    menu(id);
+
+    var el_id = document.getElementById(id);
+
+    //submenu = eval(name+".style");
+    submenu = el_id.style;
+    submenu.left = tempX - ( w + 11 );
+    submenu.top  = tempY - ( h / 2 );
+
+    selectBoxVisible();
+
+    if (el_id.style.display != 'none')
+        selectBoxHidden(id);
+}
+</script>
+<div id="to_content"><a href="#container">본문 바로가기</a></div>
+
+<header id="hd">
+
+	<h1>우리끼리 </h1>
+	
+	<div id="hd_top">
+        <button type="button" id="btn_gnb" class="btn_gnb_close ">메뉴</button>
+       <div id="logo"><a href="#"><img src="https://demo.sir.kr/gnuboard5/adm/img/logo.png" alt="우리끼리 관리자"></a></div>
+
+        <div id="tnb">
+            <ul>
+                <li class="tnb_li"><a href="#" class="tnb_community" target="_blank" title="커뮤니티 바로가기">커뮤니티 바로가기</a></li>
+                <li class="tnb_li"><a href="#" class="tnb_service">부가서비스</a></li>
+                <li class="tnb_li"><button type="button" class="tnb_mb_btn">관리자<span class="../img/route/btn_gnb.png">메뉴열기</span></button>
+                    <ul class="tnb_mb_area">
+                        <li><a href="#">관리자정보</a></li>
+                        <li id="tnb_logout"><a href="#">로그아웃</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>	
+    
+    <nav id="gnb" class="gnb_large ">
+    
+    	<h2>관리자 주메뉴</h2>
+    	
+    	<ul class="gnb_ul">
+    	
+    		<li class="gnb_li on">
+                <button type="button" class="btn_op menu-100 menu-order-1" title="환경설정">환경설정</button>
+                <div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>환경설정</h3>
+                        <ul>
+                        	<li data-menu="100100"><a href="./WR020100_01_사이트설정.html" class="gnb_2da  on">사이트 설정</a></li>
+                        	<li data-menu="100110"><a href="./WR020110_01_약관개인정보처리방침.html" class="gnb_2da  ">약관/개인정보처리방침</a></li>
+                        	<li data-menu="100120"><a href="./WR020120_01_이용탈퇴안내.html" class="gnb_2da  ">이용/탈퇴안내</a></li>
+                        	<li data-menu="100130"><a href="./WR020130_01_코드관리.html" class="gnb_2da  ">코드관리</a></li>
+                        	<li data-menu="100140"><a href="./WR020140_01_검색엔진SEO.html" class="gnb_2da  ">검색엔진 SEO 설정</a></li>
+                        	<li data-menu="100210"><a href="./WR020210_01_운영자관리.html" class="gnb_2da  ">운영자관리</a></li>
+                        	<li data-menu="100220"><a href="./WR020220_01_운영자보안설정.html" class="gnb_2da  ">운영자 보안 설정</a></li>                    
+                        	<li data-menu="100230"><a href="./WR020230_01_비밀번호찾기설정.html" class="gnb_2da  ">비밀번호 찾기 설정</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-200 menu-order-1" title="회원관리">회원관리</button>
+            	<div class="gnb_oparea_wr">
+
+					<div class="gnb_oparea">
+					
+						<h3>회원관리</h3>
+						<ul>
+                        	<li data-menu="200100"><a href="#" class="gnb_2da  ">회원리스트</a></li>
+                        	<li data-menu="200200"><a href="#" class="gnb_2da  ">회원 엑셀 업로드</a></li>
+                        	<li data-menu="200300"><a href="#" class="gnb_2da  ">회원 가입 정책 관리</a></li>
+                        	<li data-menu="200400"><a href="#" class="gnb_2da  ">회원 가입 승인</a></li>
+                        	<li data-menu="200500"><a href="#" class="gnb_2da  ">휴면 회원 정책</a></li>
+                        	<li data-menu="200600"><a href="#" class="gnb_2da  ">휴면 회원 관리</a></li>
+                        	<li data-menu="200700"><a href="#" class="gnb_2da  ">회원 탈퇴 / 삭제 관리</a></li>
+                        </ul>
+					
+					</div>					
+            	
+            	</div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-300 menu-order-1" title="모임관리">모임관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>환경설정</h3>
+                        <ul>
+                        	<li data-menu="300100"><a href="#" class="gnb_2da  ">전체모임</a></li>
+                        	<li data-menu="300200"><a href="#" class="gnb_2da  ">신규 모임</a></li>
+                        	<li data-menu="300300"><a href="#" class="gnb_2da  ">인기 모임</a></li>
+                        	<li data-menu="300400"><a href="#" class="gnb_2da  ">인기 모임 TOP100</a></li>
+                        	<li data-menu="300500"><a href="#" class="gnb_2da  ">카테고리 관리</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-400 menu-order-1" title="게시판관리">게시판관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>게시판 관리</h3>
+                        <ul>
+                        	<li data-menu="400100"><a href="#" class="gnb_2da  ">게시판 리스트</a></li>
+                        	<li data-menu="400200"><a href="#" class="gnb_2da  ">게시판 등록</a></li>
+                        	<li data-menu="400300"><a href="#" class="gnb_2da  ">게시판 관리</a></li>
+                        	<li data-menu="400400"><a href="#" class="gnb_2da  ">게시판 스킨 관리</a></li>
+                        	<li data-menu="400500"><a href="#" class="gnb_2da  ">게시판 금칙어 관리</a></li>
+                        	<li data-menu="400600"><a href="#" class="gnb_2da  ">게시판 금칙어 관리</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-500 menu-order-1" title="통계관리">통계관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>게시판 관리</h3>
+                        <ul>
+                        	<li data-menu="500100"><a href="#" class="gnb_2da  ">방문자 분석</a></li>
+                        	<li data-menu="500110"><a href="#" class="gnb_2da  ">방문자 환경분석</a></li>
+                        	<li data-menu="500120"><a href="#" class="gnb_2da  ">방문자 IP 분석</a></li>
+                        	<li data-menu="500210"><a href="#" class="gnb_2da  ">신규회원 분석</a></li>
+                        	<li data-menu="500220"><a href="#" class="gnb_2da  ">전체회원 분석</a></li>
+                        	<li data-menu="500300"><a href="#" class="gnb_2da  ">카테고리 분석</a></li>
+                        	<li data-menu="500310"><a href="#" class="gnb_2da  ">페이지 뷰 분석</a></li>
+                        	<li data-menu="500400"><a href="#" class="gnb_2da  ">연령별 활동 분석</a></li>
+                        	<li data-menu="500410"><a href="#" class="gnb_2da  ">성별 활동 분석</a></li>
+                        	<li data-menu="500420"><a href="#" class="gnb_2da  ">지역별 활동 분석	</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+    		
+    	</ul>
+    
+    </nav>
+    
+
+</header>
+
+<script>
+jQuery(function($){
+
+    var menu_cookie_key = 'g5_admin_btn_gnb';
+
+    $(".tnb_mb_btn").click(function(){
+        $(".tnb_mb_area").toggle();
+    });
+
+    $("#btn_gnb").click(function(){
+        
+        var $this = $(this);
+
+        try {
+            if( ! $this.hasClass("btn_gnb_open") ){
+                set_cookie(menu_cookie_key, 1, 60*60*24*365);
+            } else {
+                delete_cookie(menu_cookie_key);
+            }
+        }
+        catch(err) {
+        }
+
+        $("#container").toggleClass("container-small");
+        $("#gnb").toggleClass("gnb_small");
+        $this.toggleClass("btn_gnb_open");
+
+    });
+
+    $(".gnb_ul li .btn_op" ).click(function() {
+        $(this).parent().addClass("on").siblings().removeClass("on");
+    });
+
+});
+</script>
+
+<div id="wrapper">
+
+	<div id="container" class="">
+	
+
+		<form name="siteConfigFrm" action="/" method="post">
+		
+		
+		<div class="page-header">
+			<h3>사이트 설정</h3>
+			<input type="submit" value="저장" class="btn btn-red"/>
+		</div>
+
+		<section id="anc_site_basic">
+		<ul class="anchor">
+			<li><a href="#anc_site_basic">기본설정</a></li>
+			<li><a href="#anc_site_board">게시판기본</a></li>
+			<li><a href="#anc_site_join">회원가입</a></li>
+		</ul>
+
+		<div class="tbl_frm01 tbl_wrap">
+
+			<table>
+				<caption>웹사이트 기본환경 설정</caption>
+				<colgroup>
+					<col class="grid_4">
+					<col>
+					<col class="grid_4">
+					<col>
+				</colgroup>
+				<tbody>
+				<tr>
+					<th scope="row"><label for="siteNm">사이트명<strong class="sound_only">필수</strong></label></th>
+					<td colspan="3"><input type="text" name="siteNm" value="우리끼리" id="siteNm" required class="required frm_input" size="40"></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="siteTitle">상단타이틀<strong class="sound_only">필수</strong></label></th>
+					<td colspan="3"><input type="text" name="siteTitle" value="우리끼리" id="siteTitle" required class="required frm_input" size="80"></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="siteURL">사이트URL</label></th>
+					<td colspan="3"><input type="text" name="siteURL" value="dongnejinsa.com" id="siteURL" required class="frm_input" size="80"></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="siteURL">대표카테고리</label></th>
+					<td colspan="3">
+						<input type="hidden" name="siteCategory" value="여행" />
+						<span id="siteCategory">여행</span>
+						<input type="button" onclick="site_categoty();" value="대표카테고리 선택"  class="btn btn-gray btn-sm"/>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="siteCutName">이름표시</label></th>
+					<td><input type="text" name="siteCutName" value="15" id="siteCutName" required class="frm_input" size="5"> 자리만 표시</td>
+					<th scope="row"><label for="siteCutName">최근게시물 라인수</label></th>
+					<td><input type="text" name="siteCutName" value="15" id="siteCutName" required class="frm_input" size="5"> 라인</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="siteNewRows">한페이지당 라인수</label></th>
+					<td><input type="text" name="siteNewRows" value="15" id="siteNewRows" required class="frm_input" size="5"> 라인</td>
+					<th scope="row"><label for="sitePageRows">페이지 표시 수</label></th>
+					<td><input type="text" name="sitePageRows" value="10" id="sitePageRows" required class="frm_input" size="5"> 페이지 표시 수</td>
+				</tr>
+				</tbody>
+			</table>
+
+		</div>
+		</section>
+
+		<section id="anc_site_board">
+
+		<ul class="anchor">
+			<li><a href="#anc_site_basic">기본설정</a></li>
+			<li><a href="#anc_site_board">게시판기본</a></li>
+			<li><a href="#anc_site_join">회원가입</a></li>
+		</ul>
+
+		<div class="tbl_frm01 tbl_wrap">
+
+			<table>
+				<caption>게시판 기본</caption>
+				<colgroup>
+					<col class="grid_4">
+					<col>
+					<col class="grid_4">
+					<col>
+				</colgroup>
+				<tbody>
+				<tr>
+					<th scope="row"><label for="siteDelaySec">글쓰기 간격</label></th>
+					<td><input type="text" name="siteDelaySec" value="30" id="siteDelaySec" required class="frm_input" size="5"> 초 지난후 가능</td>
+					<th scope="row"><label for="siteLinkTarget">새창링크</label></th>
+					<td>
+						<span class="frm_info">글내용중 자동 링크되는 타켓을 지정합니다.</span>
+						<select name="siteLinkTarget" id="siteLinkTarget">
+							<option value="_blank" selected="selected">_blank</option>
+							<option value="_self">_self</option>
+							<option value="_top">_top</option>
+							<option value="_new">_new</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="siteImageExtension">이미지 업로드 확장자</label></th>
+					<td colspan="3">
+						<span class="frm_info">게시판 글작성시 이미지 파일 업로드 가능 확장자. | 로 구분</span>
+						<input type="text" name="siteImageExtension" value="gif|jpg|jpeg|png" id="siteImageExtension" class="frm_input" size="70">
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="siteFilter">단어필터링</label></th>
+					<td colspan="3">
+						<span class="frm_info">입력된 단어가 포함된 내용은 게시할 수 없습니다. 단어와 단어 사이는 ,로 구분합니다.</span> <textarea name="siteFilter" id="siteFilter" rows="7">18아,18놈,18새끼,18년,18뇬,18노,18것,18넘,개년,개놈,개뇬,개새,개색끼,개세끼,개세이,개쉐이,개쉑,개쉽,개시키,개자식,개좆,게색기,게색끼,광뇬,뇬,눈깔,뉘미럴,니귀미,니기미,니미,도촬,되질래,뒈져라,뒈진다,디져라,디진다,디질래,병쉰,병신,뻐큐,뻑큐,뽁큐,삐리넷,새꺄,쉬발,쉬밸,쉬팔,쉽알,스패킹,스팽,시벌,시부랄,시부럴,시부리,시불,시브랄,시팍,시팔,시펄,실밸,십8,십쌔,십창,싶알,쌉년,썅놈,쌔끼,쌩쑈,썅,써벌,썩을년,쎄꺄,쎄엑,쓰바,쓰발,쓰벌,쓰팔,씨8,씨댕,씨바,씨발,씨뱅,씨봉알,씨부랄,씨부럴,씨부렁,씨부리,씨불,씨브랄,씨빠,씨빨,씨뽀랄,씨팍,씨팔,씨펄,씹,아가리,아갈이,엄창,접년,잡놈,재랄,저주글,조까,조빠,조쟁이,조지냐,조진다,조질래,존나,존니,좀물,좁년,좃,좆,좇,쥐랄,쥐롤,쥬디,지랄,지럴,지롤,지미랄,쫍빱,凸,퍽큐,뻑큐,빠큐,ㅅㅂㄹㅁ</textarea>
+					</td>
+				</tr>
+				
+				</tbody>
+			</table>
+
+		</div>
+			
+
+		</section>
+
+
+		<section id="anc_site_join">
+
+		<ul class="anchor">
+			<li><a href="#anc_site_basic">기본설정</a></li>
+			<li><a href="#anc_site_board">게시판기본</a></li>
+			<li><a href="#anc_site_join">회원가입</a></li>
+		</ul>
+		<div class="local_desc02 local_desc">
+        <p>회원가입 시 사용할 스킨과 입력 받을 정보 등을 설정할 수 있습니다.</p>
+		</div>
+
+		<div class="tbl_frm01 tbl_wrap">
+			<table>
+			<caption>회원가입 설정</caption>
+			<colgroup>
+				<col class="grid_4">
+				<col>
+				<col class="grid_4">
+				<col>
+			</colgroup>
+			<tbody>
+			<tr>
+				<th scope="row">생년월일 입력</th>
+				<td>
+					<input type="checkbox" name="siteUseBirth" value="1" id="siteUseBirth" > <label for="siteUseBirth">보이기</label>
+					<input type="checkbox" name="siteReqBirth" value="1" id="siteReqBirth" > <label for="siteReqBirth">필수입력</label>
+				</td>
+				<th scope="row">휴대폰번호 입력</th>
+				<td>
+					<input type="checkbox" name="siteUseMobile" value="1" id="siteUseMobile" > <label for="siteUseMobile">보이기</label>
+					<input type="checkbox" name="siteReqMobile" value="1" id="siteReqMobile" > <label for="siteReqMobile">필수입력</label>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">이메일 입력</th>
+				<td>
+					<input type="checkbox" name="siteUseEmail" value="1" id="siteUseEmail" > <label for="siteUseEmail">보이기</label>
+					<input type="checkbox" name="siteReqEmail" value="1" id="siteReqEmail" > <label for="siteReqEmail">필수입력</label>
+				</td>
+				<th scope="row">주소 입력</th>
+				<td>
+					<input type="checkbox" name="siteUseAddress" value="1" id="siteUseAddress" > <label for="siteUseAddress">보이기</label>
+					<input type="checkbox" name="siteReqAddress" value="1" id="siteReqAddress" > <label for="siteReqAddress">필수입력</label>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><label for="siteProhibitId">아이디,닉네임 금지단어</label></th>
+				<td>
+					<span class="frm_info">회원아이디, 닉네임으로 사용할 수 없는 단어를 정합니다. 쉼표 (,) 로 구분</span>                <textarea name="siteProhibitId" id="siteProhibitId" rows="5">admin,administrator,관리자,운영자,어드민,주인장,webmaster,웹마스터,sysop,시삽,시샵,manager,매니저,메니저,root,루트,su,guest,방문객</textarea>
+				</td>
+				<th scope="row"><label for="siteProhibitEmail">입력 금지 메일</label></th>
+				<td>
+					<span class="frm_info">입력 받지 않을 도메인을 지정합니다. 엔터로 구분 ex) hotmail.com</span>                <textarea name="siteProhibitEmail" id="siteProhibitEmail" rows="5"></textarea>
+				</td>
+			</tr>
+			</tbody>
+			</table>
+		</div>
+			
+
+		</section>
+
+		</form>
+
+	
+	
+	</div>
+	
+
+</div>
+
+<script>
+/*대표카테고리*/
+</script>
+</body>
+</html>

@@ -1,0 +1,509 @@
+.auth_popup_wrap .popup_content .input_panel>div, .auth_popup_wrap .popup_content .group_btn
+	{
+	*zoom: 1
+}
+
+.auth_popup_wrap .popup_content .input_panel>div:before,
+	.auth_popup_wrap .popup_content .group_btn:before, .auth_popup_wrap .popup_content .input_panel>div:after,
+	.auth_popup_wrap .popup_content .group_btn:after {
+	content: "";
+	display: table
+}
+
+.auth_popup_wrap .popup_content .input_panel>div:after, .auth_popup_wrap .popup_content .group_btn:after
+	{
+	clear: both
+}
+
+.auth_popup_wrap .btn_popup_close {
+	display: block;
+	text-indent: -9999em;
+	white-space: nowrap;
+	overflow: hidden
+}
+
+.auth_popup_wrap .popup_content .authnum_send_btn, .auth_popup_wrap .popup_content .group_btn .btn_confirm,
+	.auth_popup_wrap .popup_content .group_btn .btn_cancel, .main_content .btn_certification
+	{
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	border: 1px solid transparent;
+	border-radius: 3px 3px 3px 3px;
+	background: none;
+	letter-spacing: -1px;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer
+}
+
+.auth_popup_wrap .popup_content .group_btn .btn_confirm {
+	border: 1px solid #3187e9;
+	color: #ffffff;
+	background-color: #4195f5
+}
+
+.auth_popup_wrap .popup_content .group_btn .btn_confirm:hover,
+	.auth_popup_wrap .popup_content .group_btn .btn_confirm:focus {
+	background-color: #53a3ff
+}
+
+.auth_popup_wrap .popup_content .group_btn .disabled.btn_confirm,
+	.auth_popup_wrap .popup_content .group_btn [disabled="disabled"].btn_confirm
+	{
+	background-color: #a0cafa;
+	cursor: no-drop
+}
+
+.auth_popup_wrap .popup_content .group_btn .btn_cancel {
+	border: 1px solid #888;
+	color: #ffffff;
+	background-color: #999
+}
+
+.auth_popup_wrap .popup_content .group_btn .btn_cancel:hover,
+	.auth_popup_wrap .popup_content .group_btn .btn_cancel:focus {
+	background-color: #aaa
+}
+
+.auth_popup_wrap .popup_content .group_btn .disabled.btn_cancel,
+	.auth_popup_wrap .popup_content .group_btn [disabled="disabled"].btn_cancel
+	{
+	background-color: #e7e7e7;
+	cursor: no-drop
+}
+
+.auth_popup_wrap .popup_content .group_btn .disabled.btn_cancel:hover,
+	.auth_popup_wrap .popup_content .group_btn .disabled.btn_cancel:focus,
+	.auth_popup_wrap .popup_content .group_btn [disabled="disabled"].btn_cancel:hover,
+	.auth_popup_wrap .popup_content .group_btn [disabled="disabled"].btn_cancel:focus
+	{
+	background-color: #e7e7e7
+}
+
+.auth_popup_wrap .popup_content .authnum_send_btn, .main_content .btn_certification
+	{
+	border: 1px solid #b8b8b8;
+	color: #666666;
+	background-color: #ffffff
+}
+
+.auth_popup_wrap .popup_content .authnum_send_btn:hover, .main_content .btn_certification:hover,
+	.auth_popup_wrap .popup_content .authnum_send_btn:focus, .main_content .btn_certification:focus
+	{
+	color: #4195f5
+}
+
+.auth_popup_wrap .popup_content .disabled.authnum_send_btn,
+	.main_content .disabled.btn_certification, .auth_popup_wrap .popup_content [disabled="disabled"].authnum_send_btn,
+	.main_content [disabled="disabled"].btn_certification {
+	border-color: #d8d8d8;
+	background-color: #fdfdfd;
+	color: #cccccc;
+	cursor: no-drop
+}
+
+.auth_popup_wrap {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(119, 119, 119, 0.7);
+	z-index: 1100
+}
+
+.auth_popup_wrap .btn_popup_close {
+	position: absolute;
+	top: 23px;
+	right: 23px;
+	width: 15px;
+	height: 15px;
+	border: none;
+	background: url("/images/pc/icon/close_icon.png") no-repeat -35px 0
+}
+
+.auth_popup_wrap .btn_popup_close:hover, .auth_popup_wrap .btn_popup_close:focus
+	{
+	background-position-y: -31px
+}
+
+.auth_popup_wrap .error_txt {
+	display: none;
+	padding-top: 6px;
+	line-height: normal
+}
+
+.auth_popup_wrap .error .error_txt {
+	display: block
+}
+
+.auth_popup_wrap .auth_popup {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 20px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 420px;
+	min-height: 260px;
+	border: 3px solid #4195f5;
+	background-color: #fff;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%)
+}
+
+.auth_popup_wrap .popup_content>h3 {
+	padding-bottom: 10px;
+	font-size: 15px;
+	line-height: 15px
+}
+
+.auth_popup_wrap .popup_content>p {
+	font-size: 12px;
+	line-height: 18px
+}
+
+.auth_popup_wrap .popup_content .up_txt {
+	font-weight: bold
+}
+
+.auth_popup_wrap .popup_content .up_txt:first-child {
+	padding-top: 8px
+}
+
+.auth_popup_wrap .popup_content .input_panel {
+	padding: 20px 10px 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-top: 10px;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc
+}
+
+.auth_popup_wrap .popup_content .input_panel>div {
+	margin-bottom: 20px
+}
+
+.auth_popup_wrap .popup_content label {
+	width: 144px;
+	height: 40px;
+	display: inline-block;
+	float: left;
+	line-height: 40px;
+	font-weight: bold;
+	font-size: 12px
+}
+
+.auth_popup_wrap .popup_content .input_wrap {
+	padding: 0;
+	display: inline-block;
+	width: 210px;
+	min-height: 40px;
+	float: left;
+	font-size: 12px
+}
+
+.auth_popup_wrap .popup_content input[type="text"], .auth_popup_wrap .popup_content input[type="tel"]
+	{
+	padding: 0 16px;
+	width: 100%;
+	height: 40px
+}
+
+.auth_popup_wrap .popup_content .valid_time label {
+	height: 30px;
+	line-height: 30px
+}
+
+.auth_popup_wrap .popup_content .valid_time .input_wrap {
+	min-height: 30px
+}
+
+.auth_popup_wrap .popup_content .timer {
+	display: inline-block;
+	width: 80px;
+	line-height: 30px;
+	text-align: center;
+	font-weight: bold
+}
+
+.auth_popup_wrap .popup_content .timer[data-timer="off"]::before {
+	content: "�좏슚湲곌컙 留뚮즺";
+	padding-right: 9px;
+	font-weight: normal;
+	font-size: 12px
+}
+
+.auth_popup_wrap .popup_content .timer[data-timer="off"] span {
+	display: none
+}
+
+.auth_popup_wrap .popup_content .authnum_send_btn {
+	width: 130px;
+	height: 30px;
+	line-height: 28px;
+	display: inline-block;
+	float: right;
+	font-size: 11px;
+	color: #666666;
+	background-color: #fdfdfd;
+	border: solid 1px #d8d8d8
+}
+
+.auth_popup_wrap .popup_content .authnum_send_btn[disabled],
+	.auth_popup_wrap .popup_content .authnum_send_btn[disabled="disabled"]
+	{
+	color: #cccccc;
+	cursor: no-drop
+}
+
+.auth_popup_wrap .popup_content .authnum_send_btn[disabled]:hover,
+	.auth_popup_wrap .popup_content .authnum_send_btn[disabled="disabled"]:hover
+	{
+	color: #cccccc
+}
+
+.auth_popup_wrap .popup_content .bottom_btn_area {
+	padding-top: 20px;
+	padding-bottom: 0;
+	text-align: center
+}
+
+.auth_popup_wrap .popup_content .group_btn {
+	display: inline-block;
+	vertical-align: middle
+}
+
+.auth_popup_wrap .popup_content .group_btn>*[class^="btn_"] {
+	float: left;
+	margin-left: 2px;
+	margin-right: 2px
+}
+
+.auth_popup_wrap .popup_content .group_btn .btn_confirm {
+	width: 91px;
+	height: 30px;
+	line-height: 28px;
+	font-size: 11px
+}
+
+.auth_popup_wrap .popup_content .group_btn .btn_cancel {
+	width: 91px;
+	height: 30px;
+	line-height: 28px;
+	font-size: 11px
+}
+
+.auth_popup_wrap.phone .up_txt, .auth_popup_wrap.phone .low_txt,
+	.auth_popup_wrap.phone .auth_num {
+	display: none
+}
+
+.auth_popup_wrap.phone .rsvp_txt {
+	display: block
+}
+
+.auth_popup_wrap.phone.phone_auth_num_send .up_txt, .auth_popup_wrap.phone.phone_auth_num_send .low_txt,
+	.auth_popup_wrap.phone.phone_auth_num_send .auth_num {
+	display: block
+}
+
+.auth_popup_wrap.phone.phone_auth_num_send .rsvp_txt {
+	display: none
+}
+
+.auth_notice_popup {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	z-index: 800
+}
+
+.auth_notice_popup.on {
+	display: block
+}
+
+.auth_notice_popup .bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.8;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"
+}
+
+.auth_notice_popup .popup {
+	width: 420px;
+	height: 243px;
+	position: absolute;
+	top: 300px;
+	left: 50%;
+	margin-left: -210px;
+	padding-top: 57px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 3px solid #4195f5;
+	text-align: center;
+	background-color: #fff
+}
+
+.auth_notice_popup .popup p {
+	line-height: 18px;
+	margin-bottom: 19px
+}
+
+.auth_notice_popup .popup p:nth-child(2) {
+	margin-bottom: 30px
+}
+
+.auth_notice_popup .popup span {
+	display: block;
+	color: #333;
+	font-size: 14px;
+	font-weight: bold
+}
+
+.auth_notice_popup .popup button, .auth_notice_popup .popup a {
+	display: inline-block;
+	width: 91px;
+	height: 30px;
+	padding: 0;
+	line-height: 30px;
+	font-size: 11px;
+	color: #fff;
+	cursor: pointer;
+	background-color: #4195f5;
+	border: 0 none;
+	border-radius: 3px
+}
+
+.auth_notice_popup .popup.type2 {
+	width: 420px;
+	height: 263px;
+	padding-top: 72px
+}
+
+.auth_notice_popup .popup.type2 p:nth-child(2) {
+	margin-bottom: 34px
+}
+
+.auth_notice_popup .close_btn {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 15px !important;
+	height: 15px !important;
+	background-color: #fff !important
+}
+
+#content.manage_auth {
+	padding: 30px 0 20px
+}
+
+body {
+	position: relative
+}
+
+.main_content {
+	padding: 97px 100px 100px;
+	border: solid 1px #d8d8d8;
+	background-color: #ffffff;
+	font-size: 12px;
+	text-align: center
+}
+
+.main_content .title {
+	font-size: 20px;
+	margin-bottom: 26px
+}
+
+.main_content .sub_content {
+	line-height: 18px
+}
+
+.main_content .sub_content>span {
+	display: block
+}
+
+.main_content .sub_content>span:nth-child(2) {
+	margin-bottom: 18px
+}
+
+.main_content .sub_content>span:nth-child(4) {
+	margin-bottom: 24px
+}
+
+.main_content .sub_content>span a {
+	color: #4195f5;
+	text-decoration: underline
+}
+
+.main_content .info_text {
+	font-size: 11px;
+	color: #666666
+}
+
+.main_content .btn_wrap {
+	padding: 28px 0 12px
+}
+
+.main_content .btn_certification {
+	width: 172px;
+	height: 42px;
+	line-height: 40px;
+	margin: 0 auto 8px;
+	font-size: 12px;
+	font-weight: bold
+}
+
+.main_content .btn_certification .state_txt {
+	color: #666666
+}
+
+.main_content .btn_certification[disabled], .main_content .btn_certification[disabled="disabled"]
+	{
+	position: relative;
+	border: solid 1px #d8d8d8;
+	background-color: #fdfdfd;
+	cursor: no-drop
+}
+
+.main_content .btn_certification[disabled] .state_txt, .main_content .btn_certification[disabled="disabled"] .state_txt
+	{
+	color: #cccccc
+}
+
+.main_content .btn_certification[disabled] .icon_complete, .main_content .btn_certification[disabled="disabled"] .icon_complete
+	{
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: -27px;
+	width: 16px;
+	height: 16px;
+	cursor: default;
+	background: url("/images/pc/svg/check.svg") no-repeat 0 0
+}
+
+.main_content .btn_certification[disabled] .required_txt, .main_content .btn_certification[disabled="disabled"] .required_txt
+	{
+	display: none
+}
+
+.main_content .btn_certification .required_txt {
+	color: #ff0000
+}
+
+.main_content .btn_certification .icon_complete {
+	display: none
+}

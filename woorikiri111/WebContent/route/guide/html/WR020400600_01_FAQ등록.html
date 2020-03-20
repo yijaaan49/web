@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="author" content="우리끼리">
+<meta name="keywords" content="비트캠프,자바141기,GPL,우리끼리">
+<meta name="description" content="우리끼리는 비트캠프 자바141기의 2차 프로젝트 솔루션입니다">
+<title>우리끼리 관리자 | 동네진사</title>
+<link  rel="stylesheet" href="../css/route/admin.css?ver=191202">
+<link rel="stylesheet" href="https://demo.sir.kr/gnuboard5/js/font-awesome/css/font-awesome.min.css?ver=191202">
+<!--[if lte IE 8]>
+<script src="https://demo.sir.kr/gnuboard5/js/html5.js"></script>
+<![endif]-->
+<script src="https://demo.sir.kr/gnuboard5/js/jquery-1.12.4.min.js"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/jquery-migrate-1.4.1.min.js"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/jquery.menu.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/common.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/wrest.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/placeholders.min.js"></script>
+</head>
+<body>
+
+<script>
+var tempX = 0;
+var tempY = 0;
+
+function imageview(id, w, h)
+{
+
+    menu(id);
+
+    var el_id = document.getElementById(id);
+
+    //submenu = eval(name+".style");
+    submenu = el_id.style;
+    submenu.left = tempX - ( w + 11 );
+    submenu.top  = tempY - ( h / 2 );
+
+    selectBoxVisible();
+
+    if (el_id.style.display != 'none')
+        selectBoxHidden(id);
+}
+</script>
+<div id="to_content"><a href="#container">본문 바로가기</a></div>
+
+<header id="hd">
+
+	<h1>우리끼리 </h1>
+	
+	<div id="hd_top">
+        <button type="button" id="btn_gnb" class="btn_gnb_close ">메뉴</button>
+       <div id="logo"><a href="#"><img src="https://demo.sir.kr/gnuboard5/adm/img/logo.png" alt="우리끼리 관리자"></a></div>
+
+        <div id="tnb">
+            <ul>
+                <li class="tnb_li"><a href="#" class="tnb_community" target="_blank" title="커뮤니티 바로가기">커뮤니티 바로가기</a></li>
+                <li class="tnb_li"><a href="#" class="tnb_service">부가서비스</a></li>
+                <li class="tnb_li"><button type="button" class="tnb_mb_btn">관리자<span class="../img/route/btn_gnb.png">메뉴열기</span></button>
+                    <ul class="tnb_mb_area">
+                        <li><a href="#">관리자정보</a></li>
+                        <li id="tnb_logout"><a href="#">로그아웃</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>	
+    
+    <nav id="gnb" class="gnb_large ">
+    
+    	<h2>관리자 주메뉴</h2>
+    	
+    	<ul class="gnb_ul">
+    	
+    		<li class="gnb_li">
+                <button type="button" class="btn_op menu-100 menu-order-1" title="환경설정">환경설정</button>
+                <div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>환경설정</h3>
+                        <ul>
+                        	<li data-menu="100100"><a href="./WR020100_01_사이트설정.html" class="gnb_2da ">사이트 설정</a></li>
+                        	<li data-menu="100110"><a href="./WR020110_01_약관개인정보처리방침.html" class="gnb_2da">약관/개인정보처리방침</a></li>
+                        	<li data-menu="100120"><a href="./WR020120_01_이용탈퇴안내.html" class="gnb_2da">이용/탈퇴안내</a></li>
+                        	<li data-menu="100130"><a href="./WR020130_01_코드관리.html" class="gnb_2da">코드관리</a></li>
+                        	<li data-menu="100140"><a href="./WR020140_01_검색엔진SEO.html" class="gnb_2da">검색엔진 SEO 설정</a></li>
+                        	<li data-menu="100210"><a href="./WR020210_01_운영자관리.html" class="gnb_2da  ">운영자관리</a></li>
+                        	<li data-menu="100220"><a href="./WR020220_01_운영자보안설정.html" class="gnb_2da  ">운영자 보안 설정</a></li>                    
+                        	<li data-menu="100230"><a href="./WR020230_01_비밀번호찾기설정.html" class="gnb_2da  ">비밀번호 찾기 설정</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-200 menu-order-1" title="회원관리">회원관리</button>
+            	<div class="gnb_oparea_wr">
+
+					<div class="gnb_oparea">
+					
+						<h3>회원관리</h3>
+						<ul>
+                        	<li data-menu="200100"><a href="./WR020200100_01_회원리스트.html" class="gnb_2da">회원리스트</a></li>
+							<li data-menu="200110"><a href="./WR020200110_01_회원등록.html" class="gnb_2da">회원등록</a></li>
+                        	<li data-menu="200200"><a href="./WR020200200_01_회원엑셀업로드.html" class="gnb_2da">회원 엑셀 업로드</a></li>
+                        	<li data-menu="200300"><a href="./WR020200300_01_회원가입정책관리.html" class="gnb_2da">회원 가입 정책 관리</a></li>
+                        	<li data-menu="200400"><a href="./WR020200400_01_회원가입승인.html" class="gnb_2da">회원 가입 승인</a></li>
+                        	<li data-menu="200500"><a href="./WR020200500_01_휴면회원정책.html" class="gnb_2da">휴면 회원 정책</a></li>
+                        	<li data-menu="200600"><a href="./WR020200600_01_휴면회원관리.html" class="gnb_2da">휴면 회원 관리</a></li>
+                        	<li data-menu="200700"><a href="./WR020200700_01_회원탈퇴삭제관리.html" class="gnb_2da">회원 탈퇴 / 삭제 관리</a></li>
+                        </ul>
+					
+					</div>					
+            	
+            	</div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-300 menu-order-1" title="모임관리">모임관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>환경설정</h3>
+                        <ul>
+                        	<li data-menu="300100"><a href="./WR020300100_01_전체모임.html" class="gnb_2da  ">전체모임</a></li>
+                        	<li data-menu="300200"><a href="./WR020300200_01_신규모임.html" class="gnb_2da  ">신규 모임</a></li>
+                        	<li data-menu="300300"><a href="./WR020300300_01_인기모임.html" class="gnb_2da  ">인기 모임</a></li>
+                        	<li data-menu="300400"><a href="./WR020300400_01_인기모임100.html" class="gnb_2da  ">인기 모임 TOP100</a></li>
+                        	<li data-menu="300500"><a href="./WR020300500_01_카테고리관리.html" class="gnb_2da  ">카테고리 관리</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li on">
+            	<button type="button" class="btn_op menu-400 menu-order-1" title="게시판관리">게시판관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>게시판 관리</h3>
+                        <ul>
+                        	<li data-menu="400100"><a href="./WR020400100_01_게시판리스트.html" class="gnb_2da ">게시판 리스트</a></li>
+                        	<li data-menu="400200"><a href="./WR020400200_01_게시판등록.html" class="gnb_2da ">게시판 등록</a></li>
+                        	<li data-menu="400300"><a href="./WR020400300_01_게시판글관리.html" class="gnb_2da ">게시판 관리</a></li>
+                        	<li data-menu="400400"><a href="./WR020400400_01_게시판스킨관리.html" class="gnb_2da ">게시판 스킨 관리</a></li>
+                        	<li data-menu="400500"><a href="./WR020400500_01_게시판금칙어관리.html" class="gnb_2da ">게시판 금칙어 관리</a></li>
+                        	<li data-menu="400600"><a href="./WR020400600_01_FAQ관리.html" class="gnb_2da on">FAQ관리</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-500 menu-order-1" title="통계관리">통계관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>통계관리</h3>
+                        <ul>
+                        	<li data-menu="500100"><a href="./WR020500100_01_방문자분석.html" class="gnb_2da  ">방문자 분석</a></li>
+                        	<li data-menu="500110"><a href="./WR020500110_01_방문자환경분석.html" class="gnb_2da  ">방문자 환경분석</a></li>
+                        	<li data-menu="500120"><a href="./WR020500120_01_방문자IP분석.html" class="gnb_2da  ">방문자 IP 분석</a></li>
+                        	<li data-menu="500210"><a href="./WR020500210_01_신규회원분석.html" class="gnb_2da  ">신규회원 분석</a></li>
+                        	<li data-menu="500220"><a href="./WR020500220_01_전체회워분석.html" class="gnb_2da  ">전체회원 분석</a></li>
+                        	<li data-menu="500300"><a href="./WR020500300_01_카테고리분석.html" class="gnb_2da  ">카테고리 분석</a></li>
+                        	<li data-menu="500310"><a href="./WR020500310_01_페이지뷰분석.html" class="gnb_2da  ">페이지 뷰 분석</a></li>
+                        	<li data-menu="500400"><a href="./WR020500400_01_연령별활동분석.html" class="gnb_2da  ">연령별 활동 분석</a></li>
+                        	<li data-menu="500410"><a href="./WR020500410_01_성별활동분석.html" class="gnb_2da  ">성별 활동 분석</a></li>
+                        	<li data-menu="500420"><a href="./WR020500420_01_지역별활동분석.html" class="gnb_2da  ">지역별 활동 분석	</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+    		
+    	</ul>
+    
+    </nav>
+    
+
+</header>
+
+<script>
+jQuery(function($){
+
+    var menu_cookie_key = 'g5_admin_btn_gnb';
+
+    $(".tnb_mb_btn").click(function(){
+        $(".tnb_mb_area").toggle();
+    });
+
+    $("#btn_gnb").click(function(){
+        
+        var $this = $(this);
+
+        try {
+            if( ! $this.hasClass("btn_gnb_open") ){
+                set_cookie(menu_cookie_key, 1, 60*60*24*365);
+            } else {
+                delete_cookie(menu_cookie_key);
+            }
+        }
+        catch(err) {
+        }
+
+        $("#container").toggleClass("container-small");
+        $("#gnb").toggleClass("gnb_small");
+        $this.toggleClass("btn_gnb_open");
+
+    });
+
+    $(".gnb_ul li .btn_op" ).click(function() {
+        $(this).parent().addClass("on").siblings().removeClass("on");
+    });
+
+});
+</script>
+
+<div id="wrapper">
+
+	<!--container start-->
+	<div id="container" class="">
+	
+	
+		<form>
+		<div class="page-header">
+			<h3>FAQ 등록  <small>FAQ를 등록합니다.</small></h3>
+			<input type="submit" value="저장" class="btn btn-red-line"/>
+		</div>
+
+		<div class="table-title">FAQ 등록</div>
+
+		<div class="tbl_frm01 tbl_wrap pdb20" style='border-bottom:1px solid #ccc;'>
+
+			<table>
+			<caption>FAQ등록</caption>
+			<colgroup>
+				<col class="grid_2">
+				<col>
+			</colgroup>
+			<tbody>
+			<tr>
+				<th>구분</th>
+				<td>
+					<select class="form-control " id="category" name="category" >
+						<option value="03001001"  >회원가입/정보</option>
+						<option value="03001002"  >결제/배송</option>
+						<option value="03001003"  >교환/반품/환불</option>
+						<option value="03001004"  >마일리지 적립</option>
+						<option value="03001005"  >기타</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>BEST</th>
+				<td><input type="checkbox" name="isBest" value="y"  > BEST FAQ 노출</td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td><input type="text" name="subject" value="" class="frm_input" /></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td>
+				<textarea name="contents" style="width:100%; height:350px;" id="editor" required="required" label="내용" class="replaceCode"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>답변</th>
+				<td>
+				<textarea name="contents" style="width:100%; height:350px;" id="editor" required="required" label="내용" class="replaceCode"></textarea>
+				</td>
+			</tr>
+			</table>
+
+		</div>
+
+		</form>
+
+
+
+		
+		
+		
+	</div>
+	<!--container end-->
+	
+
+</div>
+
+</body>
+</html>

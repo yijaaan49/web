@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div class="foot">
+	<div class="foot_pop">
+		<div class="privacy">
+			<div class="title">개인정보 취급방침</div>
+			<div class="textarea">
+				<?include "_privacy.php";?>
+			</div>
+			<div class="btn_close"><a>CLOSE</a></div>
+		</div>
+		<div class="email">
+			<div class="title">이메일무단수집거부</div>
+			<div class="textarea">
+				<?include "_email.php";?>
+			</div>
+			<div class="btn_close"><a>CLOSE</a></div>
+		</div>
+	</div>
+	<div class="foot_top">
+		<h1><img src="/images/common/foot_logo.jpg" alt="푸터 모나미 로고" /></h1>
+		<ul class="fm">
+			<li><a href="/about/ceo.php">회사소개</a></li>
+			<li><a class="privacy_pop">개인정보처리방침</a></li>
+			<li><a class="email_pop">이메일무단수집거부</a></li>
+		</ul>
+	</div>
+	<div class="foot_btm">
+		<div class="info">
+			<div class="tit">INFO</div>
+			<address>
+				ADDRESS : 경기도 용인시 수지구 순곡로 17 <span>l</span>
+				TEL : 031-216-0153 <span>l</span>
+				FAX : 031-270-5154
+			</address>
+			<p class="copy">COPYRIGHT(C) 2017 MONAMI.CO.,LTD. ALL RIGHTS RESERVED.</p>
+		</div>
+		<div class="cc">
+			<div class="tit">CUSTOMER CENTER</div>
+			<div class="cc_tel">080-022-0153</div>
+		</div>
+		<div class="fam_site">
+			<a>FAMILY SITE</a>
+			<ul>
+				<li><a href="http://www.monamimall.com" target="_blank">모나미몰</a></li>
+				<li><a href="http://www.mon-arte.com" target="_blank">모나르떼</a></li>
+				<li><a href="http://www.monamipet.com" target="_blank">모나미펫</a></li>
+				<li><a href="http://monamiconcept.com" target="_blank">모나미 컨셉스토어</a></li>
+				<li><a href="http://www.hangso.co.kr" target="_blank">주식회사 항소</a></li>
+				<li><a href="http://www.monamistation.com/main.do" target="_blank">모나미 스테이션</a></li>
+				<li><a href="http://www.monami.co.kr/art_contest/contest/introduction.asp" target="_blank">환경사랑 미술대회</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>

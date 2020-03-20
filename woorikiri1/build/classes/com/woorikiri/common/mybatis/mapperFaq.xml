@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+/*	Name: 게시판 MAPPER	*/ 
+/*	PART: QNA 게시판	*/
+/*	Author: 이재은	*/
+/*	RegDate : 2020-01-10	*/
+ -->
+<mapper namespace="faq"> 
+	
+  	<select id = "getPlaceList" resultType="com.woorikiri.front.board.vo.FaqVO">
+  		SELECT * FROM T_FAQ 
+  			WHERE CATEGORY IN ('1000')
+  			ORDER BY CATEGORY ASC, SORT_NO ASC
+  	</select>
+  	<select id = "getAll" resultType="com.woorikiri.front.board.vo.FaqVO">
+  		SELECT * FROM T_FAQ 
+  			WHERE CATEGORY NOT IN('1000')
+  			ORDER BY CATEGORY ASC, SORT_NO ASC
+  	</select>
+  	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

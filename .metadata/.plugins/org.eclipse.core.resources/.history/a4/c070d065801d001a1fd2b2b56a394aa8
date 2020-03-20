@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	//(실습) 전달받은 파라미터 값을 사용해서 HTML 태그 만들기
+	//스크립트릿, out, 표현식 사용해서 처리하고 출력
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>성적처리 결과</title>
+</head>
+<body>
+	<h1>성적처리 결과</h1>
+	<h2>p태그로 출력</h2>
+	
+	<hr>
+	<h2>테이블로 출력</h2>
+	
+</body>
+</html>

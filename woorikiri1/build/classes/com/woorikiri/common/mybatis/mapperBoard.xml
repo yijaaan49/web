@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+/*	Name: 게시판 MAPPER	*/ 
+/*	PART: QNA 게시판	*/
+/*	Author: 이재은	*/
+/*	RegDate : 2020-01-10	*/
+ -->
+<mapper namespace="board"> 
+	
+  	
+  	<!-- 전체 게시글의 개수(페이징 처리위해) -->
+  	<select id="totalCount" resultType="int" parameterType="String">
+		SELECT COUNT(*) FROM T_BOARD WHERE BD_ID = #{bdId}
+	</select>
+	
+	
+	<!-- 표시할 게시글 리스트(페이징 처리위해) -->
+	<select id="showList" resultType="com.woorikiri.front.board.vo.BoardVO" parameterType="Map">
+		SELECT *
+		FROM (SELECT ROWNUM R_NUM, B.*
+		        FROM (SELECT *
+		              FROM T_BOARD
+		              WHERE BD_ID = #{bdId}
+		              ORDER BY REG_DT DESC, GROUP_SNO DESC, GROUP_THREAD ASC
+		             ) B
+		     )    
+		WHERE R_NUM BETWEEN #{begin} AND #{end}	
+	</select>
+  	
+  	
+	<!-- 전체 게시글 가져오기 -->
+  	<select id="all" resultType="com.woorikiri.front.board.vo.BoardVO">
+  		SELECT * FROM T_BOARD WHERE BD_ID = #{bdId}
+  	</select>
+  	
+  	
+  	<!-- 게시글 상세보기 -->
+  	<select id="one" resultType="com.woorikiri.front.board.vo.BoardVO" parameterType="int">
+		SELECT *
+		  FROM T_BOARD
+		 WHERE SNO = #{sno}   	
+  	</select>
+  	
+  	
+  	<!-- groupNo(게시글 순서) 일괄 업데이트 -->
+  	<update id="updateGroupSno" parameterType="Map">
+		UPDATE T_BOARD
+		SET groupNo = groupNo + 1
+		WHERE GROUP_SNO = #{groupSno} AND GROUP_NO >= #{groupNo}
+	</update>
+   	
+   	
+  	<!-- 게시글(원글) 입력  -->
+  	<insert id="insert" parameterType="com.woorikiri.front.board.vo.BoardVO">
+  		INSERT INTO T_BOARD
+  			(SNO, BD_ID, GROUP_NO, GROUP_THREAD, GROUP_SNO,
+  			 MEM_NO, WR_NM, WR_ID, WR_NICK, WR_PWD,
+			 WR_IP, WR_SUBJECT, WR_CONTENT, IS_NOTICE,
+  			 IS_SECRET, HIT, MEMO_CNT, CATE, IS_DELETE,
+  			 REG_DT, REPLY_STATUS)
+		 VALUES(T_BOARD_SQ.NEXTVAL, #{bdId}, T_BOARD_GROUP_SQ.NEXTVAL, 0, 0,
+    	        #{memNo}, #{wrNm}, #{wrId}, #{wrNick}, #{wrPwd}, 
+    	        '0.0.0.0', #{wrSubject}, #{wrContent}, 'F',
+    	        'F', 0, 0, '없음', 'F', 
+    	        SYSDATE, '0') 	 
+  	</insert>
+  	
+ 
+  	<!-- 게시글 수정 -->
+  	<update id="update" parameterType="com.woorikiri.front.board.vo.BoardVO">
+  		UPDATE T_BOARD
+  		   SET WR_SUBJECT = #{wrSubject}, WR_CONTENT = #{wrContent}, MOD_DT = SYSDATE
+  		 WHERE SNO = #{sno}
+  	</update>
+  	
+  	
+  	<!-- 게시글 삭제 -->
+  	<delete id="delete" parameterType="int">
+  		DELETE FROM T_BOARD
+  		 WHERE SNO = #{sno}
+  	</delete>
+  	
+  	<!-- 댓글 존재 여부 -->
+  	<select id="oneCount" resultType="int" parameterType="com.woorikiri.front.board.vo.BoardVO">
+  		SELECT COUNT(*)
+  		  FROM T_BOARD_MEMO
+  		 WHERE BOARD_SNO = #{sno}
+  	</select>
+  	
+  	<!-- 댓글 조회 -->
+  	<select id="comtList" resultType="com.woorikiri.front.board.vo.BoardMemoVO" parameterType="map">
+  		SELECT SNO, WRITER_NICK, MEMO, REG_DT
+  		  FROM T_BOARD_MEMO
+  		 WHERE BOARD_ID = #{boardId} AND BOARD_SNO = #{boardSno}
+  	</select>
+  	
+  	<!-- 댓글 입력 -->
+  	<insert id="comtWrite" parameterType="com.woorikiri.front.board.vo.BoardMemoVO">
+  		INSERT INTO T_BOARD_MEMO
+  			  (SNO, BOARD_ID, BOARD_SNO, WRITER_ID, WRITER_NM,
+  			   WRITER_NICK, MEMO, WRITER_PW, REG_DT,
+  			   GROUP_NO, GROUP_THREAD, IS_SECRET_REPLY)
+  		VALUES(T_BOARD_MEMO_SQ.NEXTVAL, #{boardId}, #{boardSno}, #{writerId}, #{writerNm},
+  			   #{writerNick}, #{memo}, #{writerPw}, SYSDATE,
+  			   #{groupNo}, #{groupThread}, 'F')
+  	</insert>
+  	
+  	<!-- 댓글 삭제 -->
+  	<delete id="comtDel" parameterType="com.woorikiri.front.board.vo.BoardMemoVO">
+		DELETE FROM T_BOARD_MEMO
+		 WHERE SNO = #{sno} 
+  	</delete>
+</mapper>

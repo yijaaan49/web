@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="keywords" content="woorikiri, 우리끼리, 모임, 행사, 번개, 이벤트">
+<meta name="description" content="세상의 모든 모임 '우리끼리'">
+<meta name="author" content="WOORIKIRI Inc. (yijaaan49@gmail.com)">
+<meta name="viewport" content="width=1280">
+<title>우리끼리 :: 모임문화 플랫폼</title>
+
+<!--공통 CSS SCRIPT 시작-->
+<link rel="stylesheet" href="../css/import.css">
+<!--공통 CSS SCRIPT 끝-->
+
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery-1.10.2.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery-ui-1.10.4.custom.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.dotdotdot-1.5.0.js"></script>
+<!--[if lt IE 9]>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/html5shiv.min.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/reponse.ie8.js"></script>
+<![endif]-->
+
+<!--메인 CSS SCRIPT 시작-->
+<link rel="stylesheet" href="../css/event-add.css">
+<!--메인 CSS SCRIPT 끝-->
+</head>
+<body class="onoffmix">
+
+<!-- header start -->
+<header id="header" class="header_wrap">
+	
+	<!--header top 시작-->
+	<div class="header_top wide_max_width_area">
+
+		<h1 class="woori_logo">
+		<a href="/"><span class="text_logo">우리끼리 홈</span><img src="" alt="WOORIKIRI"></a>
+		</h1>
+
+		<div class="user_area">
+			<ul class="service_menu">
+				<li class="list_item login"><a href="/account/login">로그인</a></li>
+				<li class="list_item join"><a href="/account/join">회원가입</a></li>
+				<li class="list_item service"><a href="/service">서비스안내</a></li>
+				<li class="list_item customer"><a href="/cs/main">고객센터</a></li>
+			</ul>
+
+			<ul class="member_menu">
+				<li class="list_item mypage" tabindex="0">
+					<a href="/account/main">마이페이지</a>
+					<div class="sub_menu">
+						<ul class="sub_list mypage_list">
+							<li><a href="/account/login?returnUrl=/account/edit" class="site_link edit">회원정보수정</a></li>
+							<li><a href="/account/login?returnUrl=/account/pass" class="site_link pass">비밀번호변경</a></li>
+							<li><a href="/account/login?returnUrl=/account/event" class="site_link event">신청내역</a></li>
+							<li><a href="/account/login?returnUrl=/account/payment" class="site_link payment">결제내역</a></li>
+							<li><a href="/account/login?returnUrl=/account/pin" class="site_link pin">찜내역</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="list_item eventopen"><a href="/event/add">모임개설</a></li>
+				<li class="list_item manage"><a href="/account/login?returnUrl=/event/manage">모임관리</a></li>
+				<li class="list_item notice"><a href="/account/login?returnUrl=/">알림</a></li>
+			</ul>
+		</div>
+
+		<!--검색 area 시작-->
+		<div class="search_area">
+			<form class="search_form" action="/event/main" method="GET">
+				<label for="searchInput">검색할 모임을 입력해주세요.</label>
+				<input type="text" id="searchInput" class="search_input" name="s" value="" title="키워드로 모임을 검색하세요" data-event="205867">
+									<span class="ofm_keyword_value"
+					  data-event_no="205867" data-event_title="2020 IT 솔루션 박람회 Control Overflow" data-creative_name="PC_메인_검색창광고" data-creative_slot="1">IT 솔루션 박람회 Control Overflow →</span>
+				</script>
+				<input type="submit" class="btn_search" value="검색" title="검색">
+			</form>
+		</div>
+		<!--검색 area 끝-->
+
+	</div>
+	<!--header top 끝-->
+
+	<!--header bottom 시작-->
+	<div class="header_bottom">
+
+		<div class="wide_max_width_area">
+			<div class="category_section">
+				<div class="title_wrap">
+					<button class="btn_category">카테고리</button>
+				</div>
+			</div>
+		</div>
+
+		<!--detail_category 시작-->
+		<div class="detail_category">
+		
+			<div class="wide_max_width_area">
+			<!-- 모임 시작 -->
+				<section class="category_event">
+					<h1>모임</h1>
+					<ul class="list_col">
+						<li class="list_item"><a href="/event/main/?c=085">교육</a></li>
+						<li class="list_item"><a href="/event/main/?c=086">강연</a></li>
+						<li class="list_item"><a href="/event/main/?c=087">세미나/컨퍼런스</a></li>
+						<li class="list_item"><a href="/event/main/?c=088">문화/예술</a></li>
+						<li class="list_item"><a href="/event/main/?c=089">방송/연예</a></li>
+						<li class="list_item"><a href="/event/main/?c=090">취미활동</a></li>
+						<li class="list_item"><a href="/event/main/?c=091">소모임/친목행사</a></li>
+						<li class="list_item"><a href="/event/main/?c=092">공모전</a></li>
+						<li class="list_item"><a href="/event/main/?c=093">전시/박람회</a></li>
+						<li class="list_item"><a href="/event/main/?c=094">패션/뷰티</a></li>
+						<li class="list_item"><a href="/event/main/?c=095">이벤트/파티</a></li>
+						<li class="list_item"><a href="/event/main/?c=097">여행</a></li>
+						<li class="list_item"><a href="/event/main/?c=023">후원금</a></li>
+						<li class="list_item"><a href="/event/main/?c=096">기타</a></li>
+					</ul>
+				</section>
+			<!-- 모임 끝 -->
+
+			<!-- 지역 시간 -->
+			<section class="category_area">
+				<h1>지역</h1>
+				<ul class="list_col">
+					<li class="list_item"><a href="/event/main/?region=02">서울</a></li>
+					<li class="list_item"><a href="/event/main/?region=032,031">인천/경기</a></li>
+					<li class="list_item"><a href="/event/main/?region=042,043,041,044">대전/충청/세종</a></li>
+					<li class="list_item"><a href="/event/main/?region=051,052,054">부산/울산/경남</a></li>
+					<li class="list_item"><a href="/event/main/?region=062,063,061">광주/전라</a></li>
+					<li class="list_item"><a href="/event/main/?region=053,055">대구/경북</a></li>
+					<li class="list_item"><a href="/event/main/?region=033">강원</a></li>
+					<li class="list_item"><a href="/event/main/?region=064">제주</a></li>
+					<li class="list_item"><a href="/event/main/?region=00">기타지역</a></li>
+				</ul>
+			</section>
+			</div>
+			<!-- 지역 끝 -->
+
+			<div class="category_action_area">
+				<div class="wide_max_width_area">
+					<a href="#" class="btn_all_event">전체 모임 보기<span>></span></a>
+					<button class="btn_close">
+						<span>카테고리 닫기</span>
+						<img src="https://static.onoffmix.com/images/pc/svg/category_close_blue.svg" alt="닫기">
+					</button>
+				</div>
+			</div>
+
+		</div>
+		<!--detail_category 끝-->
+
+		<div class="wide_max_width_area">
+
+			<div class="right_section">
+
+				<!-- link section -->
+				<div class="link_section">
+
+				</div>
+				<!-- link section -->
+
+				<!-- lanking event 시작 -->
+				<div class="event_ranking">
+
+					<div class="visible_lanking">
+						<span class="ranking_number"></span>
+						<span class="event_title"></span>
+					</div>
+
+					<div class="detail_ranking_area">
+						<h2>실시간 <span class="date_time">2020.1.13</span></h2>
+					</div>
+
+				</div>
+				<!-- lanking event 끝 -->
+
+			</div>
+
+		</div>
+
+	</div>
+	<!--header bottom 끝-->
+
+</header>
+<!-- header end -->
+
+<!-- Main Content : event/event-add.html -->
+<style>
+/* 그룹설정 파슬리 스타일 선언 */
+fieldset.edit_group_type .parsley-errors-list {
+    display: none;
+}
+fieldset.edit_group_type div div + ul.parsley-errors-list {
+    display: block;
+}
+</style>
+<main id="content" class="event_add">
+
+	<!-- wrapping 시작 -->
+    <div class="content_wrapping max_width_area">
+
+		<div class="top_area">
+            <h2 class="main_title">개설하기</h2>
+		<div>
+
+		<section class="main_area">
+
+			<form>
+				
+				<!--event_input_area 시작-->
+				<div class="event_input_area">
+
+					<!-- 이미지영역 -->
+					<div class="event_img_area">
+
+						<div class="event_thumbnail">
+							<!-- 파일이 업로드 되면 업로드된 이미지로 변경 -->
+                            <img class="thumbnail" src="https://static.onoffmix.com/images/pc/default/event_thumbnail.png?_=1578979656"
+                            data-default-src="https://static.onoffmix.com/images/pc/default/event_thumbnail.png"
+                            alt="모임 이미지">
+
+							 <!-- 썸네일 업로드 버튼 -->
+                            <!-- 파입업로드가 되면 클래스 .upload 붙음 -->
+                            <div class="btn_area"">
+                                <input type="file" class="fileupload" title="모임 사진 업로드">
+                                <button type="button" class="btn_change_img">사진변경</button>
+                                <!-- 파일업로드후 삭제하기 버튼 생김 -->
+                                <button type="button" class="btn_delete_upload">삭제하기</button>
+                            </div>
+						</div>
+
+						<!--recommen_area 시작-->
+						<div class="recommen_area">
+
+							<button type="button" class="btn_recommend">추천 이미지 보기</button>
+							<!-- 추천이미지 클릭시 블럭 -->
+							<div class="recommen_img">
+								<p class="tip_txt">대표 이미지가 없다면
+									온오프믹스에서
+									제공하는 추천 이미지를
+									선택해 주세요.
+								</p>
+								<ul class="thumbnail_list">
+									<!-- id, name, for 임의적용 -->
+									<!-- 라디오버튼 value 추천 이미지 src -->
+									<li>
+										<input type="radio" name="recommen_thumbnail" id="thumbnail-01" value="https://static.onoffmix.com/images/pc/default/thumbnail_01.jpg"
+										>
+										<label for="thumbnail-01">
+											<img src="https://static.onoffmix.com/images/pc/default/thumbnail_01.jpg" alt="편지봉투 초대장 사진">
+										</label>
+									</li>
+									<li>
+										<input type="radio" name="recommen_thumbnail" id="thumbnail-02" value="https://static.onoffmix.com/images/pc/default/thumbnail_02.jpg"
+										>
+										<label for="thumbnail-02">
+											<img src="https://static.onoffmix.com/images/pc/default/thumbnail_02.jpg" alt="편지봉투 초대장 사진">
+										</label>
+									</li>
+									<li>
+										<input type="radio" name="recommen_thumbnail" id="thumbnail-03" value="https://static.onoffmix.com/images/pc/default/thumbnail_03.jpg"
+										>
+										<label for="thumbnail-03">
+											<img src="https://static.onoffmix.com/images/pc/default/thumbnail_03.jpg" alt="편지봉투 초대장 사진">
+										</label>
+									</li>
+								</ul>
+								<button type="button" class="btn_close">닫기</button>
+							</div>
+						</div>
+						<!--recommen_area 끝-->
+
+					</div>
+					<!-- 이미지영역 끝 -->
+
+					<!--입력 폼 영역-->
+					<div class="edit_wrap">
+
+						<!--right_wrap 시작-->
+						<div class="right_wrap">
+
+							<fieldset class="edit_title">
+                                <legend><h3 class="title">카테고리/모임명</h3></legend>
+                                <div class="edit">
+                                    <div class="write_wrap">
+                                        <select class="selectmenu category_select" name="category">
+                                            <option value="">카테고리 선택</option>
+                                        <option value="085" >교육</option><option value="086" >강연</option><option value="087" >세미나/컨퍼런스</option><option value="088" >문화/예술</option><option value="089" >방송/연예</option><option value="090" >취미활동</option><option value="091" >소모임/친목행사</option><option value="092" >공모전</option><option value="093" >전시/박람회</option><option value="094" >패션/뷰티</option><option value="095" >이벤트/파티</option><option value="097" >여행</option><option value="023" >후원금</option><option value="096" >기타</option>                                        </select>
+    
+                                        <input id="title" type="text" name="title" class="title_input" placeholder="모임명을 입력해 주세요." value="" maxlength="64" autofocus="autofocus">
+                                    </div>
+    
+                                    <div class="tip_txt">
+                                        <span class="entities">*</span> 개설하고자 하는 모임과 어울리는 카테고리/이름으로 입력하면 모임을 찾기가 쉬워집니다.
+                                    </div>
+                                </div>
+                            </fieldset>
+
+							<fieldset class="edit_date">
+                                <legend>
+                                    <h3 class="title">모임일시</h3>
+                                </legend>
+								<input type="hidden" name="eventEndDateInUse" value="Y"/>
+                                <input type="hidden" name="eventStartDateTime" value="2020.1.15 14:30"/>
+                                <input type="hidden" name="eventEndDateTime" value="2020.1.15 15:00"/>
+								<div class="edit">
+
+									<!--start_time-->
+									<div class="start_time" id="edit_date_start_time">
+
+										<div class="write_wrap">
+										
+											<input type="text" id="startEventDate" name="eventStartDateTime_date"
+                                                value="2020.1.15"
+                                                required
+                                                data-parsley-applydatecheck
+                                                data-parsley-class-handler="#edit_date_start_time"
+                                                data-parsley-required-message="모임 시작 일시를 입력해주세요."
+                                            >
+
+											<select class="timebox" id="startEventTime" name="eventStartDateTime_time" nojs timebox>
+                                                <option value='00:00'>00:00</option>
+												<option value='00:30'>00:30</option>
+												<option value='01:00'>01:00</option>
+												<option value='01:30'>01:30</option>
+												<option value='02:00'>02:00</option>
+												<option value='02:30'>02:30</option>
+												<option value='03:00'>03:00</option>
+												<option value='03:30'>03:30</option>
+												<option value='04:00'>04:00</option>
+												<option value='04:30'>04:30</option>
+												<option value='05:00'>05:00</option>
+												<option value='05:30'>05:30</option>
+												<option value='06:00'>06:00</option>
+												<option value='06:30'>06:30</option>
+												<option value='07:00'>07:00</option>
+												<option value='07:30'>07:30</option>
+												<option value='08:00'>08:00</option>
+												<option value='08:30'>08:30</option>
+												<option value='09:00'>09:00</option>
+												<option value='09:30'>09:30</option>
+												<option value='10:00'>10:00</option>
+												<option value='10:30'>10:30</option>
+												<option value='11:00'>11:00</option>
+												<option value='11:30'>11:30</option>
+												<option value='12:00'>12:00</option>
+												<option value='12:30'>12:30</option>
+												<option value='13:00'>13:00</option>
+												<option value='13:30'>13:30</option>
+												<option value='14:00'>14:00</option>
+												<option value='14:30' selected='selected'>14:30</option>
+												<option value='15:00'>15:00</option>
+												<option value='15:30'>15:30</option>
+												<option value='16:00'>16:00</option>
+												<option value='16:30'>16:30</option>
+												<option value='17:00'>17:00</option>
+												<option value='17:30'>17:30</option>
+												<option value='18:00'>18:00</option>
+												<option value='18:30'>18:30</option>
+												<option value='19:00'>19:00</option>
+												<option value='19:30'>19:30</option>
+												<option value='20:00'>20:00</option>
+												<option value='20:30'>20:30</option>
+												<option value='21:00'>21:00</option>
+												<option value='21:30'>21:30</option>
+												<option value='22:00'>22:00</option>
+												<option value='22:30'>22:30</option>
+												<option value='23:00'>23:00</option>
+												<option value='23:30'>23:30</option>
+                                            </select>
+                                            <span class="pd_txt">부터</span>
+
+										</div>
+											
+									</div>
+									<!--시작 일시 끝-->
+
+									<div class="end_time" id="edit_date_end_time">
+                                        <div class="write_wrap">
+                                            <!-- 모임기간이 하루이상일때 #endEventDate block 됨 -->
+                                            <input type="text" id="endEventDate" name="eventEndDateTime_date"
+                                                value="2020.1.15" style="display:none"                                                required data-parsley-eventdatecheck
+                                                data-startdate="#startEventDate" data-starttime="eventStartDateTime_time"
+                                                data-endtime="eventEndDateTime_time"
+                                                data-parsley-class-handler="#edit_date_end_time"
+                                                data-parsley-required-message="모임 종료 일시를 입력해주세요."
+                                            >
+                                            <select class="timebox" id="endEventTime" name="eventEndDateTime_time" nojs timebox>
+                                                <option value='00:00'>00:00</option>
+												<option value='00:30'>00:30</option>
+												<option value='01:00'>01:00</option>
+												<option value='01:30'>01:30</option>
+												<option value='02:00'>02:00</option>
+												<option value='02:30'>02:30</option>
+												<option value='03:00'>03:00</option>
+												<option value='03:30'>03:30</option>
+												<option value='04:00'>04:00</option>
+												<option value='04:30'>04:30</option>
+												<option value='05:00'>05:00</option>
+												<option value='05:30'>05:30</option>
+												<option value='06:00'>06:00</option>
+												<option value='06:30'>06:30</option>
+												<option value='07:00'>07:00</option>
+												<option value='07:30'>07:30</option>
+												<option value='08:00'>08:00</option>
+												<option value='08:30'>08:30</option>
+												<option value='09:00'>09:00</option>
+												<option value='09:30'>09:30</option>
+												<option value='10:00'>10:00</option>
+												<option value='10:30'>10:30</option>
+												<option value='11:00'>11:00</option>
+												<option value='11:30'>11:30</option>
+												<option value='12:00'>12:00</option>
+												<option value='12:30'>12:30</option>
+												<option value='13:00'>13:00</option>
+												<option value='13:30'>13:30</option>
+												<option value='14:00'>14:00</option>
+												<option value='14:30'>14:30</option>
+												<option value='15:00' selected='selected'>15:00</option>
+												<option value='15:30'>15:30</option>
+												<option value='16:00'>16:00</option>
+												<option value='16:30'>16:30</option>
+												<option value='17:00'>17:00</option>
+												<option value='17:30'>17:30</option>
+												<option value='18:00'>18:00</option>
+												<option value='18:30'>18:30</option>
+												<option value='19:00'>19:00</option>
+												<option value='19:30'>19:30</option>
+												<option value='20:00'>20:00</option>
+												<option value='20:30'>20:30</option>
+												<option value='21:00'>21:00</option>
+												<option value='21:30'>21:30</option>
+												<option value='22:00'>22:00</option>
+												<option value='22:30'>22:30</option>
+												<option value='23:00'>23:00</option>
+												<option value='23:30'>23:30</option>
+                                            </select>
+                                            <span>까지</span>
+                                        </div>
+                                    </div>
+
+                                    <!--
+									<div class="check_txt">
+                                        <input type="checkbox" id="eventEndCheck" name="eventMultiDay" value="Y" >
+                                        <label for="eventEndCheck">모임기간이 하루이상일 경우</label>
+                                    </div>
+									-->
+
+								</div>
+
+							</fieldset>
+
+							<!--모임 옵션 성별-->
+							<fieldset class="edit_apply_option">
+								<legend><h3 class="title">성별</h3></legend>
+								<input type="radio" name="" class="" value=""> 남
+								<input type="radio" name="" class="" value=""> 여
+								<input type="radio" name="" class="" value=""> 무관
+							</fieldset>
+
+							<!--모임 옵션 나이-->
+							<fieldset class="edit_apply_option">
+								<legend><h3 class="title">연령대</h3></legend>
+								<input type="checkbox" name="" class="" value=""> 10대
+								<input type="checkbox" name="" class="" value=""> 20대
+								<input type="checkbox" name="" class="" value=""> 30대
+								<input type="checkbox" name="" class="" value=""> 40대
+								<input type="checkbox" name="" class="" value=""> 50대
+								<input type="checkbox" name="" class="" value=""> 무관
+							</fieldset>
+
+
+							<!--접수 기간-->
+							<fieldset class="edit_apply_date">
+                                <legend><h3 class="title">접수기간</h3></legend>
+                                <input type="hidden" name="recruitStartDateInUse" value="Y"/>
+                                <input type="hidden" name="recruitStartDateTime"
+                                    value="2020.1.14 14:30"/>
+                                <input type="hidden" name="recruitEndDateTime"
+                                    value="2020.1.15 14:00"/>
+                                <div class="edit">
+                                    <!-- 시작 기간 -->
+                                    <div class="start_time" id="edit_apply_date_start_time">
+                                        <div class="write_wrap">
+                                            <input type="text" id="startAcceptDate" name="recruitStartDateTime_date"
+                                                value="2020.1.14"
+                                                required
+                                                data-parsley-class-handler="#edit_apply_date_start_time"
+                                                data-parsley-required-message="접수 시작 일시를 입력해주세요."
+                                            >
+                                            <select class="timebox" id="startAcceptTime" name="recruitStartDateTime_time" nojs timebox>
+                                                <option value='00:00'>00:00</option>
+												<option value='00:30'>00:30</option>
+												<option value='01:00'>01:00</option>
+												<option value='01:30'>01:30</option>
+												<option value='02:00'>02:00</option>
+												<option value='02:30'>02:30</option>
+												<option value='03:00'>03:00</option>
+												<option value='03:30'>03:30</option>
+												<option value='04:00'>04:00</option>
+												<option value='04:30'>04:30</option>
+												<option value='05:00'>05:00</option>
+												<option value='05:30'>05:30</option>
+												<option value='06:00'>06:00</option>
+												<option value='06:30'>06:30</option>
+												<option value='07:00'>07:00</option>
+												<option value='07:30'>07:30</option>
+												<option value='08:00'>08:00</option>
+												<option value='08:30'>08:30</option>
+												<option value='09:00'>09:00</option>
+												<option value='09:30'>09:30</option>
+												<option value='10:00'>10:00</option>
+												<option value='10:30'>10:30</option>
+												<option value='11:00'>11:00</option>
+												<option value='11:30'>11:30</option>
+												<option value='12:00'>12:00</option>
+												<option value='12:30'>12:30</option>
+												<option value='13:00'>13:00</option>
+												<option value='13:30'>13:30</option>
+												<option value='14:00'>14:00</option>
+												<option value='14:30' selected='selected'>14:30</option>
+												<option value='15:00'>15:00</option>
+												<option value='15:30'>15:30</option>
+												<option value='16:00'>16:00</option>
+												<option value='16:30'>16:30</option>
+												<option value='17:00'>17:00</option>
+												<option value='17:30'>17:30</option>
+												<option value='18:00'>18:00</option>
+												<option value='18:30'>18:30</option>
+												<option value='19:00'>19:00</option>
+												<option value='19:30'>19:30</option>
+												<option value='20:00'>20:00</option>
+												<option value='20:30'>20:30</option>
+												<option value='21:00'>21:00</option>
+												<option value='21:30'>21:30</option>
+												<option value='22:00'>22:00</option>
+												<option value='22:30'>22:30</option>
+												<option value='23:00'>23:00</option>
+												<option value='23:30'>23:30</option>
+                                            </select>
+                                            <span class="pd_txt">부터</span>
+                                        </div>
+                                    </div>
+                                    <!-- 끝 기간 -->
+                                    <div class="end_time" id="edit_apply_date_end_time">
+                                        <div class="write_wrap">
+                                            <input type="text" id="endAcceptDate" name="recruitEndDateTime_date"
+                                                value="2020.1.15"
+                                                required
+                                                data-parsley-applycurrentcheck="2020-01-14 14:27:36" data-parsley-eventdatecheck
+                                                data-startdate="#startAcceptDate" data-starttime="recruitStartDateTime_time"
+                                                data-endtime="recruitEndDateTime_time"
+                                                data-parsley-class-handler="#edit_apply_date_end_time"
+                                                data-parsley-required-message="접수 종료 일시를 입력해주세요."
+                                                data-parsley-eventdatecheck-message="접수기간의 종료시간은 시작시간보다 '이후'여야 합니다."
+                                            >
+                                            <select class="timebox" id="endAcceptTime" name="recruitEndDateTime_time" nojs timebox>
+                                                <option value='00:00'>00:00</option>
+												<option value='00:30'>00:30</option>
+												<option value='01:00'>01:00</option>
+												<option value='01:30'>01:30</option>
+												<option value='02:00'>02:00</option>
+												<option value='02:30'>02:30</option>
+												<option value='03:00'>03:00</option>
+												<option value='03:30'>03:30</option>
+												<option value='04:00'>04:00</option>
+												<option value='04:30'>04:30</option>
+												<option value='05:00'>05:00</option>
+												<option value='05:30'>05:30</option>
+												<option value='06:00'>06:00</option>
+												<option value='06:30'>06:30</option>
+												<option value='07:00'>07:00</option>
+												<option value='07:30'>07:30</option>
+												<option value='08:00'>08:00</option>
+												<option value='08:30'>08:30</option>
+												<option value='09:00'>09:00</option>
+												<option value='09:30'>09:30</option>
+												<option value='10:00'>10:00</option>
+												<option value='10:30'>10:30</option>
+												<option value='11:00'>11:00</option>
+												<option value='11:30'>11:30</option>
+												<option value='12:00'>12:00</option>
+												<option value='12:30'>12:30</option>
+												<option value='13:00'>13:00</option>
+												<option value='13:30'>13:30</option>
+												<option value='14:00' selected='selected'>14:00</option>
+												<option value='14:30'>14:30</option>
+												<option value='15:00'>15:00</option>
+												<option value='15:30'>15:30</option>
+												<option value='16:00'>16:00</option>
+												<option value='16:30'>16:30</option>
+												<option value='17:00'>17:00</option>
+												<option value='17:30'>17:30</option>
+												<option value='18:00'>18:00</option>
+												<option value='18:30'>18:30</option>
+												<option value='19:00'>19:00</option>
+												<option value='19:30'>19:30</option>
+												<option value='20:00'>20:00</option>
+												<option value='20:30'>20:30</option>
+												<option value='21:00'>21:00</option>
+												<option value='21:30'>21:30</option>
+												<option value='22:00'>22:00</option>
+												<option value='22:30'>22:30</option>
+												<option value='23:00'>23:00</option>
+												<option value='23:30'>23:30</option>
+                                            </select>
+                                            <span>까지</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="tip_txt">
+                                        <span class="entities">*</span> 신청 기간에만 모임에 참여 신청 / 취소를 할 수 있습니다.
+                                    </p>
+                                </div>
+                            </fieldset>
+
+							<!--모임 장소-->
+							<fieldset class="edit_place">
+                                <legend><h3 class="title">모임장소<span class="required_txt">(필수)</span></h3></legend>
+                                <input type="hidden" name='mapX' id="lng" size='' maxlength='64' value=''
+                                    required alias='지도좌표_X_를' confirm='123.'/>
+                                <input type="hidden" name='mapY' id="lat" size='' maxlength='64' value=''
+                                    required alias='지도좌표_Y_를' confirm='123.'/>
+                                <input type="hidden" name="locality" id="sido"/>
+                                <input type="hidden" name="sublocality1" id="gugun"/>
+                                <input type="hidden" name="sublocality2" id="dong"/>
+                                <div class="edit">
+                                    <div class="write_wrap" id="edit_place_error_container">
+                                        <input type="text" class="place_search" placeholder="장소명, 주소를 검색해 주세요.">
+                                        <input type="submit" class="btn_place_search" value="검색">
+                                        <!-- 장소없음 체크시 .place_detail none 처리 -->
+                                        <div class="check_txt">
+                                            <input type="checkbox" id="placeNone" name="noUseMap" >
+                                            <label for="placeNone">장소 없음 / 미정</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- .write_wrap 다음 요소 에러메세지 임시 -->
+                                    <!-- <ul class="parsley-errors-list check_msg">
+                                        <li>장소명, 주소를 검색하거나 지도에서 선택해 주세요.</li>
+                                    </ul> -->
+
+                                    <div class="place_detail">
+                                        <!-- 지도 -->
+                                        <div id="mapzone" data-lat="" data-lon=""
+                                            data-key="0m2ay6tl46">
+                                        </div>
+                                        <!-- 검색후 자동 주소 입력 -->
+                                        <div class="write_wrap">
+                                        <input id="mapAddr" name="address" type="text" class="address" value="" readonly="readonly"
+                                            required
+                                            data-parsley-errors-container="#edit_place_error_container"
+                                            data-parsley-class-handler=".edit_place"
+                                            data-parsley-required-message="장소명, 주소를 검색하거나 지도에서 선택해 주세요.">
+                                        </div>
+                                        <!-- 상세주소 직접입력 -->
+                                        <input type="text" class="address_detail" id="location" name="location" placeholder="나머지 주소를 입력해주세요." value="">
+                                        <div class="tip_txt">
+                                            <p><span class="entities">*</span> 나머지 주소를 입력해 주시면, 신청자가 모임 장소에 찾아오기가 쉬워집니다.</p>
+                                            <p>예) 새로나빌딩 3층 A세미나룸</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+						</div>
+						<!--right_wrap 끝-->
+					
+						<!--모임 소개 시작-->
+						<fieldset class="edit_summary">
+                            <legend><h3 class="title">간단한
+                                모임소개 입력<span class="required_txt">(필수)</span></h3></legend>
+                            <div class="edit">
+                                <div class="write_wrap">
+                                    <textarea placeholder="모임 내용을 간단히 소개해주세요." name="abstract"
+                                    required
+                                    data-parsley-class-handler=".edit_summary"
+                                    data-parsley-required-message="간단한 모임 소개를 입력해주세요."></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+						<!--모임 소개 끝-->
+
+						<!--상세내용 시작-->
+						<fieldset class="edit_detail">
+                            <legend><h3 class="title">상세 내용 입력<span class="required_txt">(필수)</span></h3></legend>
+                            <button type="button" class="btn_preview">상세내용 미리보기</button>
+                            <div class="edit">
+                                <div class="write_wrap">
+                                    <div class="toolbar_wrap">
+                                        <div class="editor_toolbar">
+                                            <button type="button" class="upload_photo">사진</button>
+                                            <button type="button" class="upload_file">파일</button>
+                                            <button type="button" class="embed_video">동영상 소스</button>
+                                        </div>
+                                    </div>
+                                    <textarea name="content" id="editorArea" class="editor_area" required placeholder="복사하여 붙여넣기 한 이미지는 정상적으로 보이지 않을 수 있으니 '사진/파일 첨부하기' 기능을 사용하여 이미지를 삽입해 주시기 바랍니다."
+                                        data-parsley-contentempty
+                                        data-parsley-class-handler=".edit_detail"
+                                        data-parsley-required-message="상세 내용을 입력해주세요." 
+                                    ></textarea>
+                                </div>
+                            </div>
+
+                            <div class="tip_txt">
+                                <span class="entities">*</span> 사진/파일 첨부에 대한 안내는 <a href="/cs/faq/host#168" target="_blank" title="새 창 열림">FAQ</a>를 확인해 주세요.
+                                <button type="button" class="btn_preview">상세내용 미리보기</button>
+                            </div>
+                        </fieldset>
+						<!--상세내용-->
+
+						 <!--신청 문의 시작-->
+						 <fieldset class="edit_contact">
+                            <legend><h3 class="title">신청 문의
+                                연락처 설정<span class="required_txt">(필수)</span></h3></legend>
+                                <div class="edit">
+                                <!--  에러시 .phone_area 에  .error 넣어주세요-->
+                                <div class="phone_area">
+                                    <div class="write_wrap">
+                                        <label>전화번호 입력</label>
+                                        <input type="text" id="phoneBody" name="ownerPhone_body" class="phone" title="전화번호 입력" value="01040781629"
+                                            required
+                                            placeholder="“-” 없이 입력해 주세요"
+                                            data-parsley-contactphone
+                                            data-parsley-class-handler=".phone_area"
+                                            data-parsley-required-message="신청 문의 받을 전화번호를 입력해주세요."
+                                        >
+                                    </div>
+                                </div>
+                                <div class="email_area">
+                                    <div class="write_wrap">
+                                        <label for="email">이메일 입력</label>
+                                        <input type="email" name="email" id="email" class="emailbox email" value="theprogramer@naver.com"
+                                            required
+                                            data-parsley-contactemail
+                                            data-parsley-class-handler=".email_area"
+                                            data-parsley-required-message="신청 문의 받을 이메일을 입력해주세요.">
+                                    </div>
+                                </div>
+                                <ul class="tip_list">
+                                    <li><span class="entities">*</span> 연락처는 행사 기간에만 노출되고 종료 시 노출되지 않습니다.</li>
+                                    <li><span class="entities">*</span> 다른 사람의 전화번호를 입력했을 경우, 개인정보 도용으로 처벌 받을 수 있습니다.</li>
+                                    <li><span class="entities">*</span> 온오프믹스는 신청자와 개설자 간의 분쟁에 책임지지 않습니다.</li>
+                                </ul>
+                            </div>
+                        </fieldset>
+						<!--신청 문의 끝-->
+
+						<!--모임 공개 시작-->
+						<fieldset class="edit_open_type">
+                            <legend><h3 class="title">모임 공개 설정</h3></legend>
+                            <div class="edit">
+                                <input type="radio" name="open_type" id="eventOpen" class="open checked" value="1"  checked="checked">
+                                <label for="eventOpen">노출함</label>
+                                <input type="radio" name="open_type" id="eventPrivate" class="private" value="0" >
+                                <label for="eventPrivate">노출안함 <span>(비밀번호 미적용)</span></label>
+                                <input type="radio" name="open_type" id="eventPrivatePw" class="private_pw" value="0" >
+                                <label for="eventPrivatePw">노출안함 <span>(비밀번호 적용)</span></label>
+                                <!-- 비밀번호 적용시 인풋 활성화 -->
+                                <input type="password" class="password" title="모임 비밀번호 입력" name="eventPw" value=""  disabled="disabled">
+
+                                <ul class="tip_list">
+                                    <li><span class="entities">*</span> 노출안함으로 선택하면 온오프믹스 모임 목록에서 노출되지 않습니다.</li>
+                                    <li><span class="entities">*</span> 비밀번호를 적용하면 비밀번호를 입력해야만 모임페이지에 접근할 수 있습니다.</li>
+                                </ul>
+                            </div>
+                        </fieldset>
+						<!--모임 공개 끝-->
+	
+					</div>
+					<!--입력 폼 시작-->
+
+				</div>
+				<!--event_input_area 끝-->
+
+				<!-- 버튼영역 -->
+                <div class="bottom_btn_area">
+                    <div class="btn_wrap">
+                        <button type="button" class="btn_pc">PC 미리보기</button>
+                        <button type="button" class="btn_mobile">모바일 미리보기</button>
+						<input type="submit" value="개설완료" class="btn_submit">
+                    </div>
+                </div>
+                <!-- 임시저장 시간 -->
+                <p class="save_time" style="display:none;"></p>
+
+			</form>
+
+		</section>
+
+
+
+
+
+
+	</div>
+	<!-- wrapping 끝 -->
+
+</main>
+
+<!-- Plugin -->
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.browser.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.ui.selectmenu.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.ui.emailbox.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.ui.timebox.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.ui.doubleDatepicker.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery-ui-autocompleteBox.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.tmpl.min.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.qtip-2.1.1.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.fancybox-1.3.3.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.caret.min.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.tag-editor.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.fileupload.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.fileupload-validate.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.iframe-transport.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/webeditor/SE2.3.4.O10204/js/HuskyEZCreator.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/parsley.min.js"></script>
+<!-- Script -->
+<script src="https://static.onoffmix.com/js/pc/dist/common/jquery.noscroll.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/map3.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/ko.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/event/event-add.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/event/event-add-parsley.js"></script>
+
+<!-- Footer Start -->
+<footer id="footer" class="footer_wrap ">
+
+	<div class="information_area wide_max_width_area">
+
+		<ul class="company_sns">
+			<li class="list_item youtube"><a href="#" target="_blank" title="우리끼리 유튜브">youtube</a></li>
+			<li class="list_item instagram"><a href="#" target="_blank" title="우리끼리 인스타그램">instagram</a></li>
+			<li class="list_item facebook"><a href="#" target="_blank" title="우리끼리 페이스북">facebook</a></li>
+			<li class="list_item naver"><a href="#" target="_blank" title="우리끼리 네이버블로그">naver blog</a></li>
+		</ul>
+
+		<ul class="company_links info_lists">
+			<li class="list_item"><a href="#" target="_blank">회사소개</a></li>
+			<li class="list_item"><a href="#" target="_blank">서비스약관 및 정책</a></li>
+			<li class="list_item"><a href="#" target="_blank"><strong>개인정보취급방침</strong></a></li>
+			<li class="list_item"><a href="#" target="_blank">문의하기</a></li>
+			<li class="list_item"><a href="#" target="_blank">제안하기</a></li>
+			<li class="list_item"><a href="#" target="_blank"><strong>고객센터</strong></a></li>
+		</ul>
+
+		<ul class="company_info info_lists">
+			<li class="list_item">우리끼리 대표이사 이순용</li>
+			<li class="list_item">개인정보관리책임자 이재은</li>
+			<li class="list_item">사업자등록번호 <span calss="text_spacing-0">000-00-00000</span></li>
+			<li class="list_item">통신판매업 신고번호 제<span calss="text_spacing-0">2020</span>-서울강남-<span calss="text_spacing-0">0000</span>호</li>
+		</ul>
+		<ul class="company_contact info_lists">
+			<li class="list_item">서울특별시 서초구 강남대로 <span calss="text_spacing-0">459</span> 
+			백암빌딩 <span calss="text_spacing-0">4</span>층</li>
+			<li class="list_item text_spacing-0">Tel 02-0000-0000</li>
+			<li class="list_item text_spacing-0">Fax 02-0000-0000</li>
+			<li class="list_item text_spacing-0">Email : <a class="email" href="mailto:yijaaan49@gmail.com "> yijaaan49@gmail.com </a></li>
+		</ul>
+		<div class="company_bottom">
+			<p class="info_msg">우리끼리는 통신판매중개자이며 모임에 대한 당사자 및 주최자가 아닙니다. 따라서 우리끼리는 등록된 모임에 대하여 책임을 지지 않습니다.</p>
+			<p class="copyright text_spacing-0">copyright &copy; WOORIKIRI.COM, All Rights Reserved.</p>
+		</div>
+
+	</div>
+
+</footer>
+<!-- Footer End -->
+ <!-- Plugin  -->
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/owl.carousel.min.js"></script>
+<!-- Script -->
+<script src="https://static.onoffmix.com/js/pc/dist/common/common.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/header.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/main/sliderRotate.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/main/main.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/today-seen.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="index,follow">
+<meta name="subject" content="[우리끼리]">
+<meta name="keywords" content="우리끼리">
+<meta name="description" content="우리끼리">
+<meta name="copyright" content="copyrights 우리끼리">
+<meta name="classification" content="internet">
+<meta name="distribution" content="global">
+<meta name="language" content="ko">
+<title>비트 캠프 우리끼리</title>
+<link rel="stylesheet" type="text/css" href="./css/guide.css">
+<link rel="stylesheet" type="text/css" href="./css/import.css">
+<script type="text/javascript" src="./js/jquery_min.js"></script>
+<script  type="text/javascript" src="./js/d_com.js"></script>
+</head>
+<body>
+
+<div id="g_wrap">
+	
+	<div id="g_header">
+	
+		<div id="g_top">
+        	<h1>우리끼리로고</h1>
+        	<ul class="top_info">
+            	<li class="tb">비트캠프 우리끼리 프로젝트</li>
+                <li>제작일 : 20년 1월 08일</li>
+                <li>!DOCTYPE html</li>
+                <li>charset : UTF-8</li>
+            </ul>
+        </div>
+        
+        <div id="g_gnb">
+        	<ul class="g_menu">
+            	<li><a href="guide00.html" class="on"><span>프론트 리스트(사용자)</span></a></li>
+            	<li><a href="guide01.html"><span>프론트 리스트(관리자)</span></a></li>
+                <li><a href="guide02.html"><span>폴더 및 파일</span></a></li>
+                <li><a href="guide03.html"><span>공통템플릿</span></a></li>
+            </ul>
+        </div>
+	
+	</div>
+	
+	<div id="g_container">
+		
+		<table class="gdsc_box">
+        	<colgroup>
+            	<col width="33%">
+                <col width="27%">
+                <col width="*">
+            </colgroup>
+        	<tbody>
+            	<tr>
+                    <th>프론트</th>
+                    <td>진행현황 <span class="fs11">( <span class="txt_ok">빨강-완료일</span> | <span class="txt_ing">파랑-진행중</span> | <span class="txt_mod">검정-수정일</span> )</span></td>
+                    <td>경로</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="g_caution">
+        	<p>※ 주의사항</p>
+            <ul>
+                <li>공동작업임으로 서버에서 파일이 덮여쓰여지지 않도록 주의할것</li>
+            </ul>
+            <p class="marT25">※ 참고사항</p>
+            <ul style="line-height:1.6em;">
+                <li class="tb pointRe">PM : <span class="txt_ing">박수현</span></li>
+                <li class="tb pointRe">프런트 : <span class="txt_ing">이순용, 이재은</span> / 백엔드 : <span class="txt_ing">박수현</span> /  DB : <span class="txt_ing">전성용</span></li>
+                <li class="tb pointRe">프런트라 함은 관리자 까지 포함이에요 ^^</li>
+          </ul>
+        </div>
+    	<div id="g_tit">
+        	<h2>리스트</h2>
+        </div>
+        
+        <!-- g_content start -->
+        <div id="g_content">
+        	<table class="mlist">
+            	<colgroup>
+            	<col width="33%">
+                <col width="27%">
+                <col width="*">
+            </colgroup>
+            <tbody>
+            	<tr>
+                	<th class="itemtit01"><span class="ls_ico10">메인페이지</span></th>
+                    <td><span class="txt_ok">200113</span></td>
+                    <td class="fs12"><a href="./html2/WR010000_01_사용자메인.html" target="_blank">main</a></td>
+                </tr>
+                
+                <tr>
+                	<th class="itemtit01" colspan="3"><span class="ls_ico10">모임</span></th>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">모임리스트</span></th>
+                    <td><span class="txt_ok">200114</span></td>
+                    <td><a href="./html2/WR010200_01_모임리스트.html" target="_blank">모임리스트</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">모임상세보기</span></th>
+                    <td><span class="txt_ok">200114</span></td>
+                    <td><a href="./html2/WR010210_01_모임상세보기.html" target="_blank">모임상세보기</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">모임생성</span></th>
+                    <td><span class="txt_ok">200114</span></td>
+                    <td><a href="./html2/WR010220_01_모임생성.html" target="_blank">모임생성</a></td>
+                </tr>
+				<tr>
+                	<th><span class="ls_ico01">개설자인증</span></th>
+                    <td><span class="txt_ok">200114</span></td>
+                    <td><a href="./html2/WR010221_01_개설자인증.html" target="_blank">개설자인증</a></td>
+                </tr>
+                <tr>
+                	<th class="itemtit01" colspan="3"><span class="ls_ico10">회원</span></th>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">로그인</span></th>
+                    <td><span class="txt_ok">200114</span></td>
+                    <td><a href="./html2/WR010300_01_로그인.html" target="_blank">로그인</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">회원가입 약관 동의</span></th>
+                    <td><span class="txt_ok">200114</span></td>
+                    <td><a href="./html2/WR010310_01_회원가입약관동의.html" target="_blank">회원가입 약관 동의</a></td>
+                </tr>
+                <!--
+				<tr>
+                	<th><span class="ls_ico01">회원가입 폼</span></th>
+                    <td><span class="txt_ㅐㅏ">200108</span></td>
+                    <td><a href="./html2/WR010320_01_회원가입폼.html" target="_blank">회원가입 폼</a></td>
+                </tr>
+				-->
+                <tr>
+                	<th><span class="ls_ico01">아이디찾기</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html2/WR010330_01_아이디찾기.html" target="_blank">아이디찾기</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">비밀번호 찾기</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html2/WR010340_01_비밀번호찾기.html" target="_blank">비밀번호 찾기</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">회원탈퇴</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html2/WR010350_01_회원탈퇴.html" target="_blank">회원탈퇴</a></td>
+                </tr>
+                <tr>
+                	<th class="itemtit01" colspan="3"><span class="ls_ico10">마이페이지</span></th>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">마이페이지 메인</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html/WR010400_01_마이페이지메인.html" target="_blank">마이페이지 메인</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">내가 생성한 모임 리스트</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html2/WR010410_01_내가생성한모임리스트.html" target="_blank">내가 생성한 모임 리스트</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">내가 생성한 모임 상세보기</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html2/WR010420_01_내가생성한모임상세보기.html" target="_blank">내가 생성한 모임 상세보기</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">내가 작성한 글 리스트</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html2/WR010430_01_내가작성한글리스트.html" target="_blank">내가 작성한  리스트</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">내가 작성한 글 상세보기</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html2/WR010430_01_내가작성한글상세보기.html" target="_blank">내가 작성한 상세보기</a></td>
+                </tr>
+                <tr>
+                	<th class="itemtit01" colspan="3"><span class="ls_ico10">게시판</span></th>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">게시판 리스트</span></th>
+                    <td><span class="txt_ok">200114</span></td>
+                    <td><a href="./html2/WR010500_01_게시판리스트.html" target="_blank">게시판 리스트</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">게시판 상세보기</span></th>
+                    <td><span class="txt_ok">200114</span></td>
+                    <td><a href="./html2/WR010500_01_게시판상세보기.html" target="_blank">게시판 상세보기</a></td>
+                </tr>
+				<tr>
+                	<th><span class="ls_ico01">게시판 쓰기</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html2/WR010500_01_게시판쓰기.html" target="_blank">게시판 상세보기</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">갤러리 게시판 리스트</span></th>
+                    <td><span class="txt_ok">200114</span></td>
+                    <td><a href="./html2/WR010500_01_갤러리게시판리스트.html" target="_blank">갤러리 게시판 리스트</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">웹진 게시판 리스트</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html2/WR010500_01_웹진게시판리스트.html" target="_blank">웹진 게시판 리스트</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">1:1 문의</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html2/WR010500_01_일대일문의.html" target="_blank">1:1 문의</a></td>
+                </tr>
+                <tr>
+                	<th><span class="ls_ico01">FAQ</span></th>
+                    <td><span class="txt_ing">200108</span></td>
+                    <td><a href="./html2/WR010500_01_FAQ.html" target="_blank">FAQ</a></td>
+                </tr>
+            </tbody>
+           </table>
+		</div>
+		<!-- g_content end -->
+	
+	</div>
+	
+	
+</div>
+
+
+</body>
+</html>
+

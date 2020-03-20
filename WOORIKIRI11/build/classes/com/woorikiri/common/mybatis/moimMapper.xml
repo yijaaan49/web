@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="moim">
+	<!-- 전체 모임 목록 조회 -->
+	<select id="list" resultType="com.woorikiri.front.moim.vo.moimVO">
+		SELECT * FROM T_MOIM ORDER BY MOIM_CD
+	</select>
+	
+	<!-- 특정부서 직원 조회 -->
+	<select id="deptList" parameterType="String" resultType="com.woorikiri.front.moim.vo.moimVO">
+		SELECT * 
+		FROM T_MOIM
+		WHERE MOIM_CD = #{deptno}
+		ORDER BY MOIM_CD
+	</select>
+	<!-- 동적검색으로 모임 조회 -->
+	<select id="search" parameterType="map" resultType="com.woorikiri.front.moim.vo.moimVO">
+			SELECT *
+				FROM EMPLOYEES
+				<choose>
+					<when test="sq == 0">
+						WHERE MOIM_CD = #{keyword}
+					</when>
+					<when test = "sq == 1"> 
+					WHERE MOIM_AREA_SIDO = #{keyword}
+					</when>
+					<when test = "sq == 2"> 
+					WHERE MOIM_AREA_GUGUN = #{keyword}
+					</when>
+					<when test="sq == 3">
+						WHERE MOIM_TITLE = #{keyword}
+					</when>
+					<when test="sa == 4">
+						WHERE MOIM_TAG = #{keyword}
+					</when>
+					<when test="sq == 5">
+						WHERE CREATE_DT= #{keyword}
+					</when>
+				</choose>
+	</select>
+	<insert id = "write_ok" parameterType="com.woorikiri.front.moim.vo.moimVO">
+  		INSERT INTO T_MOIM
+       		(MOIM_SQ, MOIM_CD, MOIM_CA, MIOM_AREA_SIDO, MOIM_AREA_GUGUN ,MOIM_TITLE, MOIM_TAG, MOIM_CNT, MOIM_MEM_ID, MOIM_INTRO,
+       		 MOIM_CREATE_DT, MOIM_DEL_FL, MOIM_IS_OK_FL, MOIM_HIT)
+		VALUES (MOIM_SEQ.NEXTVAL, #{code}, #{category}, #{sido}, #{gugun}, #{title}, #{tag}, #{cnt},#{memId}, #{intro},
+				 #{createDt}, #{createDt}, #{delFl}, #{isOkFl}, #{hit})
+  	</insert>
+  	
+  	<update id = "update_ok" parameterType="com.woorikiri.front.moim.vo.moimVO">
+  		UPDATE T_MOIM SET 
+  		MOIM_CA = #{category},
+  		MOIM_AREA_SIDO = #{sido}, 
+  		MOIM_AREA_GUGUN=#{gugun}, 
+  		MOIM_TITLE = #{title},
+  		MOIM_TAG = #{tag},
+  		MOIM_INTRO = #{intro}
+  		WHERE SQ = #{sq}
+  	</update>
+  	<delete id="delete_ok" parameterType="String">
+  		DELETE FROM T_MOIM WHERE SQ = #{sq} 
+  	</delete>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

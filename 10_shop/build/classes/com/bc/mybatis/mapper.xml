@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shop">
+
+	<!-- 카테고리(메뉴바)를 받아서 제품정보를 조회 -->
+	<select id="list" parameterType="String" resultType="shopVO"><!-- resultType은 config.xml alias설정! -->
+			SELECT NUM, CATEGORY, P_NUM, P_NAME, P_COMPANY
+			     , P_PRICE, P_SALEPRICE, P_IMAGE_S, P_IMAGE_L
+			     , P_CONTENT, P_DATE
+			FROM SHOP_T
+			WHERE CATEGORY = #{category}
+	</select>
+	
+	<!-- 제품번호를 받아서 제품정보를 조회 -->
+	<select id="one" parameterType="String" resultType="shopVO">
+			SELECT NUM, CATEGORY, P_NUM, P_NAME, P_COMPANY
+			     , P_PRICE, P_SALEPRICE, P_IMAGE_S, P_IMAGE_L
+			     , P_CONTENT, P_DATE
+			FROM SHOP_T
+			WHERE P_NUM = #{p_num}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

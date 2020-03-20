@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+/*	Name: 게시판 MAPPER	*/ 
+/*	PART: QNA 게시판	*/
+/*	Author: 이재은	*/
+/*	RegDate : 2020-01-10	*/
+ -->
+<mapper namespace="board"> 
+	
+  	
+  	<!-- 전체 게시글의 개수(페이징 처리위해) -->
+  	<select id="totalCount" resultType="int" parameterType="String">
+		SELECT COUNT(*) FROM T_BOARD WHERE BD_ID = #{bdId}
+	</select>
+	
+	<!-- 표시할 게시글 리스트(페이징 처리위해) -->
+	<select id="showList" resultType="com.woorikiri.route.board.vo.BoardVO" parameterType="Map">
+		SELECT *
+		FROM (SELECT ROWNUM R_NUM, B.*
+		        FROM (SELECT *
+		              FROM T_BOARD
+		              ORDER BY GROUP_NO DESC, REPLY_STATUS ASC
+		             ) B
+		     )    
+		WHERE R_NUM BETWEEN #{begin} AND #{end}	
+	</select>
+  	
+	<!-- 전체 게시글 가져오기 -->
+  	<select id="all" resultType="com.woorikiri.route.board.vo.BoardVO">
+  		SELECT * FROM T_BOARD WHERE BD_ID = #{bdId}
+  	</select>
+  	
+  	<!-- 게시글 상세보기 -->
+  	<select id="one" resultType="com.woorikiri.route.board.vo.BoardVO" parameterType="String">
+		SELECT WR_ID, WR_SUBJECT, REG_DT, WR_CONTENT
+		  FROM T_BOARD
+		 WHERE SNO = #{sno}   	
+  	</select>
+  	
+  	<!-- groupSno(게시글 순서) 일괄 업데이트 -->
+  	<update id="updateGroupSno" parameterType="Map">
+		UPDATE T_BOARD
+		SET groupSno = groupSno + 1
+		WHERE GROUP_NO = #{groupNo} AND GROUP_SNO >= #{groupSno}
+	</update>
+  	
+  	<insert id="answerInsert" parameterType="com.woorikiri.route.board.vo.BoardVO">
+		INSERT INTO T_BOARD
+	            (SNO, ANSWER_MANAGER_NO, ANSWER_SUBJECT, ANSWER_CONTENT, HIT,
+	            GROUP_NO, GROUP_THREAD, GROUP_SNO, BD_ID, 
+	            REGDATE, FILENAME, IP) 
+    	 VALUES (BOARD_SEQ.NEXTVAL, #{writer}, #{title}, #{content}, #{pwd}, 0, 
+    	        #{groups}, #{step}, #{lev}, 'BBS'
+    	      , SYSDATE, #{filename}, #{ip})
+	</insert>
+  	
+  	<!-- 게시글 입력 
+  	<insert id="insert" parameterType="BoardVO">
+  		INSERT INTO T_BOARD
+  			()
+  	</insert>
+  	 -->
+  	
+  	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="author" content="우리끼리">
+<meta name="keywords" content="비트캠프,자바141기,GPL,우리끼리">
+<meta name="description" content="우리끼리는 비트캠프 자바141기의 2차 프로젝트 솔루션입니다">
+<title>우리끼리 관리자 | 동네진사</title>
+<link  rel="stylesheet" href="../css/route/admin.css?ver=191202">
+<link rel="stylesheet" href="https://demo.sir.kr/gnuboard5/js/font-awesome/css/font-awesome.min.css?ver=191202">
+<!--[if lte IE 8]>
+<script src="https://demo.sir.kr/gnuboard5/js/html5.js"></script>
+<![endif]-->
+<script src="https://demo.sir.kr/gnuboard5/js/jquery-1.12.4.min.js"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/jquery-migrate-1.4.1.min.js"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/jquery.menu.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/common.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/wrest.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/placeholders.min.js"></script>
+</head>
+<body>
+
+<script>
+var tempX = 0;
+var tempY = 0;
+
+function imageview(id, w, h)
+{
+
+    menu(id);
+
+    var el_id = document.getElementById(id);
+
+    //submenu = eval(name+".style");
+    submenu = el_id.style;
+    submenu.left = tempX - ( w + 11 );
+    submenu.top  = tempY - ( h / 2 );
+
+    selectBoxVisible();
+
+    if (el_id.style.display != 'none')
+        selectBoxHidden(id);
+}
+</script>
+<div id="to_content"><a href="#container">본문 바로가기</a></div>
+
+<header id="hd">
+
+	<h1>우리끼리 </h1>
+	
+	<div id="hd_top">
+        <button type="button" id="btn_gnb" class="btn_gnb_close ">메뉴</button>
+       <div id="logo"><a href="#"><img src="https://demo.sir.kr/gnuboard5/adm/img/logo.png" alt="우리끼리 관리자"></a></div>
+
+        <div id="tnb">
+            <ul>
+                <li class="tnb_li"><a href="#" class="tnb_community" target="_blank" title="커뮤니티 바로가기">커뮤니티 바로가기</a></li>
+                <li class="tnb_li"><a href="#" class="tnb_service">부가서비스</a></li>
+                <li class="tnb_li"><button type="button" class="tnb_mb_btn">관리자<span class="../img/route/btn_gnb.png">메뉴열기</span></button>
+                    <ul class="tnb_mb_area">
+                        <li><a href="#">관리자정보</a></li>
+                        <li id="tnb_logout"><a href="#">로그아웃</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>	
+    
+    <nav id="gnb" class="gnb_large ">
+    
+    	<h2>관리자 주메뉴</h2>
+    	
+    	<ul class="gnb_ul">
+    	
+    		<li class="gnb_li">
+                <button type="button" class="btn_op menu-100 menu-order-1" title="환경설정">환경설정</button>
+                <div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>환경설정</h3>
+                        <ul>
+                        	<li data-menu="100100"><a href="./WR020100_01_사이트설정.html" class="gnb_2da ">사이트 설정</a></li>
+                        	<li data-menu="100110"><a href="./WR020110_01_약관개인정보처리방침.html" class="gnb_2da">약관/개인정보처리방침</a></li>
+                        	<li data-menu="100120"><a href="./WR020120_01_이용탈퇴안내.html" class="gnb_2da">이용/탈퇴안내</a></li>
+                        	<li data-menu="100130"><a href="./WR020130_01_코드관리.html" class="gnb_2da">코드관리</a></li>
+                        	<li data-menu="100140"><a href="./WR020140_01_검색엔진SEO.html" class="gnb_2da">검색엔진 SEO 설정</a></li>
+                        	<li data-menu="100210"><a href="./WR020210_01_운영자관리.html" class="gnb_2da  ">운영자관리</a></li>
+                        	<li data-menu="100220"><a href="./WR020220_01_운영자보안설정.html" class="gnb_2da  ">운영자 보안 설정</a></li>                    
+                        	<li data-menu="100230"><a href="./WR020230_01_비밀번호찾기설정.html" class="gnb_2da  ">비밀번호 찾기 설정</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li on">
+            	<button type="button" class="btn_op menu-200 menu-order-1" title="회원관리">회원관리</button>
+            	<div class="gnb_oparea_wr">
+
+					<div class="gnb_oparea">
+					
+						<h3>회원관리</h3>
+						<ul>
+                        	<li data-menu="200100"><a href="./WR020200100_01_회원리스트.html" class="gnb_2da pn">회원리스트</a></li>
+							<li data-menu="200110"><a href="./WR020200110_01_회원등록.html" class="gnb_2da">회원등록</a></li>
+                        	<li data-menu="200200"><a href="./WR020200200_01_회원엑셀업로드.html" class="gnb_2da">회원 엑셀 업로드</a></li>
+                        	<li data-menu="200300"><a href="./WR020200300_01_회원가입정책관리.html" class="gnb_2da">회원 가입 정책 관리</a></li>
+                        	<li data-menu="200400"><a href="./WR020200400_01_회원가입승인.html" class="gnb_2da">회원 가입 승인</a></li>
+                        	<li data-menu="200500"><a href="./WR020200500_01_휴면회원정책.html" class="gnb_2da">휴면 회원 정책</a></li>
+                        	<li data-menu="200600"><a href="./WR020200600_01_휴면회원관리.html" class="gnb_2da">휴면 회원 관리</a></li>
+                        	<li data-menu="200700"><a href="./WR020200700_01_회원탈퇴삭제관리.html" class="gnb_2da">회원 탈퇴 / 삭제 관리</a></li>
+                        </ul>
+					
+					</div>					
+            	
+            	</div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-300 menu-order-1" title="모임관리">모임관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>환경설정</h3>
+                        <ul>
+                        	<li data-menu="300100"><a href="./WR020300100_01_모임리스트.html" class="gnb_2da  ">모임리스트</a></li>
+                        	<li data-menu="300110"><a href="./WR020300110_01_모임등록.html" class="gnb_2da  ">모임등록</a></li>
+                        	<li data-menu="300500"><a href="./WR020300500_01_카테고리관리.html" class="gnb_2da  ">카테고리 관리</a></li>
+                        	<li data-menu="300510"><a href="./WR020300510_01_카테고리등록.html" class="gnb_2da  ">카테고리 </a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-400 menu-order-1" title="게시판관리">게시판관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>게시판 관리</h3>
+                        <ul>
+                        	<li data-menu="400100"><a href="./WR020400100_01_게시판리스트.html" class="gnb_2da  ">게시판 리스트</a></li>
+                        	<li data-menu="400200"><a href="./WR020400200_01_게시판등록.html" class="gnb_2da  ">게시판 등록</a></li>
+                        	<li data-menu="400300"><a href="./WR020400300_01_게시판관리.html" class="gnb_2da  ">게시판 관리</a></li>
+                        	<li data-menu="400400"><a href="./WR020400400_01_게시판스킨관리.html" class="gnb_2da  ">게시판 스킨 관리</a></li>
+                        	<li data-menu="400500"><a href="./WR020400500_01_게시판금칙어관리.html" class="gnb_2da  ">게시판 금칙어 관리</a></li>
+                        	<li data-menu="400600"><a href="./WR020400600_01_FAQ관리.html" class="gnb_2da  ">FAQ관리</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-500 menu-order-1" title="통계관리">통계관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>통계관리</h3>
+                        <ul>
+                        	<li data-menu="500100"><a href="./WR020500100_01_방문자분석.html" class="gnb_2da  ">방문자 분석</a></li>
+                        	<li data-menu="500110"><a href="./WR020500110_01_방문자환경분석.html" class="gnb_2da  ">방문자 환경분석</a></li>
+                        	<li data-menu="500120"><a href="./WR020500120_01_방문자IP분석.html" class="gnb_2da  ">방문자 IP 분석</a></li>
+                        	<li data-menu="500210"><a href="./WR020500210_01_신규회원분석.html" class="gnb_2da  ">신규회원 분석</a></li>
+                        	<li data-menu="500220"><a href="./WR020500220_01_전체회워분석.html" class="gnb_2da  ">전체회원 분석</a></li>
+                        	<li data-menu="500300"><a href="./WR020500300_01_카테고리분석.html" class="gnb_2da  ">카테고리 분석</a></li>
+                        	<li data-menu="500310"><a href="./WR020500310_01_페이지뷰분석.html" class="gnb_2da  ">페이지 뷰 분석</a></li>
+                        	<li data-menu="500400"><a href="./WR020500400_01_연령별활동분석.html" class="gnb_2da  ">연령별 활동 분석</a></li>
+                        	<li data-menu="500410"><a href="./WR020500410_01_성별활동분석.html" class="gnb_2da  ">성별 활동 분석</a></li>
+                        	<li data-menu="500420"><a href="./WR020500420_01_지역별활동분석.html" class="gnb_2da  ">지역별 활동 분석	</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+    		
+    	</ul>
+    
+    </nav>
+    
+
+</header>
+
+<script>
+jQuery(function($){
+
+    var menu_cookie_key = 'g5_admin_btn_gnb';
+
+    $(".tnb_mb_btn").click(function(){
+        $(".tnb_mb_area").toggle();
+    });
+
+    $("#btn_gnb").click(function(){
+        
+        var $this = $(this);
+
+        try {
+            if( ! $this.hasClass("btn_gnb_open") ){
+                set_cookie(menu_cookie_key, 1, 60*60*24*365);
+            } else {
+                delete_cookie(menu_cookie_key);
+            }
+        }
+        catch(err) {
+        }
+
+        $("#container").toggleClass("container-small");
+        $("#gnb").toggleClass("gnb_small");
+        $this.toggleClass("btn_gnb_open");
+
+    });
+
+    $(".gnb_ul li .btn_op" ).click(function() {
+        $(this).parent().addClass("on").siblings().removeClass("on");
+    });
+
+});
+</script>
+
+<div id="wrapper">
+
+	<!--container start-->
+	<div id="container" class="">
+	
+	
+		<div class="page-header">
+			<h3>회원리스트 </h3>
+			<input type="submit" value="회원 등록" class="btn btn-red-line" id="btnJoin"/>
+		</div>
+
+		
+		
+		<!-- 검색 시작-->
+		<div class="tbl_frm01 tbl_wrap pdb20" style='border-bottom:1px solid #ccc;'>
+
+			<table>
+			<caption>웹사이트 기본환경 설정</caption>
+			<colgroup>
+				<col class="grid_2">
+				<col>
+				<col class="grid_2">
+				<col>
+			</colgroup>
+			<tbody>
+			<tr>
+				<th>검색어</th>
+				<td colspan="3">
+					
+					<select class="" id="key" name="key">
+						<option value="memId">아이디</option>
+						<option value="memNM">이름</option>
+						<option value="memEmail">이메일</option>
+						<option value="memMobile">휴대폰번호</option>
+						<option value="memRecommId">추천인아이디</option>
+					</select>
+
+					<input type="text" name="keyword" class="frm_input">
+
+				</td>
+			</tr>
+			<tr>
+				<th>가입승인</th>
+				<td>
+					<input type="radio" name="appFl" value="" checked="checked"/> 전체
+					<input type="radio" name="appFl" value="y" /> 승인
+					<input type="radio" name="appFl" value="n" /> 미승인
+				</td>
+				<th>회원가입일</th>
+				<td>
+					<input type="text" name="sDate" class="frm_input"> ~ <input type="text" name="eDate" class="frm_input">
+				</td>
+			</tr>
+			</tbody>
+			<tbody class="js-search-detail">
+			<tr>
+				<th>방문횟수</th>
+				<td>
+					<input type="text" name="" class="frm_input" size="6"> 회
+					~
+					<input type="text" name="" class="frm_input" size="6"> 회
+				</td>
+				<th>최종로그인</th>
+				<td>
+					<input type="text" name="" class="frm_input" size="12">
+					~
+					<input type="text" name="" class="frm_input" size="12">
+				</td>
+			</tr>
+			<tr>
+				<th>SMS 수신동의</th>
+				<td>
+					<input type="radio" name="smsFl" value="" checked="checked"/> 전체
+					<input type="radio" name="smsFl" value="T" /> 승인
+					<input type="radio" name="smsFl" value="F" /> 미승인
+				</td>
+				<th>메일수신동의</th>
+				<td>
+					<input type="radio" name="emailFl" value="" checked="checked"/> 전체
+					<input type="radio" name="emailFl" value="T" /> 승인
+					<input type="radio" name="emailFl" value="F" /> 미승인
+				</td>
+			</tr>
+			<tr>
+				<th>가입경로</th>
+				<td>
+					<input type="radio" name="entryPath" value="" checked="checked"/> 전체
+					<input type="radio" name="entryPath" value="pc" /> PC
+					<input type="radio" name="entryPath" value="mobile" /> 모바일
+				</td>
+				<th>장기 미로그인</th>
+				<td>	
+					 <input type="text" class="frm_input" name="novisit" size="7" value=""/> 일 이상 로그인하지 않은 회원
+				</td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td>
+					<input type="radio" name="sexFl" value="" checked="checked"/> 전체
+					<input type="radio" name="sexFl" value="M" /> 승인
+					<input type="radio" name="sexFl" value="W" /> 미승인
+				</td>
+				<th>생일</th>
+				<td>
+					<input type="checkbox" id="birthCheckFl" name="birthFl" value="">
+					특정일 검색
+					<input type="text" name="" class="frm_input" size="12">
+					~
+					<input type="text" name="" class="frm_input" size="12">
+				</td>
+			</tr>
+			<tr>
+				<th>휴먼 전환 예정 회원</th>
+				<td>
+					<input type="checkbox" id="dormantMemberExpected" name="dormantMemberExpected" value="">
+                    휴면 전환
+                    <select class="form-control " id="expirationDay" name="expirationDay" disabled="true">
+						<option value="7">7</option>
+						<option value="30">30</option>
+						<option value="60">60</option>
+					</select>일 전 회원
+				</td>
+				<th>휴면해제일</th>
+				<td>
+					<input type="text" name="" class="frm_input" size="12">
+					~
+					<input type="text" name="" class="frm_input" size="12">
+				</td>
+			</tr>
+			</tbody>
+			</table>
+
+			<!--<button type="button" class="btn btn-sm btn-link js-search-toggle bold">상세검색
+				<span>펼침</span>
+			</button>
+			-->
+
+		</div>
+
+		<div class="table-btn">
+			<input type="submit" value="검색" class="btn btn-lg btn-black js-search-button"/>
+		</div>
+		<!-- 검색 끝-->
+
+		<!-- 회원 리스트 -->
+		<div class="tbl_head01 tbl_wrap mgt20">
+
+		<div class="local_ov01 local_ov">
+			<a href="#" class="ov_listall">전체목록</a>
+			<span class="btn_ov01"><span class="ov_txt">총회원수 </span><span class="ov_num"> 2,077명 </span></span>
+			<a href="?sst=mb_intercept_date&amp;sod=desc&amp;sfl=&amp;stx=" class="btn_ov01"> <span class="ov_txt">차단 </span><span class="ov_num">0명</span></a>
+			<a href="?sst=mb_leave_date&amp;sod=desc&amp;sfl=&amp;stx=" class="btn_ov01"> <span class="ov_txt">탈퇴  </span><span class="ov_num">29명</span></a>
+		</div>
+
+		<form method="post" name="memFrm">
+
+		<table>
+		<caption>회원관리 목록</caption>
+		<thead>
+		<tr>
+			<th><input type="checkbox" name="chkall" value="1" id="chkall" onclick="check_all(this.form)"></th>
+			<th>번호</th>
+			<th>아이디/닉네임</th>
+			<th>이름</th>
+			<th>연락처</th>
+			<th>회원가입일</th>
+			<th>최종로그인</th>
+			<th>휴먼해제일</th>
+			<th>가입승인</th>
+			<th>sms수신</th>
+			<th>메일수신</th>
+			<th>정보수정</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr class="bg0">
+			<td class="td_chk">
+				<input type="checkbox" name="chk[]" value="2">
+			</td>
+			<td class="td_num_c">1234567</td>
+			<td class="td_mb_id">dongnejinsa/동네진사</td>
+			<td class="td_mbname2">전성용</td>
+			<td class="td_type">010-4078-1629</td>
+			<td class="td_date">2010.01.10</td>
+			<td class="td_date">2010.01.10</td>
+			<td class="td_date">0000.00.00</td>
+			<td class="td_boolean2">T</td>
+			<td class="td_boolean2">T</td>
+			<td class="td_boolean2">T</td>
+			<td class="td_mng">
+				<a href="#" class="btn btn_03">수정</a>
+				<a href="#" class="btn btn_02">보기</a>
+			</td>
+		</tr>
+		<tr class="bg1">
+			<td class="td_chk">
+				<input type="checkbox" name="chk[]" value="2">
+			</td>
+			<td class="td_num_c">1234567</td>
+			<td class="td_mb_id">dongnejinsa/동네진사</td>
+			<td class="td_mbname2">전성용</td>
+			<td class="td_type">010-4078-1629</td>
+			<td class="td_date">2010.01.10</td>
+			<td class="td_date">2010.01.10</td>
+			<td class="td_date">0000.00.00</td>
+			<td class="td_boolean2">T</td>
+			<td class="td_boolean2">T</td>
+			<td class="td_boolean2">T</td>
+			<td class="td_mng">
+				<a href="#" class="btn btn_03">수정</a>
+				<a href="#" class="btn btn_02">보기</a>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+
+		</div>
+		<!-- 회원 끝 -->
+
+		</form>
+
+		<nav class="pg_wrap"><span class="pg"><span class="sound_only">열린</span><strong class="pg_current">1</strong><span class="sound_only">페이지</span>
+		<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=2" class="pg_page">2<span class="sound_only">페이지</span></a>
+		<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=3" class="pg_page">3<span class="sound_only">페이지</span></a>
+		<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=4" class="pg_page">4<span class="sound_only">페이지</span></a>
+		<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=5" class="pg_page">5<span class="sound_only">페이지</span></a>
+		<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=6" class="pg_page">6<span class="sound_only">페이지</span></a>
+		<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=7" class="pg_page">7<span class="sound_only">페이지</span></a>
+		<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=8" class="pg_page">8<span class="sound_only">페이지</span></a>
+		<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=9" class="pg_page">9<span class="sound_only">페이지</span></a>
+		<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=10" class="pg_page">10<span class="sound_only">페이지</span></a>
+		<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=11" class="pg_page pg_next">다음</a>
+		<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=139" class="pg_page pg_end">맨끝</a>
+		</span></nav>
+	
+	</div>
+	<!--container end-->
+	
+
+</div>
+
+</body>
+</html>

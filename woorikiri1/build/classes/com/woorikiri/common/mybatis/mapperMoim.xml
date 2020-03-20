@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="moim">
+
+	<!-- 전체 게시글 카운트(이순용) -->
+	<select id="totalCount" resultType="int" parameterType="String">
+		SELECT COUNT(*) FROM T_MOIM where MOIM_CA=#{cate}
+	</select>
+	
+	<!-- 검색어 게시글 카운트 -->
+	<select id="searchTotalCount" resultType="int" parameterType="String">
+		SELECT COUNT(*) FROM T_MOIM 
+		
+		<choose>
+			<when test="stx2 != null ">
+			where MOIM_TITLE LIKE '%' || #{stx2} || '%' OR MOIM_ADDRESS LIKE '%' || #{stx2} || '%' OR MOIM_INTRO LIKE '%' || #{stx2} || '%' OR MOIM_TAG LIKE '%' || #{stx2} || '%' 
+			</when>
+		</choose>
+		
+	</select>
+	
+	<select id="searchMoimList" resultType="com.woorikiri.front.moim.vo.MoimVO" parameterType="Map">
+	<!-- 모임 리스트  조회 페이징 처리 (전성용) -->
+	SELECT *
+	FROM (SELECT ROWNUM R_NUM, M.*
+		        FROM (SELECT A.MOIM_SQ, A.MOIM_CD, A.MOIM_CA, A.MOIM_TITLE, A.MOIM_INTRO, A.MOIM_TAG, A.MOIM_ADDRESS, A.MOIM_CNT, A.MOIM_HIT, A.MOIM_DATE, 
+		        		A.MOIM_DISPLAY_FL, B.BF_FILE AS MOIM_FILE
+						FROM T_MOIM A, T_BOARD_FILE B WHERE A.MOIM_SQ=B.BD_SNO ORDER BY A.MOIM_SQ DESC
+		             )M
+		     )    
+
+	<choose>
+		<when test="stx2 != null ">
+		WHERE R_NUM BETWEEN #{begin} AND #{end} and (MOIM_TITLE LIKE '%'|| #{stx2} ||'%' OR MOIM_ADDRESS LIKE '%'|| #{stx2} ||'%' OR MOIM_INTRO LIKE '%'|| #{stx2} ||'%' OR MOIM_TAG LIKE '%'|| #{stx2} ||'%' )
+		</when>
+		<when test="stx2 == null">
+		WHERE R_NUM BETWEEN #{begin} AND #{end}
+		</when>
+	</choose>
+	
+
+	</select>
+	
+	
+	<!-- 전체 게시글 카운트(전성용) - 지역 -->
+	<select id="totalCount2" resultType="int" parameterType="String">
+		
+		SELECT COUNT(*) FROM T_MOIM 
+		<choose>
+			<when test="zone == 10">
+			where MOIM_ADDRESS LIKE '서울%'
+			</when>
+			<when test="zone == 20">
+			where MOIM_ADDRESS LIKE '인천%' OR MOIM_ADDRESS LIKE '%경기%'
+			</when>
+			<when test="zone == 30">
+			where MOIM_ADDRESS LIKE '대전%' OR MOIM_ADDRESS LIKE '%충청%' OR MOIM_ADDRESS LIKE '%세종%'
+			</when>
+			<when test="zone == 40">
+			where MOIM_ADDRESS LIKE '부산%' OR MOIM_ADDRESS LIKE '%울산%'  OR MOIM_ADDRESS LIKE '%경남%'
+			</when>
+			<when test="zone == 50">
+			where MOIM_ADDRESS LIKE '광주%' OR MOIM_ADDRESS LIKE '%전라%'
+			</when>
+			<when test="zone == 60">
+			where MOIM_ADDRESS LIKE '대구%' OR MOIM_ADDRESS LIKE '%경북%'
+			</when>
+			<when test="zone == 70">
+			where MOIM_ADDRESS LIKE '강원%'
+			</when>
+			<when test="zone == 80">
+			where MOIM_ADDRESS LIKE '제주%'
+			</when>
+			
+		</choose> 
+		
+	</select>
+	
+	<!-- region list -->
+	<select id="regionList" resultType="com.woorikiri.front.moim.vo.MoimVO" parameterType="Map">
+	<!-- 모임 리스트  조회 페이징 처리 (이순용) -->
+	SELECT *
+	FROM (SELECT ROWNUM R_NUM, M.*
+		        FROM (SELECT A.MOIM_SQ, A.MOIM_CD, A.MOIM_CA, A.MOIM_TITLE, A.MOIM_CNT, A.MOIM_HIT, A.MOIM_DATE, A.MOIM_DISPLAY_FL, A.MOIM_ADDRESS,
+						B.BF_FILE AS MOIM_FILE
+						FROM T_MOIM A, T_BOARD_FILE B WHERE A.MOIM_SQ=B.BD_SNO  ORDER BY A.MOIM_SQ DESC
+		             )M
+		     )    
+
+	<choose>
+		<when test="zone == 10">
+		WHERE (R_NUM BETWEEN #{begin} AND #{end}) AND MOIM_ADDRESS like '%서울%'
+		</when>
+		<when test="zone == 20">
+		WHERE (R_NUM BETWEEN #{begin} AND #{end}) AND MOIM_ADDRESS LIKE '%인천%' OR MOIM_ADDRESS LIKE '%경기%'
+		</when>
+		<when test="zone == 30">
+		WHERE (R_NUM BETWEEN #{begin} AND #{end}) AND MOIM_ADDRESS LIKE '%대전%' OR MOIM_ADDRESS LIKE '%충청%' OR MOIM_ADDRESS LIKE '%세종%'
+		</when>
+		<when test="zone == 40">
+		WHERE (R_NUM BETWEEN #{begin} AND #{end}) AND MOIM_ADDRESS LIKE '%부산%' OR MOIM_ADDRESS LIKE '%울산%'  OR MOIM_ADDRESS LIKE '%경남%'
+		</when>
+		<when test="zone == 50">
+		WHERE (R_NUM BETWEEN #{begin} AND #{end}) AND MOIM_ADDRESS LIKE '%광주%' OR MOIM_ADDRESS LIKE '%전라%' 
+		</when>
+		<when test="zone == 60">
+		WHERE (R_NUM BETWEEN #{begin} AND #{end}) AND MOIM_ADDRESS LIKE '%대구%' OR MOIM_ADDRESS LIKE '%경북%'
+		</when>
+		<when test="zone == 70">
+		WHERE (R_NUM BETWEEN #{begin} AND #{end}) AND MOIM_ADDRESS LIKE '%강원%' 
+		</when>
+		<when test="zone == 80">
+		WHERE (R_NUM BETWEEN #{begin} AND #{end}) AND MOIM_ADDRESS LIKE '%제주%'
+		</when>
+	</choose>
+
+	</select>
+	
+	<!-- 전체 게시글 카운트(이순용) -->
+	<select id="one" resultType="com.woorikiri.front.moim.vo.MoimVO" parameterType="String">
+		SELECT * 
+		FROM T_MOIM 
+		WHERE MOIM_SQ = #{moimSq}
+	</select>
+	
+	<!-- T_BOARD_FILE 파일첨부 게시글 정보 가져오기(이순용) -->
+	
+	<select id="selectFile" resultType="int" parameterType="String">
+		SELECT MAX(MOIM_SQ) FROM T_MOIM WHERE MOIM_MEM_ID = #{moimMemId}
+	</select>
+	
+	<select id="fileOne" resultType="com.woorikiri.front.moim.FreeVO.BoardFileVO" parameterType="String">
+		SELECT * FROM T_BOARD_FILE WHERE BD_SNO = #{no} and BD_ID='moim'
+	</select>
+	
+
+	
+	<!-- 전체 모임 목록 조회 -->
+	<select id="allList" resultType="com.woorikiri.front.moim.vo.MoimVO">
+		SELECT A.MOIM_SQ, A.MOIM_CD, A.MOIM_CA, A.MOIM_TITLE, A.MOIM_CNT, A.MOIM_HIT, A.MOIM_DATE, A.MOIM_DISPLAY_FL,
+				B.BF_FILE AS MOIM_FILE
+		FROM T_MOIM A, T_BOARD_FILE B WHERE A.MOIM_SQ=B.BD_SNO ORDER BY A.MOIM_SQ DESC
+	</select>
+	
+	<select id="list" resultType="com.woorikiri.front.moim.vo.MoimVO" parameterType="Map">
+	<!-- 모임 리스트  조회 페이징 처리 (이순용) -->
+	SELECT *
+	FROM (SELECT ROWNUM R_NUM, M.*
+		        FROM (SELECT A.MOIM_SQ, A.MOIM_CD, A.MOIM_CA, A.MOIM_TITLE, A.MOIM_CNT, A.MOIM_HIT, A.MOIM_DATE, A.MOIM_DISPLAY_FL,
+						B.BF_FILE AS MOIM_FILE
+						FROM T_MOIM A, T_BOARD_FILE B WHERE A.MOIM_SQ=B.BD_SNO ORDER BY A.MOIM_SQ DESC
+		             )M
+		     )    
+
+	WHERE R_NUM BETWEEN #{begin} AND #{end} and MOIM_CA = #{cate2}
+
+	</select>
+	
+	
+	
+	
+	
+	
+
+
+	<!-- 동적검색으로 모임 조회 -->
+	<select id="search" parameterType="map" resultType="com.woorikiri.front.moim.vo.MoimVO">
+			SELECT *
+				FROM EMPLOYEES
+				<choose>
+					<when test="sq == 0">
+						WHERE MOIM_CD = #{keyword}
+					</when>
+					<when test = "sq == 1"> 
+					WHERE MOIM_AREA_SIDO = #{keyword}
+					</when>
+					<when test = "sq == 2"> 
+					WHERE MOIM_AREA_GUGUN = #{keyword}
+					</when>
+					<when test="sq == 3">
+						WHERE MOIM_TITLE = #{keyword}
+					</when>
+					<when test="sa == 4">
+						WHERE MOIM_TAG = #{keyword}
+					</when>
+					<when test="sq == 5">
+						WHERE CREATE_DT= #{keyword}
+					</when>
+				</choose>
+	</select>
+	
+
+	<insert id = "createMoim" parameterType="com.woorikiri.front.moim.vo.MoimVO">
+	<!--  
+  			Name: Mapper수정   
+  			PART: insert     
+   			Author: 박수현  
+			RegDate : 2020-01-10
+
+			수정 내역
+   			Author: 이순용
+			RegDate : 2020-01-10
+ 			Content: insert명 수정       
+	-->
+  		INSERT INTO T_MOIM
+  		       (MOIM_SQ, MOIM_CD, MOIM_CA, MOIM_TITLE, MOIM_TAG,
+  				MOIM_CNT, MOIM_MEM_ID, MOIM_INTRO, MOIM_DEL_FL,
+  				MOIM_IS_OK_FL, MOIM_HIT, MOIM_DATE, MOIM_HOUR, MOIM_MIN,
+				MOIM_AGE_OPTION, MOIM_GENDER, MOIM_SDATE, MOIM_EDATE, MOIM_ADDRESS, 
+				MOIM_ADDRESS_SUB, MOIM_ZONE_CODE, MOIM_REG_DT)
+		VALUES (MOIM_SQ.NEXTVAL, #{moimCd}, #{moimCa}, #{moimTitle}, #{moimTag},
+				#{moimCnt}, #{moimMemId},  #{moimIntro}, 'F',
+				'T', 0, #{moimDate}, #{moimHour}, #{moimMin}, 
+				#{moimAgeOption}, #{moimGender}, #{moimSdate}, #{moimEdate},#{moimAddress}, 
+				#{moimAddressSub}, #{moimZoneCode},SYSDATE)
+  	</insert>
+  	
+  	<insert id = "Filelist" parameterType="com.woorikiri.front.moim.FreeVO.BoardFileVO">
+  	 INSERT INTO T_BOARD_FILE
+  		       (BD_ID, BD_SNO, BF_NO, BF_SOURCE, BF_FILE,
+  		       	BF_DOWNLOAD, BF_FILE_URL, BF_THUMB_URL, BF_WIDTH, BF_HEIGHT,
+				BF_TYPE, BF_DATE)
+	 VALUES ('moim', #{bdSno}, 1, #{bfSource}, #{bfFile},
+				'0', '0', '0', 0, 0, 0, SYSDATE)
+  	</insert>
+  	<update id = "modifyMoim" parameterType="com.woorikiri.front.moim.vo.MoimVO">
+  		UPDATE T_MOIM SET 
+  		MOIM_CA = #{moimCa},
+  		MOIM_TITLE = #{moimTitle},
+  		MOIM_DATE = #{moimDate},
+  		MOIM_HOUR = #{moimHour},
+  		MOIM_MIN = #{moimMin},
+  		MOIM_CNT = #{moimCnt},
+  		MOIM_ZONE_CODE = #{moimZoneCode},
+  		MOIM_ADDRESS = #{moimAddress},
+  		MOIM_ADDRESS_SUB =#{moimAddressSub},
+  		MOIM_ADDRESS_ADD = #{moimAddressAdd},
+  		MOIM_SDATE = #{moimSdate},
+  		MOIM_EDATE = #{moimEdate},
+  		MOIM_AGE_OPTION = #{moimAgeOption},
+  		MOIM_GENDER = #{moimGender},
+  		MOIM_INTRO = #{moimIntro},
+  		MOIM_TAG = #{moimTag}
+  		WHERE MOIM_SQ = #{moimSq}
+  	</update>
+  	
+  	<update id = "modifyFileMoim" parameterType="com.woorikiri.front.moim.FreeVO.BoardFileVO">
+  		UPDATE T_BOARD_FILE SET 
+  		BD_ID = 'Free',
+		BF_SOURCE = #{bfSource},
+		BF_FILE = #{bfFile},
+		BF_DOWNLOAD = 0,
+		BF_FILE_URL = '0',
+		BF_THUMB_URL = '0', 
+		BF_WIDTH = 1200,
+		BF_HEIGHT = 800,
+		BF_TYPE = 1,
+		BF_DATE = SYSDATE
+  		WHERE BD_SNO = #{moimSq}
+  	</update>
+  	
+  	<delete id="delete_ok" parameterType="String">
+  		DELETE FROM T_MOIM WHERE MOIM_SQ = #{moimSq}
+  	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

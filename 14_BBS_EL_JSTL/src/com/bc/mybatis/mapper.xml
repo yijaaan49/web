@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BBS">
+
+	<!-- 전체 게시글 갯수 조회 -->
+	<select id="totalCount" resultType="int">
+		SELECT COUNT(*) FROM BBS_T
+	</select>
+	
+	<!-- 페이지에 표시할 게시글 조회 -->
+	<select id="list" resultType="com.bc.mybatis.BBSVO" parameterType="Map">
+		SELECT *
+		  FROM (SELECT ROWNUM R_NUM, BBS.*
+		      FROM (SELECT * 
+		              FROM BBS_T
+		             ORDER BY B_IDX DESC)BBS
+		    )
+		 WHERE R_NUM BETWEEN #{begin} AND #{end}
+	</select>
+	
+	<insert id="insert" parameterType="bbsVO">
+		INSERT INTO BBS_T
+			  (B_IDX, SUBJECT, WRITER, CONTENT, FILE_NAME, ORI_NAME, PWD, WRITE_DATE, IP, HIT)
+		VALUES(BBS_T_SEQ.NEXTVAL, #{subject}, #{writer}, #{content}, #{file_name}, #{ori_name}, 
+				#{pwd}, SYSDATE, #{ip}, 0)
+		
+	</insert>
+	
+	<update id="hit" parameterType="int">
+		UPDATE BBS_T
+		   SET HIT = HIT + 1
+		 WHERE B_IDX = #{b_idx}
+	</update>
+	
+	<select id="one" resultType="bbsVO" parameterType="int">
+		SELECT * FROM BBS_T
+		WHERE B_IDX = #{b_idx}
+	</select>
+	
+	<select id="commList" resultType="com.bc.mybatis.CommVO" parameterType="int">
+		SELECT * FROM COMMENT_T
+		WHERE B_IDX = #{b_idx}
+		ORDER BY C_IDX DESC
+	</select>
+	
+	<insert id="c_insert" parameterType="com.bc.mybatis.CommVO">
+		INSERT INTO COMMENT_T
+			(C_IDX, WRITER, CONTENT, PWD, WRITE_DATE, IP, B_IDX)
+		VALUES (COMMENT_T_SEQ.NEXTVAL, #{writer}, #{content}, #{pwd}, SYSDATE, #{ip}, #{b_idx})
+	</insert>
+	
+	<delete id="c_delete" parameterType="String">
+		DELETE FROM COMMENT_T
+		WHERE C_IDX = #{c_idx}
+	</delete>
+</mapper>

@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div class="foot">
+	<div class="foot_pop">
+		<div class="privacy">
+			<div class="title">개인정보 취급방침</div>
+			<div class="textarea">
+				123123123
+			</div>
+			<div class="btn_close"><a>CLOSE</a></div>
+		</div>
+		<div class="email">
+			<div class="title">이메일무단수집거부</div>
+			<div class="textarea">
+				
+			</div>
+			<div class="btn_close"><a>CLOSE</a></div>
+		</div>
+	</div>
+	<div class="foot_top">
+		<h1>우리끼리</h1>
+		<ul class="fm">
+			<li><a href="#">회사소개</a></li>
+			<li><a class="#">개인정보처리방침</a></li>
+			<li><a class="#">이메일무단수집거부</a></li>
+		</ul>
+	</div>
+	<div class="foot_btm">
+		<div class="info">
+			<div class="tit">INFO</div>
+			<address>
+				ADDRESS : 비트캠프 서울시 서초구 강남대로 459(서초구 백암빌딩) <span>l</span>
+				TEL : 02-3486-9600 <span>l</span>
+				FAX : 02-6007-1245
+			</address>
+			<p class="copy">COPYRIGHT(C) 2020 WOORIKIRI.CO.,LTD. ALL RIGHTS RESERVED.</p>
+		</div>
+		<div class="cc">
+			<div class="tit">CUSTOMER CENTER</div>
+			<div class="cc_tel">02-3486-9600</div>
+		</div>
+		<div class="fam_site">
+			<a>FAMILY SITE</a>
+			<ul>
+				<li><a href="#" target="_blank">우리끼리페이스북</a></li>
+				<li><a href="#" target="_blank">우리끼리인스타그램</a></li>
+				<li><a href="#" target="_blank">우리끼리까페</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>

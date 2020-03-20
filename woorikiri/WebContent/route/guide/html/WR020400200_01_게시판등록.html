@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="author" content="우리끼리">
+<meta name="keywords" content="비트캠프,자바141기,GPL,우리끼리">
+<meta name="description" content="우리끼리는 비트캠프 자바141기의 2차 프로젝트 솔루션입니다">
+<title>우리끼리 관리자 | 동네진사</title>
+<link  rel="stylesheet" href="../css/route/admin.css?ver=191202">
+<link rel="stylesheet" href="https://demo.sir.kr/gnuboard5/js/font-awesome/css/font-awesome.min.css?ver=191202">
+<!--[if lte IE 8]>
+<script src="https://demo.sir.kr/gnuboard5/js/html5.js"></script>
+<![endif]-->
+<script src="https://demo.sir.kr/gnuboard5/js/jquery-1.12.4.min.js"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/jquery-migrate-1.4.1.min.js"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/jquery.menu.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/common.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/wrest.js?ver=191202"></script>
+<script src="https://demo.sir.kr/gnuboard5/js/placeholders.min.js"></script>
+</head>
+<body>
+
+<script>
+var tempX = 0;
+var tempY = 0;
+
+function imageview(id, w, h)
+{
+
+    menu(id);
+
+    var el_id = document.getElementById(id);
+
+    //submenu = eval(name+".style");
+    submenu = el_id.style;
+    submenu.left = tempX - ( w + 11 );
+    submenu.top  = tempY - ( h / 2 );
+
+    selectBoxVisible();
+
+    if (el_id.style.display != 'none')
+        selectBoxHidden(id);
+}
+</script>
+<div id="to_content"><a href="#container">본문 바로가기</a></div>
+
+<header id="hd">
+
+	<h1>우리끼리 </h1>
+	
+	<div id="hd_top">
+        <button type="button" id="btn_gnb" class="btn_gnb_close ">메뉴</button>
+       <div id="logo"><a href="#"><img src="https://demo.sir.kr/gnuboard5/adm/img/logo.png" alt="우리끼리 관리자"></a></div>
+
+        <div id="tnb">
+            <ul>
+                <li class="tnb_li"><a href="#" class="tnb_community" target="_blank" title="커뮤니티 바로가기">커뮤니티 바로가기</a></li>
+                <li class="tnb_li"><a href="#" class="tnb_service">부가서비스</a></li>
+                <li class="tnb_li"><button type="button" class="tnb_mb_btn">관리자<span class="../img/route/btn_gnb.png">메뉴열기</span></button>
+                    <ul class="tnb_mb_area">
+                        <li><a href="#">관리자정보</a></li>
+                        <li id="tnb_logout"><a href="#">로그아웃</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>	
+    
+    <nav id="gnb" class="gnb_large ">
+    
+    	<h2>관리자 주메뉴</h2>
+    	
+    	<ul class="gnb_ul">
+    	
+    		<li class="gnb_li">
+                <button type="button" class="btn_op menu-100 menu-order-1" title="환경설정">환경설정</button>
+                <div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>환경설정</h3>
+                        <ul>
+                        	<li data-menu="100100"><a href="./WR020100_01_사이트설정.html" class="gnb_2da ">사이트 설정</a></li>
+                        	<li data-menu="100110"><a href="./WR020110_01_약관개인정보처리방침.html" class="gnb_2da">약관/개인정보처리방침</a></li>
+                        	<li data-menu="100120"><a href="./WR020120_01_이용탈퇴안내.html" class="gnb_2da">이용/탈퇴안내</a></li>
+                        	<li data-menu="100130"><a href="./WR020130_01_코드관리.html" class="gnb_2da">코드관리</a></li>
+                        	<li data-menu="100140"><a href="./WR020140_01_검색엔진SEO.html" class="gnb_2da">검색엔진 SEO 설정</a></li>
+                        	<li data-menu="100210"><a href="./WR020210_01_운영자관리.html" class="gnb_2da  ">운영자관리</a></li>
+                        	<li data-menu="100220"><a href="./WR020220_01_운영자보안설정.html" class="gnb_2da  ">운영자 보안 설정</a></li>                    
+                        	<li data-menu="100230"><a href="./WR020230_01_비밀번호찾기설정.html" class="gnb_2da  ">비밀번호 찾기 설정</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-200 menu-order-1" title="회원관리">회원관리</button>
+            	<div class="gnb_oparea_wr">
+
+					<div class="gnb_oparea">
+					
+						<h3>회원관리</h3>
+						<ul>
+                        	<li data-menu="200100"><a href="./WR020200100_01_회원리스트.html" class="gnb_2da on">회원리스트</a></li>
+							<li data-menu="200110"><a href="./WR020200110_01_회원등록.html" class="gnb_2da">회원등록</a></li>
+                        	<li data-menu="200200"><a href="./WR020200200_01_회원엑셀업로드.html" class="gnb_2da">회원 엑셀 업로드</a></li>
+                        	<li data-menu="200300"><a href="./WR020200300_01_회원가입정책관리.html" class="gnb_2da">회원 가입 정책 관리</a></li>
+                        	<li data-menu="200400"><a href="./WR020200400_01_회원가입승인.html" class="gnb_2da">회원 가입 승인</a></li>
+                        	<li data-menu="200500"><a href="./WR020200500_01_휴면회원정책.html" class="gnb_2da">휴면 회원 정책</a></li>
+                        	<li data-menu="200600"><a href="./WR020200600_01_휴면회원관리.html" class="gnb_2da">휴면 회원 관리</a></li>
+                        	<li data-menu="200700"><a href="./WR020200700_01_회원탈퇴삭제관리.html" class="gnb_2da">회원 탈퇴 / 삭제 관리</a></li>
+                        </ul>
+					
+					</div>					
+            	
+            	</div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-300 menu-order-1" title="모임관리">모임관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>환경설정</h3>
+                        <ul>
+                        	<li data-menu="300100"><a href="./WR020300100_01_회원리스트.html" class="gnb_2da  ">전체모임</a></li>
+                        	<li data-menu="300200"><a href="./WR020300200_01_회원리스트.html" class="gnb_2da  ">신규 모임</a></li>
+                        	<li data-menu="300300"><a href="./WR020300300_01_회원리스트.html" class="gnb_2da  ">인기 모임</a></li>
+                        	<li data-menu="300400"><a href="./WR020300400_01_회원리스트.html" class="gnb_2da  ">인기 모임 TOP100</a></li>
+                        	<li data-menu="300500"><a href="./WR020300500_01_회원리스트.html" class="gnb_2da  ">카테고리 관리</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li on">
+            	<button type="button" class="btn_op menu-400 menu-order-1" title="게시판관리">게시판관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>게시판 관리</h3>
+                        <ul>
+                        	<li data-menu="400100"><a href="./WR020400100_01_게시판리스트.html" class="gnb_2da  ">게시판 리스트</a></li>
+                        	<li data-menu="400200"><a href="./WR020400200_01_게시판등록.html" class="gnb_2da on">게시판 등록</a></li>
+                        	<li data-menu="400300"><a href="./WR020400300_01_게시판관리.html" class="gnb_2da  ">게시판 관리</a></li>
+                        	<li data-menu="400400"><a href="./WR020400400_01_게시판스킨관리.html" class="gnb_2da  ">게시판 스킨 관리</a></li>
+                        	<li data-menu="400500"><a href="./WR020400500_01_게시판금칙어관리.html" class="gnb_2da  ">게시판 금칙어 관리</a></li>
+                        	<li data-menu="400600"><a href="./WR020400600_01_FAQ관리.html" class="gnb_2da  ">FAQ관리</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+            
+            <li class="gnb_li">
+            	<button type="button" class="btn_op menu-500 menu-order-1" title="통계관리">통계관리</button>
+            	<div class="gnb_oparea_wr">
+                    <div class="gnb_oparea">
+                        <h3>통계관리</h3>
+                        <ul>
+                        	<li data-menu="500100"><a href="./WR020500100_01_방문자분석.html" class="gnb_2da  ">방문자 분석</a></li>
+                        	<li data-menu="500110"><a href="./WR020500110_01_방문자환경분석.html" class="gnb_2da  ">방문자 환경분석</a></li>
+                        	<li data-menu="500120"><a href="./WR020500120_01_방문자IP분석.html" class="gnb_2da  ">방문자 IP 분석</a></li>
+                        	<li data-menu="500210"><a href="./WR020500210_01_신규회원분석.html" class="gnb_2da  ">신규회원 분석</a></li>
+                        	<li data-menu="500220"><a href="./WR020500220_01_전체회워분석.html" class="gnb_2da  ">전체회원 분석</a></li>
+                        	<li data-menu="500300"><a href="./WR020500300_01_카테고리분석.html" class="gnb_2da  ">카테고리 분석</a></li>
+                        	<li data-menu="500310"><a href="./WR020500310_01_페이지뷰분석.html" class="gnb_2da  ">페이지 뷰 분석</a></li>
+                        	<li data-menu="500400"><a href="./WR020500400_01_연령별활동분석.html" class="gnb_2da  ">연령별 활동 분석</a></li>
+                        	<li data-menu="500410"><a href="./WR020500410_01_성별활동분석.html" class="gnb_2da  ">성별 활동 분석</a></li>
+                        	<li data-menu="500420"><a href="./WR020500420_01_지역별활동분석.html" class="gnb_2da  ">지역별 활동 분석	</a></li>
+                        </ul>                    
+                    </div>
+                </div>
+            </li>
+    		
+    	</ul>
+    
+    </nav>
+    
+
+</header>
+
+<script>
+jQuery(function($){
+
+    var menu_cookie_key = 'g5_admin_btn_gnb';
+
+    $(".tnb_mb_btn").click(function(){
+        $(".tnb_mb_area").toggle();
+    });
+
+    $("#btn_gnb").click(function(){
+        
+        var $this = $(this);
+
+        try {
+            if( ! $this.hasClass("btn_gnb_open") ){
+                set_cookie(menu_cookie_key, 1, 60*60*24*365);
+            } else {
+                delete_cookie(menu_cookie_key);
+            }
+        }
+        catch(err) {
+        }
+
+        $("#container").toggleClass("container-small");
+        $("#gnb").toggleClass("gnb_small");
+        $this.toggleClass("btn_gnb_open");
+
+    });
+
+    $(".gnb_ul li .btn_op" ).click(function() {
+        $(this).parent().addClass("on").siblings().removeClass("on");
+    });
+
+});
+</script>
+
+<div id="wrapper">
+
+	<!--container start-->
+	<div id="container" class="">
+	
+	
+		<div class="page-header">
+			<h3>게시판 등록	 <small>커뮤니티 메뉴에서 서비스하는 게시판을 등록합니다.</small></h3>
+			<input type="submit" value="저장" class="btn btn-red"/>
+		</div>
+
+		<div class="table-title mgt15">
+			기본설정
+		</div>
+
+		<!--게시판 등록 시작-->
+		<form name="" method="">
+		<div class="tbl_frm01 tbl_wrap pdb20" style='border-bottom:1px solid #ccc;'>
+
+		<table>
+		<caption>게시판 기본 설정</caption>
+		<colgroup>
+			<col class="grid_2">
+			<col>
+		</colgroup>
+		<tbody>
+		<tr>
+			<th>PC 사용여부</th>
+			<td>
+				<input type="radio" name="bdUsePcFl" value="T" checked="checked"/> 사용
+				<input type="radio" name="bdUsePcFl" value="F"  /> 사용안함
+				<div class="notice-info">
+				“사용 안함” 설정 시 사이트 회원(비회원포함)접근을 하지 못하도록 설정합니다.<br>
+				 관리자에서 접근 시 사용여부 설정과 상관없이 접속이 가능합니다.
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<th>모바일 사용여부</th>
+			<td>
+				<input type="radio" name="bdUseMobileFl" value="T" checked="checked"/> 사용
+				<input type="radio" name="bdUseMobileFl" value="F"  /> 사용안함
+				<div class="notice-info">
+				“사용 안함” 설정 시 쇼핑몰 회원(비회원포함)접근을 하지 못하도록 설정합니다.<br>
+				관리자에서 접근 시 사용여부 설정과 상관없이 접속이 가능합니다.
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<th>유형</th>
+			<td>
+				<div class="pull-left" style="padding-right:15px">
+					<input type='radio' name="bdKind" value="default" checked="checked" /> 일반형
+					<div class="mgt10"><img src="../img/route/board/type_default.png"></div>
+				</div>
+
+				<div class="pull-left" style="padding-right:15px">
+					<input type='radio' name="bdKind" value="gallery"  /> 갤러리형
+					<div class="mgt10"><img src="../img/route/board/type_gallery.png"></div>
+                </div>
+
+				<div class="pull-left" style="padding-right:15px">
+					<input type='radio' name="bdKind" value="gallery"  /> 이벤트형
+					<div class="mgt10"><img src="../img/route/board/type_event.png"></div>
+                </div>
+
+				<div class="pull-left" style="padding-right:15px">
+					<input type='radio' name="bdKind" value="gallery"  /> 1:1 문의형
+					<div class="mgt10"><img src="../img/route/board/type_qa.png"></div>
+                </div>
+			</td>
+		</tr>
+		<tr>
+			<th>게시판 아이디</th>
+			<td>
+				<input type="hidden" name="chkbdId" id="chkbdId" value=""/>
+				<input type="text" name="bdId" id="bdId" class="frm_input" size="31" style="ime-mode:disabled"/>
+				<button type="button" id="overlap_bdId" class="btn btn-white btn-sm">중복확인</button>
+			</td>
+		</tr>
+		<tr>
+			<th>게시판명</th>
+			<td><input type="text" name="bdNm" value="" class="frm_input" size="31" title="이름"/></td>
+		</tr>
+		<tr>
+			<th>게시판 스킨</th>
+			<td>
+				<table class="table table-cols">
+				<colgroup>
+					<col class="width10p">
+					<col class="width45p">
+					<col class="width45p">
+				</colgroup>
+				<tr>
+					<th>구분</th>
+					<th>사용중인 디자인 스킨</th>
+					<th>게시판 디자인 스킨 선택</th>
+				</tr>
+				<tr>
+					<td>PC</td>
+					<td>basic</td>
+					<td>
+						<select name="themeSno" id="themeSno" class="form-control">
+							<option value="">선택해주세요</option>
+							<option value="1" >일반형(기본)  (default)</option>
+						</select>
+
+						<button class="btn btn-white btn-sm pull-right" onclick="addSkin()" type="button">게시판 스킨등록</button>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<th>리스트권한 설정</th>
+			<td>
+				<input type="radio" name="bdAuthList" value="all" checked="checked"> 전체(회원+비회원)
+                <input type="radio" name="bdAuthList" value="admin" > 관리자 전용
+                <input type="radio" name="bdAuthList" value="member"> 회원전용(비회원제외)
+                <input type="radio" name="bdAuthList" value="group"                                                    onclick="layer_register('member_groupLayer_list','bdAuthListGroup','info_member_list_group')"> 특정회원등급
+                <button type="button" class="btn btn-sm btn-gray js-group-select"> 회원등급 선택</button>
+                <div id="member_groupLayer_list" class="selected-btn-group "></div>
+			</td>
+		</tr>
+		<tr>
+			<th>읽기권한 설정</th>
+			<td>
+				<input type="radio" name="bdAuthRead" value="all" checked="checked"> 전체(회원+비회원)
+				<input type="radio" name="bdAuthRead" value="admin" > 관리자 전용
+				<input type="radio" name="bdAuthRead" value="member"> 회원전용(비회원제외)
+				<input type="radio" name="bdAuthRead" value="group"                                                        onclick="layer_register('member_groupLayer_read','bdAuthReadGroup','info_member_read_group')"> 특정회원등급
+				<button type="button" class="btn btn-sm btn-gray js-group-select"> 회원등급 선택</button>
+				<div id="member_groupLayer_read" class="selected-btn-group "></div>
+			</td>
+		</tr>
+		<tr>
+			<th>쓰기권한 설정</th>
+			<td>
+				<input type="radio" name="bdAuthWrite" value="all" class="if-is-event-disabled" checked="checked"> 전체(회원+비회원)
+				<input type="radio" name="bdAuthWrite" value="admin" class="if-is-event-checked" > 관리자전용
+				<input type="radio" name="bdAuthWrite" value="member" class="if-is-event-disabled"> 회원전용(비회원제외)
+				<input type="radio" name="bdAuthWrite" value="group" class="if-is-event-disabled"                                                        onclick="layer_register('member_groupLayer_write','bdAuthWriteGroup','info_member_write_group')"> 특정회원등급
+				<button type="button" class="btn btn-sm btn-gray js-group-select">회원등급 선택</button>
+				<div id="member_groupLayer_write" class="selected-btn-group "></div>
+			</td>
+		</tr>
+		<tr>
+			<th>답변권한 설정</th>
+			<td>
+				<input type="radio" name="bdReplyFl" value="y" checked="checked" class="if-is-event-disabled"> 사용
+				( <input type="checkbox" name="bdAnswerStatusFl" value="y" > 답변관리 기능 사용 )
+				<input type="radio" name="bdReplyFl" value="n"  class="if-is-event-checked"> 사용안함
+				<div class="notice-info js-answer-status">답변관리 기능 사용 시 운영자 작성 답변글은 답변완료인 글만 사이트에 노출되며, 사용 전에 작성된 답변글은 답변완료로 처리 시 노출됩니다.</div>
+			</td>
+		</tr>
+		<tr>
+			<th>댓글 기능</th>
+			<td>
+				<input type="radio" name="bdMemoFl" id="bdMemoFl" class="if-is-qa-disabled" value="y" checked="checked" /> 사용
+				<input type="radio" name="bdMemoFl" id="bdMemoFl" class="if-is-qa-disabled" value="n"  /> 사용안함
+			</td>
+		</tr>
+		<tr>
+			<th>댓글권한 설정</th>
+			<td>
+				<input type="radio" name="bdAuthMemo" value="all" checked="checked"> 전체(회원+비회원)
+				<input type="radio" name="bdAuthMemo" value="admin" > 관리자 전용
+				<input type="radio" name="bdAuthMemo" value="member" checked="checked"> 회원전용(비회원제외)
+				<input type="radio" name="bdAuthMemo" value="group"                                                        onclick="layer_register('member_groupLayer_memo','bdAuthMemoGroup','info_member_memo_group')"> 특정회원등급
+				<button type="button" class="btn btn-sm btn-gray js-group-select">회원등급 선택</button>
+				<div id="member_groupLayer_memo" class="selected-btn-group "></div>
+			</td>
+		</tr>
+		<tr>
+			<th>작성자 표시방법</th>
+			<td>
+				<input type="radio" name="bdUserDsp" value="name"  /> 이름표시
+				<input type="radio" name="bdUserDsp" value="nick" checked="checked" /> 닉네임표시
+				<input type="radio" name="bdUserDsp" value="id"  /> 아이디표시
+			</td>
+		</tr>
+		<tr>
+			<th>작성자 노출제한</th>
+			<td>
+				<select name="bdUserLimitDsp" class="form-control">
+					<option value="0" selected>전체노출</option>
+					<option value="1" >1글자 노출</option>
+					<option value="2" >2글자 노출</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>운영자 표시방법</th>
+			<td>
+				<input type="radio" name="bdAdminDsp" value="nick" checked="checked" /> 닉네임표시
+				<input type="radio" name="bdAdminDsp" value="image"  /> 이미지표시 
+			</td>
+		</tr>
+		<tr>
+			<th>저장 위치</th>
+			<td>
+				<select name="bdUploadStorage" id="bdUploadStorage" class="form-control">
+					<option value="local" >기본 경로</option>
+				</select>
+
+				<div class="mgt5">
+					파일 저장 위치 :
+					<span id="spanFileStorage"></span>
+					<input type="text" name="bdUploadPath" id="bdUploadPath" size="30" value="" readonly="readonly" class="frm_input"/>
+				</div>
+				<div class="mgt5">
+					썸네일 저장 위치 :
+					<span id="spanFileThumbStorage"></span>
+					<input type="text" name="bdUploadThumbPath" id="bdUploadThumbPath" size="30" value="" readonly="readonly" class="frm_input"/>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<th>게시글 삭제 설정</th>
+			<td>
+				<input type="radio" name="bdReplyDelFl" value="applicable" checked="checked" /> 답변글이 있는 게시글 삭제시, 해당 글만 삭제
+				<input type="radio" name="bdReplyDelFl" value="reply"  /> 답변글이 있는 게시글 삭제시, 답변글도 함께 삭제 <br>
+				<div class="notice-info">답변글이 있는 게시글 삭제시, 삭제하고자 하는 게시글 하위의 모든 답변글이 함께 삭제됩니다.</div>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+
+		</div>
+
+		<div class="table-title mgt15">
+			기능설정
+		</div>
+		<div class="tbl_frm01 tbl_wrap pdb20" style='border-bottom:1px solid #ccc;'>
+			<table>
+			<caption>게시판 기능 설정</caption>
+			<colgroup>
+				<col class="grid_2">
+				<col>
+			</colgroup>
+			<tbody>
+			<!--
+			<tr>
+				<th>모임 연동</th>
+				<td></td>
+			</tr>
+			-->
+			<tr>
+				<th>게시글 작성시 별점</th>
+				<td>
+					<input type="radio" name="bdGoodsPtFl" value="T"  /> 사용
+					<input type="radio" name="bdGoodsPtFl" value="F" checked="checked" /> 사용안함
+				</td>
+			</tr>
+			<tr>
+				<th>게시글 추천</th>
+				<td>
+					<input type="radio" name="bdRecommendFl" value="y"  /> 사용
+					<input type="radio" name="bdRecommendFl" value="n" checked="checked" /> 사용안함
+				</td>
+			</tr>
+			<tr>
+				<th>기본 게시글 양식 설정</th>
+				<td>
+					<select class="form-control " id="bdTemplateSno" name="bdTemplateSno" >
+						<option value="0"  >=선택없음=</option>
+					</select>                    
+					<input type="button" value="게시글 양식 등록" class="btn btn-black js-template-register">
+				</td>
+			</tr>
+			<tr>
+				<th>말머리 기능</th>
+				<td>
+					<div class="checkbox">
+						
+						<input type="checkbox" name="bdCategoryFl" value='y'  /> 말머리 사용
+						<a class="btn-link">글작성시 제목앞에 특정단어를 넣는 기능입니다</a>
+						<div class="notice-info">말머리 게시글 양식 설정: 말머리 선택에 따른 게시글 양식을 설정할 수 있습니다. 기본 게시글 양식과 중복 사용이 가능하되, 말머리에 설정한 게시글 양식이 있는 경우 말머리 게시글 양식이 우선으로 노출됩니다.
+						</div>
+					</div>
+
+					<div class="categoryWrite">
+						<table class="table table-cols">
+						<colgroup>
+							<col class="width-sm"/>
+							<col/>
+						</colgroup>
+						<tr>
+							<th>말머리 타이틀</th>
+							<td>
+								<input type="text" name="bdCategoryTitle" class="form-control" value=""/>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								말머리 입력
+							</th>
+							<td>
+								<table class="table table-cols categoryTable">
+								<colgroup>
+									<col class="width-2xl"/>
+									<col/>
+								</colgroup>
+								<tr>
+									<th>말머리명</th>
+									<th>말머리 게시글 양식 설정</th>
+								</tr>
+								<tr>
+									<td class="form-inline">
+										<input type="text" name="bdCategory[]" class="frm_input js-add-field-category" size="40" value=""/>
+										<button type="button" class="btn btn-sm btn-white btn-icon-plus" onclick="add_category();">추가</button>
+									</td>
+									<td>
+										<select class="frm_input " id="bdCategoryTemplateSno[]" name="bdCategoryTemplateSno[]" >
+											<option value="0"  >=선택없음=</option>
+										</select>
+									</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th>조회수 표시 설정</th>
+				<td>
+					<input type="checkbox" name="bdPcHitFl" value="y" checked="checked"> PC
+                    <input type="checkbox" name="bdMobileHitFl" value="y" checked="checked"  > 모바일
+                    <div class="notice-info">
+                        PC, 모바일 전체 체크 시, PC 및 모바일의 리스트 및 상세 영역의 조회수가 노출됩니다.
+                    </div>
+				</td>
+			</tr>
+			<tr>
+				<th>조회당 Hit증가수</th>
+				<td>
+					<input type="text" name="bdHitPerCnt" size="6" value="1" class="frm_input js-number wd-sm2"/> 개
+                    <input type="checkbox" name="bdHitIPCheck" value="T"  /> IP 중복제한
+				</td>
+			</tr>
+			<tr>
+				<th>비밀글 설정</th>
+				<td>
+					<input type="radio" name="bdSecretFl" value="0" checked="checked" /> 작성시 기본 일반글
+					<input type="radio" name="bdSecretFl" value="1"  /> 작성시 기본 비밀글
+					<input type="radio" name="bdSecretFl" value="2"  /> 무조건 일반글
+					<input type="radio" name="bdSecretFl" value="3"  /> 무조건 비밀글
+				</td>
+			</tr>
+			<tr>
+				<th>비밀글 제목 설정</th>
+				<td>
+					<input type="radio" name="bdSecretTitleFl" value="0" checked="checked" /> 제목 노출
+					<input type="radio" name="bdSecretTitleFl" value="1"  /> 제목 지정
+					<input type="text" name="bdSecretTitleTxt" value="" class="frm_input" size="40"/>
+				</td>
+			</tr>
+			<tr>
+				<th>비밀글 댓글 설정</th>
+				<td>
+					<input type="radio" name="bdSecretReplyFl" value="0" checked="checked"/> 작성시 기본 일반댓글
+                    <input type="radio" name="bdSecretReplyFl" value="1" /> 작성시 기본 비밀댓글
+                    <input type="radio" name="bdSecretReplyFl" value="2" /> 무조건 일반댓글
+                    <input type="radio" name="bdSecretReplyFl" value="3" /> 무조건 비밀댓글
+				</td>
+			</tr>
+			<tr>
+				<th>비밀댓글 제목 설정</th>
+				<td>
+					<input type="radio" name="bdSecretReplyTitleFl" value="0" checked="checked" /> 제목 노출
+                    <input type="radio" name="bdSecretReplyTitleFl" value="1"  /> 제목 지정
+                    <input type="text" name="bdSecretReplyTitle" value="" class="frm_input" size="40"/>
+				</td>
+			</tr>
+			<tr>
+				<th>게시물 시작번호</th>
+				<td><input type="text" name="bdStartNum" size="6" value="1" class="frm_input js-number wd-sm2"/></td>
+			</tr>
+			<tr>
+				<th>new아이콘 효력</th>
+				<td>
+					<input type="text" name="bdNewFl" id="bdNewFl" size="5" class="frm_input js-number wd-sm2" value="24"/> 시간
+				</td>
+			</tr>
+			<tr>
+				<th>HOT아이콘 조건</th>
+				<td>
+					조회수 <input type="text" name="bdHotFl" id="bdHotFl" class="frm_input js-number wd-sm2" size="5" value="100"/> 회 이상 게시글
+				</td>
+			</tr>
+			</table>
+		</div>
+
+		<div class="table-title mgt15">
+			리스트 화면 설정
+		</div>
+		<div class="tbl_frm01 tbl_wrap pdb20" style='border-bottom:1px solid #ccc;'>
+			<table>
+			<caption>게시판 리스트 설정</caption>
+			<colgroup>
+				<col class="grid_2">
+				<col>
+			</colgroup>
+			<tbody>
+			<tr>
+				<th>공지사항 노출설정</th>
+				<td>
+					<input type="text" name="bdNoticeCount" value="3" class="frm_input js-number" size="5" maxlength="5"/>개&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" name="bdListInNotice" value="y" checked="checked"> 리스트 내 노출
+                    <input type="checkbox" name="bdOnlyMainNotice" value="y" checked="checked">첫페이지만 노출
+                    <div class="notice-info"> 리스트 내 노출 설정 시 공지사항 글이 리스트 상단 이외에 본문리스트에 노출됩니다. </div>
+                    <div class="notice-info"> 첫페이지만 노출 설정 시 공지사항 글이 첫페이지만 노출됩니다. </div>
+				</td>
+			</tr>
+			<tr>
+				<th>제목글 제한</th>
+				<td>
+					<input type="text" name="bdSubjectLength" value="30" class="frm_input js-number" size="5" maxlength="5"/> 자
+				</td>
+			</tr>
+			<tr>
+				<th>페이지당 게시물수</th>
+				<td>
+					<input type="text" name="bdListCount" value="15" class="frm_input js-number wd-sm2" size="5" maxlength="5"/>
+                    <div class="notice-info"> 게시판 전체보기의 페이지별 게시글 노출 개수를 설정합니다. </div>
+				</td>
+			</tr>
+			<tr>
+				<th>리스트 썸네일 여부</th>
+				<td>
+					<input type="radio" name="bdListImageFl" value="T"  /> 사용</label>
+					<input type="radio" name="bdListImageFl" value="F" checked="checked" /> 사용안함</label>
+
+					<table class="table table-cols mgt10">
+					<tbody>
+					<tr>
+						<th class="width-sm">대표 이미지 설정</th>
+						<td>
+							<input type="radio" name="bdListImageTarget" value="goods"  />모임 이미지
+							<input type="radio" name="bdListImageTarget" value="upload" checked="checked" />업로드 이미지
+							<input type="radio" name="bdListImageTarget" value="editor"  />에디터 이미지
+							
+							<div class="notice-info js-bdListImageTarget-notice display-none">
+								※ '모임연동 / 업로드 파일 사용 / 에디터 사용' 중 1개 이상을 사용함으로 설정해야 합니다.
+							</div>
+						</td>
+					</tr>
+					</tbody>
+                    </table>
+				</td>
+			</tr>
+			<tr>
+				<th>리스트 이미지 크기</th>
+				<td>
+					<input type="text" name="bdListImageSize[width]" class="frm_input js-number" value="178"> *
+                    <input type="text" name="bdListImageSize[height]" class="frm_input js-number" value="227">
+                    <div class="notice-info">
+                        ※ 모바일에서는 리스트 이미지 크기는 화면 비율에 따라 자동 적용 됩니다.
+                    </div>
+				</td>
+			</tr>
+			<tr>
+				<th>검색 시 답변글 노출</th>
+				<td>
+					<input name="bdIncludeReplayInSearchFl" type="radio" value='T'  /> 사용함
+					<input name="bdIncludeReplayInSearchFl" type="radio" value='F' checked="checked" /> 사용안함
+
+					<div class="js-bdIncludeReplayInSearchFl-show" >
+						<input name="bdIncludeReplayInSearchType[]" type="checkbox" value='1' checked="checked" /> 쇼핑몰 화면 적용
+						<input name="bdIncludeReplayInSearchType[]" type="checkbox" value='2' checked="checked" /> 관리자 화면 적용
+                    </div>
+
+					<div class="notice-info">
+                        검색 시 원본글에 등록된 답변글도 검색결과에 노출시킬지 여부를 설정하실 수 있습니다.
+                    </div>
+                    <div class="notice-info">
+                        검색결과 때 노출되는 답변글은 페이지당 게시물 수에 포함되지 않습니다.
+                    </div>
+				</td>
+			</tr>
+			</table>
+		</div>
+
+		<div class="table-title mgt15">
+			쓰기 화면 설정
+		</div>
+		<div class="tbl_frm01 tbl_wrap pdb20" style='border-bottom:1px solid #ccc;'>
+			<table>
+			<caption>게시판 쓰기 화면 설정</caption>
+			<colgroup>
+				<col class="grid_2">
+				<col>
+			</colgroup>
+			<tbody>
+			<tr>
+				<th>에디터 사용</th>
+				<td>
+					<input name="bdEditorFl" type="radio" value='T' checked="checked" /> 사용함
+					<input name="bdEditorFl" type="radio" value='F'  /> 사용안함
+				</td>
+			</tr>
+			<tr>
+				<th>휴대폰 사용</th>
+				<td>
+					<input type="radio" name="bdMobileFl" value="T"  /> 사용함
+                    <input type="radio" name="bdMobileFl" value="F" checked="checked" /> 사용안함
+				</td>
+			</tr>
+			<tr>
+				<th>이메일 사용</th>
+				<td>
+					<input type="radio" name="bdEmailFl" value="T"  /> 사용함
+                    <input type="radio" name="bdEmailFl" value="F" checked="checked" /> 사용안함
+				</td>
+			</tr>
+			<tr>
+				<th>업로드 사용</th>
+				<td>
+					<input name="bdUploadFl" type="radio" value='T' checked="checked" /> 사용함
+                    <input name="bdUploadFl" type="radio" value='F'  /> 사용안함
+				</td>
+			</tr>
+			<tr>
+				<th>업로드 파일크기</th>
+				<td>
+					<input type="text" name="bdUploadMaxSize" id="bdUploadMaxSize" class="frm_input js-number wd-sm2" value="5"/> MByte(s)
+				</td>
+			</tr>	
+			<tr>
+				<th>링크 사용</th>
+				<td>
+					<input type="radio" name="bdLinkFl" value="T"  /> 사용함
+                    <input type="radio" name="bdLinkFl" value="F" checked="checked" /> 사용안함
+				</td>
+			</tr>
+			</table>
+		</div>
+
+		<div class="table-title mgt15">
+			게시글 상세 화면 설정
+		</div>
+		<div class="tbl_frm01 tbl_wrap pdb20" style='border-bottom:1px solid #ccc;'>
+			<table>
+			<caption>게시판 쓰기 화면 설정</caption>
+			<colgroup>
+				<col class="grid_2">
+				<col>
+			</colgroup>
+			<tbody>
+			<tr>
+				<th>첨부파일 이미지 표시</th>
+				<td>
+					<input type="radio" name="bdAttachImageDisplayFl" value="T" checked="checked" /> 사용함
+					<input type="radio" name="bdAttachImageDisplayFl" value="F"  /> 사용안함
+					<div class="notice-info">첨부파일로 등록된 이미지를 게시글 본문 상단에 노출할 수 있습니다.</div>
+				</td>
+			</tr>
+			<tr>
+				<th>이미지 리사이즈</th>
+				<td>
+					<input type="text" class="frm_input js-number wd-sm2" name="bdAttachImageMaxSize" value="700" size="5">px
+                    <div class="notice-info">첨부파일 이미지 업로드 시 제한된 값보다 이미지 넓이가 클 경우 설정된 값으로 리사이즈하여 노출합니다.</div>
+                    <div class="notice-info">모바일은 디바이스 해상도보다 클 경우 모바일 해상도로 리사이즈하여 노출됩니다.</div>
+				</td>
+			</tr>
+			<tr>
+				<th>파일 노출 위치</th>
+				<td>
+					<input type="radio" name="bdAttachImagePosition" value="top" checked="checked" /> 본문상단
+					<input type="radio" name="bdAttachImagePosition" value="bottom"  /> 본문하단
+				</td>
+			</tr>
+			<tr>
+				<th>리스트 화면 노출</th>
+				<td>
+					<label class="radio-inline"><input type="radio" name="bdListInView" value="T" checked="checked" /> 사용함
+					<label class="radio-inline"><input type="radio" name="bdListInView" value="F"  /> 사용안함
+				</td>
+			</tr>
+			<tr>
+				<th>IP 노출</th>
+				<td>
+					<input type="checkbox" name="bdIpFl" value="y" onclick="$('#bdIpFilterFl').prop('disabled', !this.checked)"/> 글쓴이의 IP를 보여줍니다
+					<input type="checkbox" name="bdIpFilterFl" id="bdIpFilterFl" value="y"   disabled="disabled"  /> IP 끝자리 암호화표기
+				</td>
+			</tr>
+			</table>
+		</div>
+
+		<div class="table-title mgt15">
+			게시판 상단 하단 꾸미기
+		</div>
+		<div class="tbl_frm01 tbl_wrap pdb20" style='border-bottom:1px solid #ccc;'>
+			<table>
+			<caption>게시판 쓰기 화면 설정</caption>
+			<colgroup>
+				<col class="grid_2">
+				<col>
+			</colgroup>
+			<tbody>
+			<tr>
+				<th>상단 내용(Header)</th>
+				<td>
+					<textarea name="bdHeader" id="editor" label="상단디자인"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>하단 내용(Footer)</th>
+				<td>
+					<textarea name="bdFooter" id="editor2" label="하단디자인"></textarea>
+				</td>
+			</tr>
+			</table>
+		</div>
+
+		</form>
+		<!--게시판 등록 끝-->
+		
+		
+		
+	</div>
+	<!--container end-->
+	
+
+</div>
+
+</body>
+</html>

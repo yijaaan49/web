@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	//(실습) 전달받은 파라미터 값을 사용해서 HTML 태그 만들기
+	//스크립트릿, out, 표현식 사용해서 처리하고 출력
+	String name = request.getParameter("name");
+	String korS = request.getParameter("kor");
+	String engS = request.getParameter("eng");
+	String mathS = request.getParameter("math");
+
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>성적처리 결과</title>
+</head>
+<body>
+	<h1>성적처리 결과</h1>
+	<h2>p태그로 출력</h2>
+	<p>이름 : <%=name %></p>
+	<p>국어 : <%=korS %></p>
+	<p>영어 : <%=engS %></p>
+	<p>수학 : <%=mathS %></p>
+	<%
+	int kor = Integer.parseInt(korS);
+	int eng = Integer.parseInt(engS);
+	int math = Integer.parseInt(mathS);
+	
+	int tot = kor + eng + math;
+	double avg = tot*100/3/100.0;
+	%>
+	<hr>
+	<p>총점 : <%=tot %></p>
+	<p>평균 : <%=avg %></p>
+	
+	
+	<hr>
+	<h2>테이블로 출력</h2>
+	
+</body>
+</html>

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="keywords" content="woorikiri, 우리끼리, 모임, 행사, 번개, 이벤트">
+<meta name="description" content="세상의 모든 모임 '우리끼리'">
+<meta name="author" content="WOORIKIRI Inc. (yijaaan49@gmail.com)">
+<meta name="viewport" content="width=1280">
+<title>우리끼리 :: 모임문화 플랫폼</title>
+
+<!--공통 CSS SCRIPT 시작-->
+<link rel="stylesheet" href="../css/import.css">
+<!--공통 CSS SCRIPT 끝-->
+
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery-1.10.2.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery-ui-1.10.4.custom.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/jquery.dotdotdot-1.5.0.js"></script>
+<!--[if lt IE 9]>
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/html5shiv.min.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/reponse.ie8.js"></script>
+<![endif]-->
+
+<!--메인 CSS SCRIPT 시작-->
+<link rel="stylesheet" href="../css/main.css">
+<!--메인 CSS SCRIPT 끝-->
+</head>
+<body class="onoffmix">
+
+<!-- header start -->
+<header id="header" class="header_wrap">
+	
+	<!--header top 시작-->
+	<div class="header_top wide_max_width_area">
+
+		<h1 class="woori_logo">
+		<a href="/"><span class="text_logo">온오프믹스 홈</span><img src="" alt="WOORIKIRI"></a>
+		</h1>
+
+		<div class="user_area">
+			<ul class="service_menu">
+				<li class="list_item login"><a href="/account/login">로그인</a></li>
+				<li class="list_item join"><a href="/account/join">회원가입</a></li>
+				<li class="list_item service"><a href="/service">서비스안내</a></li>
+				<li class="list_item customer"><a href="/cs/main">고객센터</a></li>
+			</ul>
+
+			<ul class="member_menu">
+				<li class="list_item mypage" tabindex="0">
+					<a href="/account/main">마이페이지</a>
+					<div class="sub_menu">
+						<ul class="sub_list mypage_list">
+							<li><a href="/account/login?returnUrl=/account/edit" class="site_link edit">회원정보수정</a></li>
+							<li><a href="/account/login?returnUrl=/account/pass" class="site_link pass">비밀번호변경</a></li>
+							<li><a href="/account/login?returnUrl=/account/event" class="site_link event">신청내역</a></li>
+							<li><a href="/account/login?returnUrl=/account/payment" class="site_link payment">결제내역</a></li>
+							<li><a href="/account/login?returnUrl=/account/pin" class="site_link pin">찜내역</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="list_item eventopen"><a href="/event/add">모임개설</a></li>
+				<li class="list_item manage"><a href="/account/login?returnUrl=/event/manage">모임관리</a></li>
+				<li class="list_item notice"><a href="/account/login?returnUrl=/">알림</a></li>
+			</ul>
+		</div>
+
+		<!--검색 area 시작-->
+		<div class="search_area">
+			<form class="search_form" action="/event/main" method="GET">
+				<label for="searchInput">검색할 모임을 입력해주세요.</label>
+				<input type="text" id="searchInput" class="search_input" name="s" value="" title="키워드로 모임을 검색하세요" data-event="205867">
+									<span class="ofm_keyword_value"
+					  data-event_no="205867" data-event_title="2020 IT 솔루션 박람회 Control Overflow" data-creative_name="PC_메인_검색창광고" data-creative_slot="1">IT 솔루션 박람회 Control Overflow →</span>
+				</script>
+				<input type="submit" class="btn_search" value="검색" title="검색">
+			</form>
+		</div>
+		<!--검색 area 끝-->
+
+	</div>
+	<!--header top 끝-->
+
+	<!--header bottom 시작-->
+	<div class="header_bottom">
+
+		<div class="wide_max_width_area">
+			<div class="category_section">
+				<div class="title_wrap">
+					<button class="btn_category">카테고리</button>
+				</div>
+			</div>
+		</div>
+
+		<!--detail_category 시작-->
+		<div class="detail_category">
+		
+			<div class="wide_max_width_area">
+			<!-- 모임 시작 -->
+				<section class="category_event">
+					<h1>모임</h1>
+					<ul class="list_col">
+						<li class="list_item"><a href="/event/main/?c=085">교육</a></li>
+						<li class="list_item"><a href="/event/main/?c=086">강연</a></li>
+						<li class="list_item"><a href="/event/main/?c=087">세미나/컨퍼런스</a></li>
+						<li class="list_item"><a href="/event/main/?c=088">문화/예술</a></li>
+						<li class="list_item"><a href="/event/main/?c=089">방송/연예</a></li>
+						<li class="list_item"><a href="/event/main/?c=090">취미활동</a></li>
+						<li class="list_item"><a href="/event/main/?c=091">소모임/친목행사</a></li>
+						<li class="list_item"><a href="/event/main/?c=092">공모전</a></li>
+						<li class="list_item"><a href="/event/main/?c=093">전시/박람회</a></li>
+						<li class="list_item"><a href="/event/main/?c=094">패션/뷰티</a></li>
+						<li class="list_item"><a href="/event/main/?c=095">이벤트/파티</a></li>
+						<li class="list_item"><a href="/event/main/?c=097">여행</a></li>
+						<li class="list_item"><a href="/event/main/?c=023">후원금</a></li>
+						<li class="list_item"><a href="/event/main/?c=096">기타</a></li>
+					</ul>
+				</section>
+			<!-- 모임 끝 -->
+
+			<!-- 지역 시간 -->
+			<section class="category_area">
+				<h1>지역</h1>
+				<ul class="list_col">
+					<li class="list_item"><a href="/event/main/?region=02">서울</a></li>
+					<li class="list_item"><a href="/event/main/?region=032,031">인천/경기</a></li>
+					<li class="list_item"><a href="/event/main/?region=042,043,041,044">대전/충청/세종</a></li>
+					<li class="list_item"><a href="/event/main/?region=051,052,054">부산/울산/경남</a></li>
+					<li class="list_item"><a href="/event/main/?region=062,063,061">광주/전라</a></li>
+					<li class="list_item"><a href="/event/main/?region=053,055">대구/경북</a></li>
+					<li class="list_item"><a href="/event/main/?region=033">강원</a></li>
+					<li class="list_item"><a href="/event/main/?region=064">제주</a></li>
+					<li class="list_item"><a href="/event/main/?region=00">기타지역</a></li>
+				</ul>
+			</section>
+			</div>
+			<!-- 지역 끝 -->
+
+			<div class="category_action_area">
+				<div class="wide_max_width_area">
+					<a href="#" class="btn_all_event">전체 모임 보기<span>></span></a>
+					<button class="btn_close">
+						<span>카테고리 닫기</span>
+						<img src="https://static.onoffmix.com/images/pc/svg/category_close_blue.svg" alt="닫기">
+					</button>
+				</div>
+			</div>
+
+		</div>
+		<!--detail_category 끝-->
+
+		<div class="wide_max_width_area">
+
+			<div class="right_section">
+
+				<!-- link section -->
+				<div class="link_section">
+
+				</div>
+				<!-- link section -->
+
+				<!-- lanking event 시작 -->
+				<div class="event_ranking">
+
+					<div class="visible_lanking">
+						<span class="ranking_number"></span>
+						<span class="event_title"></span>
+					</div>
+
+					<div class="detail_ranking_area">
+						<h2>실시간 <span class="date_time">2020.1.13</span></h2>
+					</div>
+
+				</div>
+				<!-- lanking event 끝 -->
+
+			</div>
+
+		</div>
+
+	</div>
+	<!--header bottom 끝-->
+
+</header>
+<!-- header end -->
+
+<main id="content" class="main">
+
+<!--main latest-->
+<section class="section_main_top">
+
+	<div class="content_wrap wide_max_width_area">
+
+		<!--branding 시작-->
+		<div class="banner_branding">
+			<div class="head"><h3>우리끼리 소식</h3></div>
+
+			<div class="content owl-carousel">
+
+				<a class="gtag_bn_item_type1" href="#" target="_blank" title="[에릭클랩튼:기타의 신] 온오프믹스 특별초대 시사회" data-c="777143e61"
+				data-event_no="206078" data-event_title="[에릭클랩튼:기타의 신] 온오프믹스 특별초대 시사회" data-creative_name="PC_메인_마케팅 영역" data-creative_slot="1">
+				<img src="https://cfile1.onoffmix.com/attach/I2Zum91MdpEeiJylVWoqNAK6Qj7nLOGX" alt="[에릭클랩튼:기타의 신] 온오프믹스 특별초대 시사회">
+				</a>
+
+				<a class="gtag_bn_item_type1" href="#" target="_blank" title="온오프믹스 특별초대 [블라인드 시사회]" data-c="777143e62"
+				data-event_no="205931" data-event_title="온오프믹스 특별초대 [블라인드 시사회]" data-creative_name="PC_메인_마케팅 영역" data-creative_slot="2">
+				<img src="https://cfile1.onoffmix.com/attach/3ubwKQkFSzgZ7PChY8WeaUHcltd54xrI" alt="온오프믹스 특별초대 [블라인드 시사회]">
+				</a>
+
+				<a class="gtag_bn_item_type1" href="#" target="_blank" title="[6시 퇴근] 온오프믹스 특별초대 뮤지컬" data-c="777143e63"
+				data-event_no="206100" data-event_title="[6시 퇴근] 온오프믹스 특별초대 뮤지컬" data-creative_name="PC_메인_마케팅 영역" data-creative_slot="3">
+				<img src="https://cfile1.onoffmix.com/attach/xQDS5mi8Vavbt3CzoO0ILBqu7fcUNRGr" alt="[6시 퇴근] 온오프믹스 특별초대 뮤지컬">
+				</a>
+
+				<a class="gtag_bn_item_type1" href="#" target="_blank" title="" data-c="777143e64"
+				data-event_no="out_51316" data-event_title="" data-creative_name="PC_메인_마케팅 영역" data-creative_slot="4">
+				<img src="https://cfile1.onoffmix.com/attach/85ySxPOw4XYT70tzveKp6jNdHAiUuqDB" alt="">
+				</a>
+
+				<a class="gtag_bn_item_type1" href="#" target="_blank" title="" data-c="777143e65"
+				data-event_no="out_51396" data-event_title="" data-creative_name="PC_메인_마케팅 영역" data-creative_slot="5">
+				<img src="https://cfile1.onoffmix.com/attach/g47iR2dv5EzlsWcHAf9MKk8ajtDoOYxw" alt="">
+				</a>
+
+				<a class="gtag_bn_item_type1" href="#" target="_blank" title="" data-c="777143e66"
+				data-event_no="out_50981" data-event_title="" data-creative_name="PC_메인_마케팅 영역" data-creative_slot="6">
+				<img src="https://cfile1.onoffmix.com/attach/9ZF0IVArdX7Rc8uKtC4sJOibja1S2Q6B" alt="">
+				</a>
+
+				<a class="gtag_bn_item_type1" href="#" target="_blank" title="볼거리가 가득한 온오프믹스 유튜브채널! #좋아요 #구독 " data-c="777143e67"
+				data-event_no="out_23201" data-event_title="볼거리가 가득한 온오프믹스 유튜브채널! #좋아요 #구독 " data-creative_name="PC_메인_마케팅 영역" data-creative_slot="7">
+				<img src="https://cfile1.onoffmix.com/attach/olqpGAabvF1tgURmj079VwI2SZsurhCL" alt="볼거리가 가득한 온오프믹스 유튜브채널! #좋아요 #구독 "></a>
+
+				<a class="gtag_bn_item_type1" href="#" target="_blank" title="온오프믹스 블로그" data-c="777143e68"
+				data-event_no="out_42226" data-event_title="온오프믹스 블로그" data-creative_name="PC_메인_마케팅 영역" data-creative_slot="8">
+				<img src="https://cfile1.onoffmix.com/attach/k2opi1wIU9ZGXRKQj0czsdu6LEayNvtA" alt="온오프믹스 블로그">
+				</a>
+
+				<a class="gtag_bn_item_type1" href="#" target="_blank" title="인스타그램" data-c="777143e69"
+				data-event_no="out_42227" data-event_title="인스타그램" data-creative_name="PC_메인_마케팅 영역" data-creative_slot="9">
+				<img src="https://cfile1.onoffmix.com/attach/TvMCPJywNDdRYEIHGWiSk97Q2u6olsUO" alt="인스타그램">
+				</a>
+
+			</div>
+		</div>
+		<!--branding 끝-->
+
+		<!--banner_top_area 시작-->
+		<div class="banner_top_area">
+			<button type="button" class="full_view_btn">전체보기</button>
+			<ul class="title_list_area"></ul>
+			<ul class="banner_text">
+				<li>
+					<a class="gtag_bn_item_type1" href="http://naver.com" target="_blank" title="차이나워치 포럼"  data-c="aa16fe1a1"
+					   data-event_no="205826" data-event_title="2020 차이나워치 포럼" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="1">
+					<img src="https://cfile1.onoffmix.com/attach/L58BQIJl1vasVGZf07drPMbp2R4qFjkT" alt="차이나워치 포럼">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="CES 2020 리뷰 컨퍼런스"  data-c="aa16fe1a2"
+					data-event_no="206023" data-event_title="[성남산업진흥원] CES 2020 리뷰 컨퍼런스" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="2">
+					<img src="https://cfile1.onoffmix.com/attach/1ioS9C4NRIYq0nygBpQ3KuwbAsfkZxTX" alt="CES 2020 리뷰 컨퍼런스">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="Microsoft IoT in Action 서울 이벤트"  data-c="aa16fe1a3"
+					data-event_no="205584" data-event_title="[Microsoft] IoT in Action 서울 이벤트" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="3">
+					<img src="https://cfile1.onoffmix.com/attach/ksAni73YyrqTuF4MozfEBLQ5bXNZRg86" alt="Microsoft IoT in Action 서울 이벤트">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="제3회 국제 교육 콘퍼런스"  data-c="aa16fe1a4"
+					data-event_no="203409" data-event_title="EDUCON 2020(제3회 국제 교육 콘퍼런스)" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="4">
+					<img src="https://cfile1.onoffmix.com/attach/pU1JzGluPvtacx4C9XFmKABbw83OY7re" alt="제3회 국제 교육 콘퍼런스">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="허니테이스팅 클래스"  data-c="aa16fe1a5"
+					data-event_no="205748" data-event_title="[Its Honey!] 1월 허니테이스팅 클래스" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="5">
+					<img src="https://cfile1.onoffmix.com/attach/0T7yFtMUlxBbgN15Ci2IYjE3DWzpdmfO" alt="허니테이스팅 클래스">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="제17회 대한민국 교육박람회"  data-c="aa16fe1a6"
+					data-event_no="203605" data-event_title="[제17회 대한민국 교육박람회]학부모 특급 교육강연" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="6">
+					<img src="https://cfile1.onoffmix.com/attach/ktxWBuiMHcJ1ZoNgmjlGvEQ0FsCKXpTR" alt="제17회 대한민국 교육박람회">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="핀테크 정책 설명회"  data-c="aa16fe1a7"
+					data-event_no="205895" data-event_title="핀테크 정책 설명회" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="7">
+					<img src="https://cfile1.onoffmix.com/attach/Qgqkad37OofLu9Wnsl0A2bzGBcvVymPJ" alt="핀테크 정책 설명회">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="DMS 2020"  data-c="aa16fe1a8"
+					data-event_no="204020" data-event_title="DMS 2020" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="8">
+					<img src="https://cfile1.onoffmix.com/attach/OnShqMrl7F5vZsDTugx1bIQKEct0XBP2" alt="DMS 2020">
+					</a>
+				</li>
+			</ul>
+
+		</div>
+		<div class="full_view_area">
+			<ul>
+																																									<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="차이나워치 포럼"  data-c="aa16fe1a1"
+					   data-event_no="205826" data-event_title="2020 차이나워치 포럼" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="1">
+						<img src="https://cfile1.onoffmix.com/attach/L58BQIJl1vasVGZf07drPMbp2R4qFjkT" alt="차이나워치 포럼">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="CES 2020 리뷰 컨퍼런스"  data-c="aa16fe1a2"
+					   data-event_no="206023" data-event_title="[성남산업진흥원] CES 2020 리뷰 컨퍼런스" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="2">
+						<img src="https://cfile1.onoffmix.com/attach/1ioS9C4NRIYq0nygBpQ3KuwbAsfkZxTX" alt="CES 2020 리뷰 컨퍼런스">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="Microsoft IoT in Action 서울 이벤트"  data-c="aa16fe1a3"
+					   data-event_no="205584" data-event_title="[Microsoft] IoT in Action 서울 이벤트" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="3">
+						<img src="https://cfile1.onoffmix.com/attach/ksAni73YyrqTuF4MozfEBLQ5bXNZRg86" alt="Microsoft IoT in Action 서울 이벤트">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="제3회 국제 교육 콘퍼런스"  data-c="aa16fe1a4"
+					   data-event_no="203409" data-event_title="EDUCON 2020(제3회 국제 교육 콘퍼런스)" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="4">
+						<img src="https://cfile1.onoffmix.com/attach/pU1JzGluPvtacx4C9XFmKABbw83OY7re" alt="제3회 국제 교육 콘퍼런스">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="허니테이스팅 클래스"  data-c="aa16fe1a5"
+					   data-event_no="205748" data-event_title="[Its Honey!] 1월 허니테이스팅 클래스" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="5">
+						<img src="https://cfile1.onoffmix.com/attach/0T7yFtMUlxBbgN15Ci2IYjE3DWzpdmfO" alt="허니테이스팅 클래스">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="제17회 대한민국 교육박람회"  data-c="aa16fe1a6"
+					   data-event_no="203605" data-event_title="[제17회 대한민국 교육박람회]학부모 특급 교육강연" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="6">
+						<img src="https://cfile1.onoffmix.com/attach/ktxWBuiMHcJ1ZoNgmjlGvEQ0FsCKXpTR" alt="제17회 대한민국 교육박람회">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="핀테크 정책 설명회"  data-c="aa16fe1a7"
+					   data-event_no="205895" data-event_title="핀테크 정책 설명회" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="7">
+						<img src="https://cfile1.onoffmix.com/attach/Qgqkad37OofLu9Wnsl0A2bzGBcvVymPJ" alt="핀테크 정책 설명회">
+					</a>
+				</li>
+				<li>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="DMS 2020"  data-c="aa16fe1a8"
+					   data-event_no="204020" data-event_title="DMS 2020" data-creative_name="PC_메인_상단배너 타입2" data-creative_slot="8">
+						<img src="https://cfile1.onoffmix.com/attach/OnShqMrl7F5vZsDTugx1bIQKEct0XBP2" alt="DMS 2020">
+					</a>
+				</li>
+			</ul>
+			<button type="button" class="full_view_close_btn">리스트 보기 닫기</button>
+		</div>
+		<!--banner_top_area 끝-->
+	</div>
+
+</section>
+<!--main latest-->
+
+<!-- Right Now Event Start -->
+<section class="section_now_event">
+	
+	<div class="title_area">
+		<h1 class="title">오늘 어때! <span class="text_normal">이 모임</span></h1>
+	</div>
+
+	<!--content_wrap 시작-->
+	<div class="content_wrap wide_max_width_area">
+
+		<!--area_top 시작-->
+		<div class="area_top">
+
+			<!--오른쪽 9개 시작-->
+			<ul class="event_list">
+
+				<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="#" target="_blank" title="C-LAB 9기 스타트업 모집 공고 (대구창조경제혁신센터)" data-c="hotissue1"
+						   data-event_no="204551" data-event_title="C-LAB 9기 스타트업 모집 공고 (대구창조경제혁신센터)" data-creative_name="PC_메인_모임상단 타입2" data-creative_slot="1">
+							<!-- 이미지 -->
+							<div class="event_thumbnail">
+								<img src="https://cfile1.onoffmix.com/images/event/204551/s">
+							</div>
+
+							<div class="event_info_area">
+								<!-- 타이틀 -->
+								<div class="title_area">
+									<h5 class="title ellipsis">
+									C-LAB 9기 스타트업 모집 공고 (대구창조경제혁신센터)</h5>
+								</div>
+								<!-- 정보 -->
+								<div class="event_info">
+									<div class="type_info">
+										<span class="payment_type free">
+											무료    
+										</span>
+									</div>
+									<div class="date">12.18 (수) ~ 1.15 (수)</div>
+								</div>
+							</div>
+						</a>
+					</article>
+				</li>
+
+				<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="#" target="_blank" title="[AI 해커톤] NAVER AI BURNING DAY" data-c="hotissue2"
+						   data-event_no="204667" data-event_title="[AI 해커톤] NAVER AI BURNING DAY" data-creative_name="PC_메인_모임상단 타입2" data-creative_slot="2">
+							<!-- 이미지 -->
+							<div class="event_thumbnail">
+								<img src="https://cfile1.onoffmix.com/images/event/204667/s">
+							</div>
+
+							<div class="event_info_area">
+								<!-- 타이틀 -->
+								<div class="title_area">
+									<h5 class="title ellipsis">
+									[AI 해커톤] NAVER AI BURNING DAY</h5>
+								</div>
+								<!-- 정보 -->
+								<div class="event_info">
+									<div class="type_info">
+										<span class="payment_type free">
+											무료    
+										</span>
+									</div>
+									<div class="date">1.21 (화) ~ 2.15 (토)</div>
+								</div>
+							</div>
+						</a>
+					</article>
+				</li>
+
+				<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="/cs/a/51243?url=%2Fevent%2F204629" target="_blank" title="AWS Community Day 2020" data-c="hotissue3"
+						   data-event_no="204629" data-event_title="AWS Community Day 2020" data-creative_name="PC_메인_모임상단 타입2" data-creative_slot="3">
+							<!-- 이미지 -->
+							<div class="event_thumbnail">
+								<img src="https://cfile1.onoffmix.com/images/event/204629/s">
+							</div>
+
+							<div class="event_info_area">
+								<!-- 타이틀 -->
+								<div class="title_area">
+									<h5 class="title ellipsis">
+									AWS Community Day 2020</h5>
+								</div>
+								<!-- 정보 -->
+								<div class="event_info">
+									<div class="type_info">
+										<span class="payment_type free">
+											무료    
+										</span>
+									</div>
+									<div class="date">1.21 (화)</div>
+								</div>
+							</div>
+						</a>
+					</article>
+				</li>
+																								<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="/cs/a/51344?url=%2Fevent%2F205859" target="_blank" title="[08 커넥츠소사이어티] 미디어 커머스 시대에 맞는 콘텐츠 전략은 무엇인가?" data-c="hotissue4"
+						   data-event_no="205859" data-event_title="[08 커넥츠소사이어티] 미디어 커머스 시대에 맞는 콘텐츠 전략은 무엇인가?" data-creative_name="PC_메인_모임상단 타입2" data-creative_slot="4">
+							<!-- 이미지 -->
+							<div class="event_thumbnail">
+								<img src="https://cfile1.onoffmix.com/images/event/205859/s">
+							</div>
+
+							<div class="event_info_area">
+								<!-- 타이틀 -->
+								<div class="title_area">
+									<h5 class="title ellipsis">
+									[08 커넥츠소사이어티] 미디어 커머스 시대에 맞는 콘텐츠 전략은 무엇인가?</h5>
+								</div>
+								<!-- 정보 -->
+								<div class="event_info">
+									<div class="type_info">
+										<span class="payment_type pay">
+											유료    
+										</span>
+									</div>
+									<div class="date">1.16 (목)</div>
+								</div>
+							</div>
+						</a>
+					</article>
+				</li>
+				<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="#" target="_blank" title="2020 부산게임아카데미 &lt;게임 개발자&gt; 양성과정" data-c="hotissue5"
+						   data-event_no="204685" data-event_title="2020 부산게임아카데미 &lt;게임 개발자&gt; 양성과정" data-creative_name="PC_메인_모임상단 타입2" data-creative_slot="5">
+							<!-- 이미지 -->
+							<div class="event_thumbnail">
+								<img src="https://cfile1.onoffmix.com/images/event/204685/s">
+							</div>
+
+							<div class="event_info_area">
+								<!-- 타이틀 -->
+								<div class="title_area">
+									<h5 class="title ellipsis">
+									2020 부산게임아카데미 &lt;게임 개발자&gt; 양성과정</h5>
+								</div>
+								<!-- 정보 -->
+								<div class="event_info">
+									<div class="type_info">
+										<span class="payment_type pay">
+											유료    
+										</span>
+									</div>
+									<div class="date">2.3 (월) ~ 7.31 (금)</div>
+								</div>
+							</div>
+						</a>
+					</article>
+				</li>
+				<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="#" target="_blank" title="(2월) 힐링아지트 &lt;김창옥TV SHOW&gt;" data-c="hotissue6"
+						   data-event_no="202545" data-event_title="(2월) 힐링아지트 &lt;김창옥TV SHOW&gt;" data-creative_name="PC_메인_모임상단 타입2" data-creative_slot="6">
+							<!-- 이미지 -->
+							<div class="event_thumbnail">
+								<img src="https://cfile1.onoffmix.com/images/event/202545/s">
+							</div>
+
+							<div class="event_info_area">
+								<!-- 타이틀 -->
+								<div class="title_area">
+									<h5 class="title ellipsis">
+									(2월) 힐링아지트 &lt;김창옥TV SHOW&gt;</h5>
+								</div>
+								<!-- 정보 -->
+								<div class="event_info">
+									<div class="type_info">
+										<span class="payment_type pay">
+											유료    
+										</span>
+									</div>
+									<div class="date">2.15 (토)</div>
+								</div>
+							</div>
+						</a>
+					</article>
+				</li>
+
+			</ul>
+			<!--오른쪽 9개 끝-->
+
+			<!-- 왼쪽 세개 시작 -->
+			<div class="banner_now_top">
+				<div class="head"></div>
+				<div class="content owl-carousel">
+																																										<a class="gtag_bn_item_type1" href="#" target="_blank" title="성남-KAIST K-GLOBAL 사업" data-c="559c659b1"
+					   data-event_no="202538" data-event_title="성남-KAIST K-GLOBAL 사업" data-creative_name="PC_메인_모임상단 타입1" data-creative_slot="1">
+						<img src="https://cfile1.onoffmix.com/attach/GNBziJ5gAkaYhySFxDjHtZ8sOTI3M4Vc" alt="성남-KAIST K-GLOBAL 사업">
+					</a>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="2020 IT 솔루션 박람회 Control Overflow" data-c="559c659b2"
+					   data-event_no="205867" data-event_title="2020 IT 솔루션 박람회 Control Overflow" data-creative_name="PC_메인_모임상단 타입1" data-creative_slot="2">
+						<img src="https://cfile1.onoffmix.com/attach/ygka76DIV9HWrFitLznb10xoUKvSd5qB" alt="2020 IT 솔루션 박람회 Control Overflow">
+					</a>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="[It's Honey!] 1월 허니테이스팅 클래스" data-c="559c659b3"
+					   data-event_no="205748" data-event_title="[Its Honey!] 1월 허니테이스팅 클래스" data-creative_name="PC_메인_모임상단 타입1" data-creative_slot="3">
+						<img src="https://cfile1.onoffmix.com/attach/UpwZ3Iqu8CDn2aoA57KQE6fSs1PXL4Gd" alt="[It's Honey!] 1월 허니테이스팅 클래스">
+					</a>
+				</div>
+			</div>
+			<!-- 왼쪽 세개 끝 -->
+
+		</div>
+		<!--area_top 끝-->
+		
+		<!--area_bottom 시작-->
+		<div class="area_bottom">
+
+			<ul class="event_list">
+				<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="/cs/a/51342?url=%2Fevent%2F206116" target="_blank" title="[한국엔젤투자협회] 2020 엔젤투자 교육 프로그램 안내" data-c="f7ae469a1"
+						data-event_no="206116" data-event_title="[한국엔젤투자협회] 2020 엔젤투자 교육 프로그램 안내" data-creative_name="PC_메인_모임하단 타입2" data-creative_slot="1">
+						<!-- 이미지 -->
+						<div class="event_thumbnail">
+							<img src="https://cfile1.onoffmix.com/images/event/206116/s">
+						</div>
+
+						<div class="event_info_area">
+							<!-- 타이틀 -->
+							<div class="title_area">
+								<h5 class="title ellipsis">[한국엔젤투자협회] 2020 엔젤투자 교육 프로그램 안내</h5>
+							</div>
+							<!-- 정보 -->
+							<div class="event_info">
+								<div class="type_info">
+									<span class="payment_type free">무료</span>
+								</div>
+								<div class="date">3.27 (금)</div>
+							</div>
+						</div>
+						</a>
+					</article>
+				</li>
+				<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="#" target="_blank" title="농식품 투업 콘서트" data-c="f7ae469a2"
+						data-event_no="205572" data-event_title="농식품 투업 콘서트" data-creative_name="PC_메인_모임하단 타입2" data-creative_slot="2">
+						<!-- 이미지 -->
+						<div class="event_thumbnail">
+						<img src="https://cfile1.onoffmix.com/images/event/205572/s">
+						</div>
+
+						<div class="event_info_area">
+							<!-- 타이틀 -->
+							<div class="title_area">
+								<h5 class="title ellipsis">농식품 투업 콘서트</h5>
+							</div>
+							<!-- 정보 -->
+							<div class="event_info">
+								<div class="type_info">
+									<span class="payment_type free">무료</span>
+								</div>
+								<div class="date">1.14 (화)</div>
+							</div>
+						</div>
+						</a>
+					</article>
+				</li>
+				<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="#" target="_blank" title="농식품 투업 콘서트" data-c="f7ae469a2"
+						data-event_no="205572" data-event_title="농식품 투업 콘서트" data-creative_name="PC_메인_모임하단 타입2" data-creative_slot="2">
+						<!-- 이미지 -->
+						<div class="event_thumbnail">
+						<img src="https://cfile1.onoffmix.com/images/event/205572/s">
+						</div>
+
+						<div class="event_info_area">
+							<!-- 타이틀 -->
+							<div class="title_area">
+								<h5 class="title ellipsis">농식품 투업 콘서트</h5>
+							</div>
+							<!-- 정보 -->
+							<div class="event_info">
+								<div class="type_info">
+									<span class="payment_type free">무료</span>
+								</div>
+								<div class="date">1.14 (화)</div>
+							</div>
+						</div>
+						</a>
+					</article>
+				</li>
+				<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="#" target="_blank" title="농식품 투업 콘서트" data-c="f7ae469a2"
+						data-event_no="205572" data-event_title="농식품 투업 콘서트" data-creative_name="PC_메인_모임하단 타입2" data-creative_slot="2">
+						<!-- 이미지 -->
+						<div class="event_thumbnail">
+						<img src="https://cfile1.onoffmix.com/images/event/205572/s">
+						</div>
+
+						<div class="event_info_area">
+							<!-- 타이틀 -->
+							<div class="title_area">
+								<h5 class="title ellipsis">농식품 투업 콘서트</h5>
+							</div>
+							<!-- 정보 -->
+							<div class="event_info">
+								<div class="type_info">
+									<span class="payment_type free">무료</span>
+								</div>
+								<div class="date">1.14 (화)</div>
+							</div>
+						</div>
+						</a>
+					</article>
+				</li>
+				<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="#" target="_blank" title="농식품 투업 콘서트" data-c="f7ae469a2"
+						data-event_no="205572" data-event_title="농식품 투업 콘서트" data-creative_name="PC_메인_모임하단 타입2" data-creative_slot="2">
+						<!-- 이미지 -->
+						<div class="event_thumbnail">
+						<img src="https://cfile1.onoffmix.com/images/event/205572/s">
+						</div>
+
+						<div class="event_info_area">
+							<!-- 타이틀 -->
+							<div class="title_area">
+								<h5 class="title ellipsis">농식품 투업 콘서트</h5>
+							</div>
+							<!-- 정보 -->
+							<div class="event_info">
+								<div class="type_info">
+									<span class="payment_type free">무료</span>
+								</div>
+								<div class="date">1.14 (화)</div>
+							</div>
+						</div>
+						</a>
+					</article>
+				</li>
+				<li>
+					<article class="event_area event_card">
+						<a class="gtag_bn_item_type1" href="#" target="_blank" title="농식품 투업 콘서트" data-c="f7ae469a2"
+						data-event_no="205572" data-event_title="농식품 투업 콘서트" data-creative_name="PC_메인_모임하단 타입2" data-creative_slot="2">
+						<!-- 이미지 -->
+						<div class="event_thumbnail">
+						<img src="https://cfile1.onoffmix.com/images/event/205572/s">
+						</div>
+
+						<div class="event_info_area">
+							<!-- 타이틀 -->
+							<div class="title_area">
+								<h5 class="title ellipsis">농식품 투업 콘서트</h5>
+							</div>
+							<!-- 정보 -->
+							<div class="event_info">
+								<div class="type_info">
+									<span class="payment_type free">무료</span>
+								</div>
+								<div class="date">1.14 (화)</div>
+							</div>
+						</div>
+						</a>
+					</article>
+				</li>
+			</ul>
+
+			<!-- 최소1구좌, 최대3구좌 -->
+			<!--오른쪽 시작-->
+			<div class="banner_now_bottom">
+				<div class="head"></div>
+				<div class="content owl-carousel">
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="[Microsoft] IoT in Action 서울 이벤트" data-c="adfab8f91"
+					data-event_no="205584" data-event_title="[Microsoft] IoT in Action 서울 이벤트" data-creative_name="PC_메인_모임하단 타입1" data-creative_slot="1">
+					<img src="https://cfile1.onoffmix.com/attach/Eue4m5VYv1qApQ6ox80LWhHTl7J9fr3C" alt="[Microsoft] IoT in Action 서울 이벤트">
+					</a>
+					<a class="gtag_bn_item_type1" href="#" target="_blank" title="핀테크 정책 설명회" data-c="adfab8f92"
+					data-event_no="205895" data-event_title="핀테크 정책 설명회" data-creative_name="PC_메인_모임하단 타입1" data-creative_slot="2">
+					<img src="https://cfile1.onoffmix.com/attach/2npdh9OfWwJHleVmzU7FIQXscuyRti5A" alt="핀테크 정책 설명회">
+					</a>
+				</div>
+			</div>
+			<!--오른쪽 끝-->
+		</div>
+		<!--area_bottom 끝-->
+
+	</div>
+	<!--content_wrap 끝-->
+
+</section>
+<!-- Right Now Event End -->
+
+<!-- Today 시작 -->
+<section class="section_today_event">
+	<div class="title_area">
+		<h1 class="title">Today #</span></h1>
+	</div>
+
+	<div class="content_wrap wide_max_width_area">
+
+		<div class="main_tags">
+		   <a class="gtag_bn_item_type1" href="#" data-c="afc8f73f1"
+			   data-event_no="out_41660" data-event_title="#보안" data-creative_name="PC_메인_태그이미지영역" data-creative_slot="1">
+				<p class="tag"><span>#보안</span></p>
+				<img src="https://cfile1.onoffmix.com/attach/LvldwKHm2eGR3Z1gtpJ0qFEiXPO8n6UM" alt="#보안">
+			</a>
+			<a class="gtag_bn_item_type1" href="#" data-c="afc8f73f2"
+			   data-event_no="out_41656" data-event_title="#크리에이터" data-creative_name="PC_메인_태그이미지영역" data-creative_slot="2">
+				<p class="tag"><span>#크리에이터</span></p>
+				<img src="https://cfile1.onoffmix.com/attach/2Zcmf6Gpeo1jbRuyMOaxgQnJ5vCk4BKH" alt="#크리에이터">
+			</a>
+			<a class="gtag_bn_item_type1" href="#" data-c="afc8f73f3"
+			   data-event_no="out_41673" data-event_title="#창업" data-creative_name="PC_메인_태그이미지영역" data-creative_slot="3">
+				<p class="tag"><span>#창업</span></p>
+				<img src="https://cfile1.onoffmix.com/attach/1UqijertBzghDOGKIHxP5kY9WyFcC8Qf" alt="#창업">
+			</a>
+		</div>
+
+		<ul class="tag_list">
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a07090971" data-event_no="out_41756" data-event_title="#강연" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="1">#강연</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a07090972" data-event_no="out_41696" data-event_title="#토크쇼" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="2">#토크쇼</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a07090973" data-event_no="out_41674" data-event_title="#유튜브" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="3">#유튜브</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a07090974" data-event_no="out_41686" data-event_title="#문화" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="4">#문화</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a07090975" data-event_no="out_41693" data-event_title="#콘텐츠" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="5">#콘텐츠</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a07090976" data-event_no="out_41755" data-event_title="#비트코인" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="6">#비트코인</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a07090977" data-event_no="out_41679" data-event_title="#3D" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="7">#3D</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a07090978" data-event_no="out_41694" data-event_title="#교육" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="8">#교육</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a07090979" data-event_no="out_41675" data-event_title="#컨퍼런스" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="9">#컨퍼런스</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a070909710" data-event_no="out_41692" data-event_title="#무료" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="10">#무료</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a070909711" data-event_no="out_41678" data-event_title="#아두이노" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="11">#아두이노</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a070909712" data-event_no="out_41680" data-event_title="#세미나" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="12">#세미나</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a070909713" data-event_no="out_41677" data-event_title="#책쓰기" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="13">#책쓰기</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a070909714" data-event_no="out_41681" data-event_title="#트렌드" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="14">#트렌드</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a070909715" data-event_no="out_41682" data-event_title="#마케팅" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="15">#마케팅</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a070909716" data-event_no="out_41683" data-event_title="#영화" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="16">#영화</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a070909717" data-event_no="out_41684" data-event_title="#국비지원" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="17">#국비지원</a></li>
+			<li><a class="gtag_bn_item_type1" href="#" data-c="a070909718" data-event_no="out_41695" data-event_title="#원데이클래스" data-creative_name="PC_메인_태그텍스트영역" data-creative_slot="18">#원데이클래스</a></li>
+		</ul>
+
+	</div>
+</section>
+<!-- Today 끝 -->
+
+</main>
+
+<!-- Footer Start -->
+<footer id="footer" class="footer_wrap ">
+
+	<div class="information_area wide_max_width_area">
+
+		<ul class="company_sns">
+			<li class="list_item youtube"><a href="#" target="_blank" title="우리끼리 유튜브">youtube</a></li>
+			<li class="list_item instagram"><a href="#" target="_blank" title="우리끼리 인스타그램">instagram</a></li>
+			<li class="list_item facebook"><a href="#" target="_blank" title="우리끼리 페이스북">facebook</a></li>
+			<li class="list_item naver"><a href="#" target="_blank" title="우리끼리 네이버블로그">naver blog</a></li>
+		</ul>
+
+		<ul class="company_links info_lists">
+			<li class="list_item"><a href="#" target="_blank">회사소개</a></li>
+			<li class="list_item"><a href="#" target="_blank">서비스약관 및 정책</a></li>
+			<li class="list_item"><a href="#" target="_blank"><strong>개인정보취급방침</strong></a></li>
+			<li class="list_item"><a href="#" target="_blank">문의하기</a></li>
+			<li class="list_item"><a href="#" target="_blank">제안하기</a></li>
+			<li class="list_item"><a href="#" target="_blank"><strong>고객센터</strong></a></li>
+		</ul>
+
+		<ul class="company_info info_lists">
+			<li class="list_item">우리끼리 대표이사 이순용</li>
+			<li class="list_item">개인정보관리책임자 이재은</li>
+			<li class="list_item">사업자등록번호 <span calss="text_spacing-0">000-00-00000</span></li>
+			<li class="list_item">통신판매업 신고번호 제<span calss="text_spacing-0">2020</span>-서울강남-<span calss="text_spacing-0">0000</span>호</li>
+		</ul>
+		<ul class="company_contact info_lists">
+			<li class="list_item">서울특별시 서초구 강남대로 <span calss="text_spacing-0">459</span> 
+			백암빌딩 <span calss="text_spacing-0">4</span>층</li>
+			<li class="list_item text_spacing-0">Tel 02-0000-0000</li>
+			<li class="list_item text_spacing-0">Fax 02-0000-0000</li>
+			<li class="list_item text_spacing-0">Email : <a class="email" href="mailto:yijaaan49@gmail.com "> yijaaan49@gmail.com </a></li>
+		</ul>
+		<div class="company_bottom">
+			<p class="info_msg">우리끼리는 통신판매중개자이며 모임에 대한 당사자 및 주최자가 아닙니다. 따라서 우리끼리는 등록된 모임에 대하여 책임을 지지 않습니다.</p>
+			<p class="copyright text_spacing-0">copyright &copy; WOORIKIRI.COM, All Rights Reserved.</p>
+		</div>
+
+	</div>
+
+</footer>
+<!-- Footer End -->
+ <!-- Plugin  -->
+<script src="https://static.onoffmix.com/js/pc/dist/common/plugins/owl.carousel.min.js"></script>
+<!-- Script -->
+<script src="https://static.onoffmix.com/js/pc/dist/common/common.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/header.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/main/sliderRotate.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/main/main.js"></script>
+<script src="https://static.onoffmix.com/js/pc/dist/common/today-seen.js"></script>
+</body>
+</html>

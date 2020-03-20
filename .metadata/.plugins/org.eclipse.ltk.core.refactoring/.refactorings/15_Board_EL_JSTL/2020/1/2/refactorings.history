@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Paging.java&apos; to &apos;WOORIKIRI/src/com.woorikiri.common.vo&apos;&#x0D;&#x0A;- Original project: &apos;15_Board_EL_JSTL&apos;&#x0D;&#x0A;- Destination element: &apos;WOORIKIRI/src/com.woorikiri.common.vo&apos;&#x0D;&#x0A;- Original element: &apos;com.bc.mybatis.Paging.java&apos;" description="Copy compilation unit" destination="=WOORIKIRI/src&lt;com.woorikiri.common.vo" element1="/src&lt;com.bc.mybatis{Paging.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1578624762465" units="1" version="1.0"/>
+</session>

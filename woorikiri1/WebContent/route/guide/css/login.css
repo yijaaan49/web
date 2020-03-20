@@ -1,0 +1,322 @@
+@charset "UTF-8";
+
+.sso_login .sso, .check_area, .help {
+	*zoom: 1
+}
+
+.sso_login .sso:before, .check_area:before, .help:before, .sso_login .sso:after,
+	.check_area:after, .help:after {
+	content: "";
+	display: table
+}
+
+.sso_login .sso:after, .check_area:after, .help:after {
+	clear: both
+}
+
+.wing_menu_area, #footer .company_sns, #footer .company_links, #footer .company_info,
+	#footer .company_contact, #footer .info_msg {
+	display: none !important;
+	visibility: hidden
+}
+
+.sso_login .sso li a {
+	display: block;
+	text-indent: -9999em;
+	white-space: nowrap;
+	overflow: hidden
+}
+
+input[type="submit"] {
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	border: 1px solid transparent;
+	border-radius: 3px 3px 3px 3px;
+	background: none;
+	letter-spacing: -1px;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer
+}
+
+input[type="submit"] {
+	border: 1px solid #3187e9;
+	color: #ffffff;
+	background-color: #4195f5
+}
+
+input[type="submit"]:hover, input[type="submit"]:focus {
+	background-color: #53a3ff
+}
+
+input.disabled[type="submit"], input[disabled="disabled"][type="submit"]
+	{
+	background-color: #a0cafa;
+	cursor: no-drop
+}
+
+body {
+	background-color: #f7f7f7
+}
+
+#header .header_top {
+	padding: 0;
+	height: 35px
+}
+
+#header .ofm_logo img, #header .member_menu, #header .search_area,
+	#header .header_bottom {
+	display: none
+}
+
+#header .ofm_logo .text_logo {
+	display: block
+}
+
+#footer {
+	border-top: none;
+	background-color: #f7f7f7
+}
+
+#footer .information_area {
+	padding-top: 0;
+	background-color: transparent
+}
+
+#footer .company_bottom {
+	position: relative;
+	margin: -1px auto 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 980px;
+	text-align: center
+}
+
+#footer .company_bottom .copyright {
+	padding-top: 0;
+	font-size: 11px
+}
+
+.top_area, .main_area {
+	margin: 0 auto;
+	width: 600px
+}
+
+.top_area .ofm_logo {
+	padding: 46px 0 10px;
+	width: 199px;
+	height: 24px
+}
+
+.top_area .ofm_logo img {
+	width: 100%
+}
+
+.main_area {
+	padding: 80px 103px 98px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: solid 1px #d8d8d8;
+	background-color: #ffffff
+}
+
+.main_title {
+	visibility: hidden
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"]
+	{
+	padding: 0 9px;
+	width: 100%;
+	height: 45px;
+	display: block;
+	margin-bottom: 10px
+}
+
+input[type="submit"] {
+	width: 100%;
+	height: 42px;
+	line-height: 40px;
+	margin-top: 18px;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: normal
+}
+
+.main_content {
+	position: relative
+}
+
+.tab .title {
+	position: absolute;
+	top: 0;
+	padding: 13px 0 14px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 50%;
+	border: 1px solid #cccccc;
+	font-size: 15px;
+	text-align: center;
+	background-color: #f8f8f8;
+	cursor: pointer
+}
+
+.tab .title:hover, .tab .title:focus {
+	color: #4195f5;
+	text-decoration: underline
+}
+
+.tab .sub_title {
+	display: inline-block;
+	padding-top: 4px;
+	font-size: 15px
+}
+
+.tab.member .title {
+	left: 0;
+	border-right: none
+}
+
+.tab.non_member .title {
+	right: 0
+}
+
+.tab.non_member .sub_title {
+	padding: 33px 0 13px
+}
+
+.tab.non_member .btn_submit {
+	margin-bottom: 25px
+}
+
+.tab.active .title {
+	border-bottom-color: #ffffff;
+	color: #4195f5;
+	background-color: #ffffff
+}
+
+.tab.active .tab_content {
+	display: block
+}
+
+.tab_content {
+	display: none;
+	padding-top: 0px;
+	background-color: #ffffff
+}
+
+.sso_login {
+	padding: 29px 0 8px;
+	height: 26px
+}
+
+.sso_login .sso {
+	float: right
+}
+
+.sso_login .sso li {
+	float: left;
+	margin-left: 4px;
+	cursor: pointer
+}
+
+.sso_login .sso li:first-child {
+	margin-left: 0
+}
+
+.sso_login .sso li a {
+	width: 26px;
+	height: 26px;
+	display: block;
+	background: url("/images/pc/icon/sns_24x24.png") no-repeat 0 0
+}
+
+.sso_login .sso li.twitter a {
+	background-position-x: -31px
+}
+
+.sso_login .sso li.google a {
+	background-position-x: -61px
+}
+
+.sso_login .sso li.naver a {
+	background-position-x: -91px
+}
+
+.sso_login .sso li.daum a {
+	background-position-x: -122px
+}
+
+.sso_login .sso li.kakao a {
+	background-position-x: -153px
+}
+
+.check_area {
+	height: 17px;
+	margin-top: -1px;
+	padding-bottom: 18px;
+	letter-spacing: -1px;
+	color: #666666;
+	font-size: 11px
+}
+
+.check_area li {
+	display: inline-block;
+	vertical-align: middle
+}
+
+.check_area a {
+	color: #666666
+}
+
+.check_area a:hover, .check_area a:focus {
+	text-decoration: underline;
+	color: #333333
+}
+
+.check_area .find {
+	float: right;
+	margin-right: 10px;
+	margin-top: 1px
+}
+
+.check_area .join {
+	float: right;
+	margin-top: 1px;
+	font-weight: bold
+}
+
+.check_area .find_pw {
+	float: right;
+	margin-top: 1px
+}
+
+.help {
+	margin-top: 10px
+}
+
+.help a {
+	float: right;
+	padding-left: 18px;
+	display: block;
+	height: 15px;
+	font-size: 11px;
+	background: url("/images/pc/icon/help_icon.png") no-repeat 0 -96px;
+	color: #666666;
+	text-align: right;
+	letter-spacing: -1px;
+	line-height: 14px;
+	cursor: help
+}
+
+.help a:hover, .help a:focus {
+	color: #333333;
+	text-decoration: underline
+}
+
+.error_msg {
+	margin-top: -4px;
+	line-height: 16px
+}
